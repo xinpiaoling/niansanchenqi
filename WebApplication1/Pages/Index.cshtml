@@ -1,10 +1,10 @@
 ﻿@page
-<head>
+    <head>
 
-    The world never remember little people!!!
-    <script type="text/javascript" src="~/js/9.8 homework.js"></script>
-
-</head>
+        The world never remember little people!!!
+        @*<script type="text/javascript" src="~/js/9.8 homework.js"></script>*@
+        <script type="text/javascript" src="~/js/9.10homework.js"></script>
+    </head>
 
 
 
@@ -34,9 +34,12 @@
 
         //console.log(sum);
 
+        //var sum = 0;
+        //for (var i = 0; i < 101;i++) {
+        //    sum = sum + i;
 
-
-
+        //}
+        //console.log(sum);
 
     </script>
     <script>
@@ -509,19 +512,19 @@
         //array=[NaN,829,583,'50',NaN,22]   //NaN值能判断么
         //需求文档不明确，需要写出测试用例，确定边界条件，函数范围
 
-        var array = [50, 829, 583, 50, 22];
-        function repet(array) {
-            let result = [20];
-            for (var i = 0; i < array.length; i++) {                
-                for (var j = 1; j < array.length; j++) {
-                    if (array[i] == array[j]) {
-                        result.push( array[i]);
-                    }
-                }
-            }
-            return result;
-            console.log(result);
-        }
+        //var array = [50, 829, 583, 50, 22];
+        //function repet(array) {
+        //    let result = [20];
+        //    for (var i = 0; i < array.length; i++) {
+        //        for (var j = 1; j < array.length; j++) {
+        //            if (array[i] == array[j]) {
+        //                result.push( array[i]);
+        //            }
+        //        }
+        //    }
+        //    return result;
+        //    console.log(result);
+        //}
 
 
 
@@ -533,94 +536,216 @@
 
 
     <script>
-            //9使用JavaScript内置字符串函数，处理 “‘源栈’：飞哥小班教学，线下免费收看” ：“飞哥”改成“大神”，“线下”改成“线上”。
-            //var replaceText = ('"源栈"：飞哥小班教学，线下免费收看');
-            //replaceText = replaceText.replace("飞哥","大神");
-            //replaceText = replaceText.replace('线下','线上');
+        //9使用JavaScript内置字符串函数，处理 “‘源栈’：飞哥小班教学，线下免费收看” ：“飞哥”改成“大神”，“线下”改成“线上”。
+        //var replaceText = ('"源栈"：飞哥小班教学，线下免费收看');
+        //replaceText = replaceText.replace("飞哥","大神");
+        //replaceText = replaceText.replace('线下','线上');
 
-            //var string ="源栈：飞哥小班教学，线下免费收看";
-            //string = string.replace("飞哥", "大神");
-            //string = string.replace("线下", "线上");
+        //var string ="源栈：飞哥小班教学，线下免费收看";
+        //string = string.replace("飞哥", "大神");
+        //string = string.replace("线下", "线上");
 
 
-            //对于什么时候使用小括号，什么时候使用中括号
-            //函数格式问题，如replace（"",""）的双引号
+        //对于什么时候使用小括号，什么时候使用中括号
+        //函数格式问题，如replace（"",""）的双引号
 
     </script>
 
     <script>
-           // 10.将数组['why','gIT','vs2019','community','VERSION']规范化，所有字符串：
-                   //首字母大写开头，其他字母小写
-            //截去超过6个字符的部分，如'community'将变成'Commun'
-            //function stand(str) {
-            //    var arr = [];
-            //    for (var i = 0; i < str.length; i++) {
-            //        arr[i] = str[i].toLowerCase().substring(0, 6);
-            //        arr[i] = arr[i][0].toUpperCase() + arr[i].substring(1, 6);
-            //    }
-            //    return arr;
-            //}
-            //var str = ['why', 'gIT', 'vs2019', 'community', 'VERSION'];
-            //var result = stand(str);
+        // 10.将数组['why','gIT','vs2019','community','VERSION']规范化，所有字符串：
+        //首字母大写开头，其他字母小写
+        //截去超过6个字符的部分，如'community'将变成'Commun'
+        //function stand(str) {
+        //    var arr = [];
+        //    for (var i = 0; i < str.length; i++) {
+        //        arr[i] = str[i].toLowerCase().substring(0, 6);
+        //        arr[i] = arr[i][0].toUpperCase() + arr[i].substring(1, 6);
+        //    }
+        //    return arr;
+        //}
+        //var str = ['why', 'gIT', 'vs2019', 'community', 'VERSION'];
+        //var result = stand(str);
     </script>
     <script>
-            //11.创建一个函数getRandomArray(length, max)，能返回一个长度不大于length，每个元素值不大于max的随机整数数组
-            //测试1
-            //getRandomArray(10, 1)
+        //11.创建一个函数getRandomArray(length, max)，能返回一个长度不大于length，每个元素值不大于max的随机整数数组
+        //测试1
+        //getRandomArray(10, 1)
 
 
 
 
 
-            //function getRandomArray(length, max) {
-            //    var result = [];
-            //    for (var i = 0; i < length.length; i++) {
-            //        result[i] = Math.floor(Math.random（）* max);                              //随机数
+        //function getRandomArray(length, max) {
+        //    var result = [];
+        //    for (var i = 0; i < length.length; i++) {
+        //        result[i] = Math.floor(Math.random（）* max);                              //随机数
 
 
-            //    }
-
-
-
-
-            //}
+        //    }
 
 
 
+
+        //}
 
 
 
 
 
-            //var result=getRandomArray(10,100);
+
+
+
+        //var result=getRandomArray(10,100);
 
 
 
     </script>
 
-
-
-    <script>
-            //12.不使用JavaScript内置函数，将一个字符串顺序颠倒，比如：'hello,yuanzhan' 变成 'nahznauy,olleh'
-            //function order(reverse){
-            //    var reverseFinish='';
-            //    for (var i = reverse.length - 1; i >= 0;i--){
-            //        reverseFinish += reverse[i];
-            //    }
-            //    console.log(reverseFinish);
-            //    //return reverseFinish;
-            //}
-            //console.log(order('hello yuanzhan'));
-    </script>
 
 
     <script>
-            //13.统计出这段文字中有多少个单词
-            //There are two ways to create a RegExp object : a literal notation and a constructor.
-            //To indicate strings , the parameters to the literal notation do not use quotation marks
-            //while the parameters to the constructor function do use quotation-marks.
-            //So the following expressions create the same regular expression
+        //12.不使用JavaScript内置函数，将一个字符串顺序颠倒，比如：'hello,yuanzhan' 变成 'nahznauy,olleh'
+        //function order(reverse){
+        //    var reverseFinish='';
+        //    for (var i = reverse.length - 1; i >= 0;i--){
+        //        reverseFinish += reverse[i];
+        //    }
+        //    console.log(reverseFinish);
+        //    //return reverseFinish;
+        //}
+        //console.log(order('hello yuanzhan'));
+    </script>
+
+
+    <script>
+        //13.统计出这段文字中有多少个单词
+        //There are two ways to create a RegExp object : a literal notation and a constructor.
+        //To indicate strings , the parameters to the literal notation do not use quotation marks
+        //while the parameters to the constructor function do use quotation-marks.
+        //So the following expressions create the same regular expression
 
     </script>
+
+
+    <script>
+        //JavaScript - 3 homework
+        //title
+        //构建一个函数has9(number) ，可以判断number中是否带有数字9；
+        //构建一个函数has8(number) ，可以判断number中是否带有数字8；
+
+        //构建一个函数has6(number) ，可以判断number中是否带有数字6；
+
+        //使用上述函数，找出10000以内有多少个数字包含：9或者8或者6。
+
+        //使用“模拟名称空间”技术，构建一个函数函数yz.fei.get986(number) ；
+
+        //在yz.fei.get986(number)中包含不带参数的函数has9() / has8() / has6() ；
+
+
+
+        //让get986()通过调用has9() / has8() / has6() ，能找出number以内有多少个数字包含：9或者8或6。
+
+
+        //测试用例
+        //hasx（9，NaN）;
+        //hasx()
+
+
+        //function hasX(x, number) {
+        //    if (isNaN(number)) {
+        //       // console.log(number + '不是数字');
+        //        return false;
+        //    }
+        //    if (number < 0) {
+        //        //console.log(number + '不是正数');
+        //        return false;
+        //    }
+        //    if (number.toString().indexOf('.') > -1) {
+        //       // console.log(number + '是小数');
+        //        return false;
+        //    }
+        //    if (number.toString().indexOf(x) > -1) {
+        //       // console.log(number + '含有数字' + x);
+
+        //    } else {
+        //        //console.log(number + '不含有数字' + x);
+        //    }
+        //}
+
+        //var result = has9(9, number);
+
+        //var result = has8(8, number);
+
+        //var result = has6(6, number);
+
+
+
+
+    </script>
+
+
+    <script>
+        //使用上述函数，找出10000以内有多少个数字包含：9或者8或者6。
+
+        //var result = has9(9, number);
+        //var result = has8(8, number);
+        //var result = has6(6, number);
+
+
+        //var counter = 0;
+        //for (var i = 0; i < 10000; i++) {
+        //    if (has9(9,i)||has8(8,i)||has6(6,i)) {
+        //        counter++;
+        //    }
+        //} return counter;
+        //console.log('10000以内有'+counter+'数字包含9或者8或者6');
+
+
+
+
+
+
+
+        //使用“模拟名称空间”技术，构建一个函数函数yz.fei.get986(number) ；
+
+        //var yz = {};
+        //yz.fei = {};
+        //yz.fei.get986 = function(){
+        // var counter = 0;
+        //for (var i = 0; i < 10000; i++) {
+        //    if (has9(9,i)||has8(8,i)||has6(6,i)) {
+        //        counter++;
+        //    }
+        //} return counter;
+        //console.log('10000以内有'+counter+'数字包含9或者8或者6');
+        //}
+
+        //在yz.fei.get986(number)中包含不带参数的函数has9() / has8() / has6() ；
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </body>
