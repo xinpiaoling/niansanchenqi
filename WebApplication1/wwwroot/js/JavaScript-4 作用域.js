@@ -63,7 +63,7 @@ function buildList(list) {
     for (var i = 0; i < list.length; i++) {
         result.push(
             (function (i) {
-                function () {
+                return function () {
                     console.log('item' + i + ': ' + list[i]);
                 }
             })(i)
