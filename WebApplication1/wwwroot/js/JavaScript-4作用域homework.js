@@ -1,4 +1,4 @@
-//ÔÚº¯Êıstudent()ÖĞÉùÃ÷ÁËº¯ÊıÓò±äÁ¿name¡¢ageºÍfemale£¬Ê¹ÓÃ±Õ°ü»úÖÆ£¬½«Æä±©Â¶µ½º¯ÊıÍâ²¿
+ï»¿//åœ¨å‡½æ•°student()ä¸­å£°æ˜äº†å‡½æ•°åŸŸå˜é‡nameã€ageå’Œfemaleï¼Œä½¿ç”¨é—­åŒ…æœºåˆ¶ï¼Œå°†å…¶æš´éœ²åˆ°å‡½æ•°å¤–éƒ¨
 //function student() {
 //    let name = 'lihua';
 //    var age = 18;
@@ -11,13 +11,13 @@
 
 //}
 //var result = student();
-//console.log(`"±Õ°üµÄ½á¹ûÃû³Æ£º"${name}`);
+//console.log(`"é—­åŒ…çš„ç»“æœåç§°ï¼š"${name}`);
 
 
 
 
 
-//½âÊÍÒÔÏÂ´úÂëÔËĞĞ½á¹û£º£¨ condition ? <statement when true> : <statement when false>£©
+//è§£é‡Šä»¥ä¸‹ä»£ç è¿è¡Œç»“æœï¼šï¼ˆ condition ? <statement when true> : <statement when false>ï¼‰
 //function foo(x) {
 //    var tmp = 3;
 //    return function (y) {
@@ -27,8 +27,8 @@
 //}
 
 //var bar = foo(0);
-////»òÕß£ºvar bar = foo(1);
-////»òÕß£ºvar bar = foo(0);
+////æˆ–è€…ï¼švar bar = foo(1);
+////æˆ–è€…ï¼švar bar = foo(0);
 
 //bar(10);
 
@@ -37,8 +37,8 @@
 
 
 
-//¸Ä¶¯ÒÔÏÂ´úÂë£¬ÈÃÆäÊä³öÈçÍ¼ËùÊ¾£¬²¢ËµÃ÷ÀíÓÉ¡£
-//·½·¨1£º¸ÄvarÎªlet
+//æ”¹åŠ¨ä»¥ä¸‹ä»£ç ï¼Œè®©å…¶è¾“å‡ºå¦‚å›¾æ‰€ç¤ºï¼Œå¹¶è¯´æ˜ç†ç”±ã€‚
+//æ–¹æ³•1ï¼šæ”¹varä¸ºlet
 //function buildList(list) {
 //    var result = [];
 //    for (let i = 0; i < list.length; i++) {
@@ -56,7 +56,7 @@
 //    }
 //})();
 
-//º¯ÊıÇ¶Ì×£¬Á¢¼´Ö´ĞĞ
+//å‡½æ•°åµŒå¥—ï¼Œç«‹å³æ‰§è¡Œ
 
 function buildList(list) {
     var result = [];
