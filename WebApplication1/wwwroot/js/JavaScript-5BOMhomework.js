@@ -40,81 +40,81 @@
 //
 
 
-var gameNumber = Math.ceil(Math.random() * 1000);
-console.log(gameNumber);
+//var gameNumber = Math.ceil(Math.random() * 1000);
+//console.log(gameNumber);
 
-if (confirm(`游戏
+//if (confirm(`游戏
 
 
 
-规则`)) {
-    for (var i = 1; i < 11; i++) {
-        var word = prompt('');
-        if (isNaN(word)) {
-            if (i < 10) {
-                alert('你输入的不是一个数字,请输入一个正整数');
-                continue;
-            }
-            else {
-                alert('^ (*￣(oo) ￣)^');
-                break;
-            }
+//规则`)) {
+//    for (var i = 1; i < 11; i++) {
+//        var word = prompt('');
+//        if (isNaN(word)) {
+//            if (i < 10) {
+//                alert('你输入的不是一个数字,请输入一个正整数');
+//                continue;
+//            }
+//            else {
+//                alert('^ (*￣(oo) ￣)^');
+//                break;
+//            }
 
-        }
-        if (word < 0) {
-            if (i < 10) {
-                alert('你输入的不是一个正整数，请输入一个正整数');
-                continue;
-            }
-            else {
-                alert('^ (*￣(oo) ￣)^');
-                break;
-            }
+//        }
+//        if (word < 0) {
+//            if (i < 10) {
+//                alert('你输入的不是一个正整数，请输入一个正整数');
+//                continue;
+//            }
+//            else {
+//                alert('^ (*￣(oo) ￣)^');
+//                break;
+//            }
 
-        }
-        if (!(word.indexOf('.') === -1)) {
-            if (i < 10) {
-                alert('你输入的不是一个正整数，请输入正整数');
-                continue;
-            }
-            else {
-                alert('^ (*￣(oo) ￣)^');
-                break;
-            }
+//        }
+//        if (!(word.indexOf('.') === -1)) {
+//            if (i < 10) {
+//                alert('你输入的不是一个正整数，请输入正整数');
+//                continue;
+//            }
+//            else {
+//                alert('^ (*￣(oo) ￣)^');
+//                break;
+//            }
 
-        }
-        if (word == gameNumber) {      //无法比较。修改三个等号为两个等号，解决问题，可以比较
-            if (i < 6) {
-                alert('碉堡了');
-                break;
+//        }
+//        if (word == gameNumber) {      //无法比较。修改三个等号为两个等号，解决问题，可以比较
+//            if (i < 6) {
+//                alert('碉堡了');
+//                break;
 
-            } else if(i<8) {
-                alert('666');
-                break;
+//            } else if(i<8) {
+//                alert('666');
+//                break;
 
-            } else {
-                alert('猜到了');
-                break;
-            }
-        }
-        else if (word < gameNumber) {
-            if (i < 10) {
-                alert('小了');
-            }
-        }
-        else if (word > gameNumber) {
-            if (i < 10) {
-                alert('大了');
-            }
-        }
+//            } else {
+//                alert('猜到了');
+//                break;
+//            }
+//        }
+//        else if (word < gameNumber) {
+//            if (i < 10) {
+//                alert('小了');
+//            }
+//        }
+//        else if (word > gameNumber) {
+//            if (i < 10) {
+//                alert('大了');
+//            }
+//        }
 
-        else {
-            alert('^ (*￣(oo) ￣)^');
-        }
+//        else {
+//            alert('^ (*￣(oo) ￣)^');
+//        }
 
-    }
+//    }
 
-}
+//}
 
 
 
