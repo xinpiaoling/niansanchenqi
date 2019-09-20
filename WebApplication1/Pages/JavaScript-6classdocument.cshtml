@@ -12,22 +12,37 @@
         <p>HTML DOM定义了访问和操作HTML文档的标准方法。</p>
         <p>
             DOM将HTML文档表达为树结构。见：
-            <a href="http://www.w3cschool.com.cn/htmldom/index.asp" target="_blank">w3cschool教程</a>
+            <a class="text-text" href="http://www.w3cschool.com.cn/htmldom/index.asp" target="_blank">w3cschool教程</a>
         </p>
         <p id="sample">
             但我们认为，将其图示为
             <strong kks="test" style="color:darkblue">嵌套结构</strong>
             过渡更容易理解
         </p>
-        <img src="~/images/lover.png" alt="HTML DOM 嵌套图例" />
+        <img src="~/images/哪吒头像.jpg" alt="HTML DOM 嵌套图例" />
     </div>
-
+    <form>
+        <input type="text" name="username" />
+        <textarea></textarea>
+        <select name="level">
+            <option value="1">一级</option>      //一般向后台传递数据要写value="1"如果不写，默认向后台传递文本一级
+            <option value="2">二级</option>
+            <option value="3">三级</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+    </form>
+    <textarea id="message-box"></textarea>
 
 
 
 
     <!--document.getElementById('sample').style.color='red'-->
     <!--将蓝色改为红色-->
+
+
+
+
     <!--document.getElements-->
     <!--      -->
     <!--document.getElementById('sample').children-->
@@ -41,21 +56,89 @@
             DOM将HTML文档表达为树结构。见：
             <a href="http://www.w3cschool.com.cn/htmldom/index.asp" target="_blank">w3cschool教程</a>
         </p>>-->
+    @*<script>
+
+            var welcome = document.createElement('p');     //创建一个P标签
+            welcome.setAttribute('style', 'font-size:24px');  //添加属性
+            var text = document.createTextNode('源栈欢迎您！')    //添加文本
+            welcome.append(text);     //尾部添加
+            document.getElementById('sample').append(welcome);   //选中sample这个ID的标签 ,在其尾部添加P标签
+
+
+
+
+        </script>*@
+
+
     <script>
-
-        var welcome = document.createElement('p');     //创建一个P标签
-        welcome.setAttribute('style', 'font-size:24px');  //添加属性
-        var text = document.createTextNode('源栈欢迎您！')    //添加文本
-        welcome.append(text);     //尾部添加
-        document.getElementById('sample').append(welcome);   //选中sample这个ID的标签 ,在其尾部添加P标签
+            //document.getElementById('sample').innerText;     //获得它的文本
+            //document.getElementById('sample').remove()    //移除
 
 
-
+            //var myhref = document.createElement('a');
+            //myhref.href ="a";
+            //myhref.createTextNode('上课不要聊QQ');
+            //document.getElementById('sample').replaceWith(myhref);
 
     </script>
 
+    <script>
+            //getElementById//只有求Id的时候，才会用Element,其他都是Elements
+            //document.getElementsByClassName('');      //取出的是class='text-text';
+            //document.getElementsByName('');          //取出的是name='username';
+            //document.getElementsByTagName('a');       //取出的是标签<a  /a>
+
+            //document.querySelector('p');              //取出第一个P标签，querySelector的作用是取出第一个元素
+            //document.querySelectorAll('p');           //取出所有的P标签， querySelectorAll的作用是取出所有元素
+
+    </script>
+    @*<script>
+            document.getElementById('sample').innerHTML;       //取出sample里面的标签所有内容
+            document.getElementById('sample').innerText;      //取出sample里面的文本内容
+            document.getElementById('sample').removeAttribute('style');   //删除style这个属性
+            document.getElementById('sample').append('');             //尾部添加
 
 
+            document.querySelector('[style]')       //取出含有style样式的标签内容
+            document.querySelectorAll('[class]')       //取出所有含有class类的标签内容
+            document.querySelectorAll('[class="text-text"]')    //取出含有class="text-text"的内容
+
+            document.querySelector('.text-info').setAttribute('style','display；none');   //对这个标签内容进行隐藏
+            document.querySelector('a.text-info')   //取出带有text-info的a标签内容
+            document.querySelectorAll('div strong')   //取出div的strong内容
+            document.querySelectorAll('div>strong')    //功能和空格一样，使用范围为上下级两级之间
+            //+  ~是兄弟关系使用
+
+
+
+        </script>*@
+
+    <script>
+            //document.getElementsByName('username')[0].value;   //取出这个值
+            //document.getElementsByTagName('textarea')[0].value;   //取出输入的内容
+            //document.getElementsByName('level')[0].value;       //取出选择的1这个值：1
+            //document.getElementsByName('username')[0].value = '彭志强好样的';   //赋值
+            //document.getElementsByName('level')[0].value = 2;    //改变页面选择的1为2
+            //document.getElementsByName('level')[0].selectedIndex     //取出这个值的下标
+
+            //document.getElementsByName('level')
+            //    //取出的内容为
+            //    < select >
+            //    < option value="1" > 一级</option >
+            //    <option value="2">二级</option>
+            //    <option value="3">三级</option>
+            //    <option>4</option>
+            //    <option>5</option>
+            //</select >
+            //    document.getElementsByName('level')[0]   //取出的内容为< option value = "1" > 一级</option >
+            //document.getElementsByName('level')[0][0].innerText;     //取出页面选择1的文本：一级
+             //可以用var声明一个变量代替上面重复部分，用空间换时间
+             //优化性能必然损失其他东西，比如用空间换时间。性能，安全，可维护性三者的平衡。
+             //人力沟通成本高，
+             //两个独立模块之间的消耗是最大的
+
+
+    </script>
 
 
 
