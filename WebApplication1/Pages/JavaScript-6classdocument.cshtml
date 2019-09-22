@@ -8,6 +8,7 @@
 </head>
 <body>
     <h1>HTML DOM示范</h1>
+    <h1 onclick="greet('IT的世界')" style="color:mediumvioletred">  绑定点击事件使用onclick</h1>
     <div>
         <p>HTML DOM定义了访问和操作HTML文档的标准方法。</p>
         <p>
@@ -16,7 +17,7 @@
         </p>
         <p id="sample">
             但我们认为，将其图示为
-            <strong kks="test" style="color:darkblue">嵌套结构</strong>
+            <strong kks="test" style="color:red">嵌套结构</strong>
             过渡更容易理解
         </p>
         <img src="~/images/哪吒头像.jpg" alt="HTML DOM 嵌套图例" />
@@ -39,10 +40,6 @@
 
     <!--document.getElementById('sample').style.color='red'-->
     <!--将蓝色改为红色-->
-
-
-
-
     <!--document.getElements-->
     <!--      -->
     <!--document.getElementById('sample').children-->
@@ -59,7 +56,7 @@
     @*<script>
 
             var welcome = document.createElement('p');     //创建一个P标签
-            welcome.setAttribute('style', 'font-size:24px');  //添加属性
+            welcome.setAttribute('style', 'font-size:24px');  //在这个p标签里面添加属性
             var text = document.createTextNode('源栈欢迎您！')    //添加文本
             welcome.append(text);     //尾部添加
             document.getElementById('sample').append(welcome);   //选中sample这个ID的标签 ,在其尾部添加P标签
@@ -71,25 +68,25 @@
 
 
     <script>
-            //document.getElementById('sample').innerText;     //获得它的文本
-            //document.getElementById('sample').remove()    //移除
+                //document.getElementById('sample').innerText;     //获得它的文本
+                //document.getElementById('sample').remove()    //移除
 
 
-            //var myhref = document.createElement('a');
-            //myhref.href ="a";
-            //myhref.createTextNode('上课不要聊QQ');
-            //document.getElementById('sample').replaceWith(myhref);
+                //var myhref = document.createElement('a');
+                //myhref.href ="a";
+                //myhref.createTextNode('上课不要聊QQ');
+                //document.getElementById('sample').replaceWith(myhref);
 
     </script>
 
     <script>
-            //getElementById//只有求Id的时候，才会用Element,其他都是Elements
-            //document.getElementsByClassName('');      //取出的是class='text-text';
-            //document.getElementsByName('');          //取出的是name='username';
-            //document.getElementsByTagName('a');       //取出的是标签<a  /a>
+                //getElementById//只有求Id的时候，才会用Element,其他都是Elements
+                //document.getElementsByClassName('');      //取出的是class='text-text';
+                //document.getElementsByName('');          //取出的是name='username';
+                //document.getElementsByTagName('a');       //取出的是标签<a  /a>
 
-            //document.querySelector('p');              //取出第一个P标签，querySelector的作用是取出第一个元素
-            //document.querySelectorAll('p');           //取出所有的P标签， querySelectorAll的作用是取出所有元素
+                //document.querySelector('p');              //取出第一个P标签，querySelector的作用是取出第一个元素
+                //document.querySelectorAll('p');           //取出所有的P标签， querySelectorAll的作用是取出所有元素
 
     </script>
     @*<script>
@@ -114,32 +111,50 @@
         </script>*@
 
     <script>
-            //document.getElementsByName('username')[0].value;   //取出这个值
-            //document.getElementsByTagName('textarea')[0].value;   //取出输入的内容
-            //document.getElementsByName('level')[0].value;       //取出选择的1这个值：1
-            //document.getElementsByName('username')[0].value = '彭志强好样的';   //赋值
-            //document.getElementsByName('level')[0].value = 2;    //改变页面选择的1为2
-            //document.getElementsByName('level')[0].selectedIndex     //取出这个值的下标
+                //document.getElementsByName('username')[0].value;   //取出这个值
+                //document.getElementsByTagName('textarea')[0].value;   //取出输入的内容
+                //document.getElementsByName('level')[0].value;       //取出选择的1这个值：1
+                //document.getElementsByName('username')[0].value = '彭志强好样的';   //赋值
+                //document.getElementsByName('level')[0].value = 2;    //改变页面选择的1为2
+                //document.getElementsByName('level')[0].selectedIndex     //取出这个值的下标
 
-            //document.getElementsByName('level')
-            //    //取出的内容为
-            //    < select >
-            //    < option value="1" > 一级</option >
-            //    <option value="2">二级</option>
-            //    <option value="3">三级</option>
-            //    <option>4</option>
-            //    <option>5</option>
-            //</select >
-            //    document.getElementsByName('level')[0]   //取出的内容为< option value = "1" > 一级</option >
-            //document.getElementsByName('level')[0][0].innerText;     //取出页面选择1的文本：一级
-             //可以用var声明一个变量代替上面重复部分，用空间换时间
-             //优化性能必然损失其他东西，比如用空间换时间。性能，安全，可维护性三者的平衡。
-             //人力沟通成本高，
-             //两个独立模块之间的消耗是最大的
+                //document.getElementsByName('level')
+                //    //取出的内容为
+                //    < select >
+                //    < option value="1" > 一级</option >
+                //    <option value="2">二级</option>
+                //    <option value="3">三级</option>
+                //    <option>4</option>
+                //    <option>5</option>
+                //</select >
+                //    document.getElementsByName('level')[0]   //取出的内容为< option value = "1" > 一级</option >
+                //document.getElementsByName('level')[0][0].innerText;     //取出页面选择1的文本：一级
+                //可以用var声明一个变量代替上面重复部分，用空间换时间
+                //优化性能必然损失其他东西，比如用空间换时间。性能，安全，可维护性三者的平衡。
+                //人力沟通成本高，
+                //两个独立模块之间的消耗是最大的
 
 
     </script>
 
+
+    <script>
+
+    function greet(name) {
+    alert('hello，'+name);
+    }
+
+
+    </script>
+    <script>
+
+
+
+
+
+
+
+    </script>
 
 
 

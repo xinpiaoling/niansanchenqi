@@ -80,8 +80,8 @@
 //setInterval和setTimeout是异步的代码，JavaScript先执行同步代码，再执行异步代码
 
 //var counter = 0;
-//function greet() {
 //    //var counter = 0;
+//function greet() {
 //    return setTimeout(function () {
 //        console.log('hello');
 //        counter = counter + 1000;
