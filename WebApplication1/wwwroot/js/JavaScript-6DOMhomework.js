@@ -88,34 +88,37 @@ for (var i = 0; i < dark.length;i++) {
 //参考用户注册页面，创建一下函数：
 //显示密码的长度
 
-//显示密码长度，应该是使用document.getElementsByClassName()[].innerText.length
-
-
-
-
-
 //参考用户注册页面，创建一下函数：
 //如果密码和确认密码不一致，弹出提示
 
-
-//取出密码，应该是使用document.getElementsByClassName()[].innerText
-
-var i = '密码';
-var j = '确认密码';
-if (i = j) {
-    //nothing
-} else {
-    alert('密码和确认密码不一致');
-
+var password = document.querySelectorAll('[type="password"]')[0].value;
+var repeatpassword = document.querySelectorAll('[type="password"]')[1].value;
+alert('你输入的密码长度为' + password.length);
+//回答上一道题
+if (!(password === repeatpassword)) {
+    alert('您输入的密码和确认密码不一致');
 }
 
-
-
-
-
+//总结：回答这道题
+//注意elements的文件要加下标，不然取出来的是数组
 
 //参考用户资料页面，控制台显示出用户的：性别 / 出生年月 / 关注（关键字）/ 自我介绍
+//自己不会写css页面，此题是抄陈元
 
-//不会 
+document.getElementsByClassName('button')[0].onclick = previous();
+function previous(event) {
+    event.preventDefault();
+    if (document.getElementsByName('sex')[0].checked) {
+        console.log('你选中的是男性');
+    } else {
+        console.log('你选中的是女性');
+    }
+    var year = document.getElementsByClassName('year')[0].value;
+    var month = document.getElementsByClassName('month')[0].value;
+    var constellation = document.getElementsByClassName('constellation')[0].value;
+    console.log('你出生于' + year + '年' + month + '月，你的星座是' + 'constellation ');
+    console.log(document.getElementsByClassName('introduce')[0].value);
+}
+
 
 
