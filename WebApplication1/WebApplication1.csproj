@@ -5,11 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Pages\game.cshtml" />
     <Content Remove="Pages\JavaScript-6classdocument.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Pages\game.cshtml" />
     <None Include="Pages\JavaScript-6classdocument.cshtml" />
+    <None Include="wwwroot\images\banner1.svg" />
+    <None Include="wwwroot\images\banner2.svg" />
+    <None Include="wwwroot\images\banner3.svg" />
   </ItemGroup>
 
   <ItemGroup>

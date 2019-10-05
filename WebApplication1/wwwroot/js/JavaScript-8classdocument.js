@@ -149,7 +149,7 @@ var cumulated = arr.reduce(function (previous, currentIndex, array) {
 创建正则表达式
 字面量：两个斜杠（//）包裹，如/<a.*?/a>/gl,注意不要加引号
 RegExp构造函数：（表达式会动态改变时使用）
-var regex = new RegExp('/<a.*?/a >/', 'gi');
+var regex = new RegExp('/< a.*?/a >/', 'gi');
 
 var reg = /<option.*?> /gim;
 var result = null;
@@ -266,14 +266,12 @@ function callback() {
 
 var callback = function (sname) {
     console.log(`I'm a callback function,name is ${sname}`);
-
 };
 
 
 function main(para,work) {
     console.log(`I'm main function,I invoked para（）`);
     para(work);
-
 }
 main(callback, 'eat');
 

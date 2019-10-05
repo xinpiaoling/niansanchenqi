@@ -43,7 +43,7 @@ console.log(counter);
 //document.getElementsByClassName('problem-status')[1].style.backgroundColor = 'darkgray';
 
 var dark = document.getElementsByClassName('problem-status');
-for (var i = 0; i < dark.length;i++) {
+for (var i= 0; i < dark.length; i++) {
     if (dark[i].innerText === '协助中') {
         dark[i].style.backgroundColor = 'darkgray';
 
