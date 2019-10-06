@@ -241,4 +241,79 @@ JavaScript.__proto__.hasOwnProperty(begin);
 
 
 
+在封装作业的基础上，为Course添加两个子类：主修课（MajorCourse）和辅修课（ElectiveCourse）
+声明一个Stundent类，包含name和score两个属性，让Course的Students包含的是Student的对象
+主修课需要参加考试，所以有一个Exam(student)方法；辅修课只需要测评，所以有一个方法Assess(student)
+class Course {
+    constructor(name, startDate, endDate, students) {
+        this.name = name;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.students = students;
+    }
+    begin() {
+        //JavaScript于2019年5月5日开课，共有5名同学（两开花、王枫、王平、采铃、老程）报名。
+        var startDateRule = this.startDate.getFullYear() + '-' + this.startDate.getMonth() + '-' + this.startDate.getDate();
+        console.log(this.name + "于" + startDateRule + "开课，共有" + this.students.length + "名同学(" + this.students + ")报名");
+    }
+    end() {
+        console.log(this.endDate);
+    }
+}
+
+
+class MajorCourse extends Course {
+    constructor(name) {
+        super(name);
+       
+    }
+}
+
+class ElectiveCourse extends Course {
+    constructor(name) {
+        super(name);
+
+    }
+}
+
+
+
+
+
+
+
+
+var JavaScript = new Course("JavaScript", new Date(2019, 4, 5), new Date(2020, 1, 20), ['两开花', '王枫', '王平', '采玲', '老程']);
+JavaScript.begin();
+var SQL = new Course("SQL");
+
+
+
+//Course.prototype.begin = function () {
+//    console.log("飞哥真帅");
+//};
+JavaScript.__proto__.begin = function () {
+    console.log("飞哥超级帅");
+};
+SQL.begin();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -49,3 +49,77 @@ class Person {
     }
 }
 
+
+
+
+
+
+同一个类的不同实例共享一个prototype
+可以在function prototype上设置属性，从而影响该函数生成的对象
+
+function senior(student){
+    this.student = student;
+}
+senior.prototype.end = function () {
+    console.log('这个'+this.student+'是谁');
+
+};
+
+let xin = new senior('girl');
+xin.end();
+
+
+
+get End(){);
+}
+
+set End(value){
+    console.log();
+}
+
+
+var _end = date;
+
+_表示提示这个变量为私有
+
+
+
+
+
+继承的本质
+
+
+子类.__proto__ = 父类；
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
