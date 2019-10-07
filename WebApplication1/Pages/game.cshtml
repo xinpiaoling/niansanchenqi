@@ -6,37 +6,136 @@
     <meta charset="utf-8" />
     <title>疯狂打地鼠！</title>
 </head>
-<body style="background-image:url(/images/打地鼠/背景.jpg);background-size:cover">
-<h1 >疯狂打地鼠</h1>
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <div @*style="background-image:url(/images/打地鼠/背景.jpg)"*@>
-        <div>
-            <div style="float:left;margin-right:300px"><img src="~/images/打地鼠/土堆.png" /></div>
-            <div style="float:left;margin-right:300px"><img src="~/images/打地鼠/土堆.png" /></div>
-            <div><img src="~/images/打地鼠/土堆.png" /></div>
-        </div>
-        <br />
-        <br />
-        <br />
-        <div>
-            <div style="float:left;margin-right:300px"><img src="~/images/打地鼠/土堆.png" /></div>
-            <div style="float:left;margin-right:300px"><img src="~/images/打地鼠/土堆.png" /></div>
-            <div><img src="~/images/打地鼠/土堆.png" /></div>
-        </div>
-        <br />
-        <br />
-        <br />
-        <div>
-            <div style="float:left;margin-right:300px"><img src="~/images/打地鼠/土堆.png" /></div>
-            <div style="float:left;margin-right:300px"><img src="~/images/打地鼠/土堆.png" /></div>
-            <div><img src="~/images/打地鼠/土堆.png" /></div>
-        </div>
-    </div>
+<body >
+
+    <h1 class="size" style="color:green" align="center">疯狂打地鼠</h1>
+    <h1 style="color:aqua" align="center" onclick="change()">开始游戏</h1>
+    @*<style>
+            h1 {
+                text-align: centers
+            }
+        </style>*@
+
+    @*<style>
+        .size {
+            font-size: 50px
+        }
+    </style>*@
+    <script>
+        document.getElementsByTagName('body')[0].onmousedown = function () {
+                        document.getElementsByTagName('body')[0].style.cursor = "url(/images/打地鼠/hitted.png),auto";
+                    }
+         document.getElementsByTagName('body')[0].onmouseup = function () {
+                        document.getElementsByTagName('body')[0].style.cursor = "url(/images/打地鼠/pending.png),auto";
+                    }
+
+        //document.getElementsByTagName('body')[0].addEventListener('mousedown', mousedown, false);
+        //function mousedown() { 
+        //     document.getElementsByTagName('body')[0].style.cursor = "url(/images/打地鼠 / hitted.png),auto";      
+            //this.style.cursor='{url(/images/打地鼠 / hitted.png), auto}';
+            //this.css({ cursor: url(/images/打地鼠 / hitted.png), auto });
+        //}
+    </script>
+    <script>
+
+        var changeC = setInterval(function () { set() }, 300);
+
+        function set() {
+            var changeColor = document.getElementsByTagName('h1')[0];
+            if (changeColor.style.color === "red") {
+                changeColor.style.color = "green";
+            } else {
+                changeColor.style.color = "red";
+            }
+        }
+    </script>
+    <script>
+        var myVar = setInterval(function () { setColor() }, 300);
+
+        function setColor() {
+            var x = document.body;
+            x.style.backgroundColor = x.style.backgroundColor == "yellow" ? "pink" : "yellow";
+        }
+
+        //function stopColor() {
+        //    clearInterval(myVar);
+        //}
+    </script>
+    <script>
+        var text = 3;
+        function change() {
+            var changeTime = document.getElementsByTagName('h1')[1];
+            changeTime.innerHTML = text;
+            if (text < 1) {
+                //hide text
+                var removeh1 = changeTime.parentNode;
+                removeh1.removeChild(changeTime);
+            } else {
+                text = text - 1;
+                setTimeout('change()', 1000);
+            }
+        }
+    </script>
+    @*<div style="background-image:url(/images/打地鼠/背景.jpg)">
+            <div>
+                <div style="float:left;margin-right:300px"><img src="~/images/打地鼠/土堆.png" /></div>
+                <div style="float:left;margin-right:300px"><img src="~/images/打地鼠/土堆.png" /></div>
+                <div><img src="~/images/打地鼠/土堆.png" /></div>
+            </div>
+            <br />
+            <br />
+            <br />
+            <div>
+                <div style="float:left;margin-right:300px"><img src="~/images/打地鼠/土堆.png" /></div>
+                <div style="float:left;margin-right:300px"><img src="~/images/打地鼠/土堆.png" /></div>
+                <div><img src="~/images/打地鼠/土堆.png" /></div>
+            </div>
+            <br />
+            <br />
+            <br />
+            <div>
+                <div style="float:left;margin-right:300px"><img src="~/images/打地鼠/土堆.png" /></div>
+                <div style="float:left;margin-right:300px"><img src="~/images/打地鼠/土堆.png" /></div>
+                <div><img src="~/images/打地鼠/土堆.png" /></div>
+            </div>
+        </div>*@
+
+
+    <table style="background-image:url(/images/打地鼠/背景.jpg)" align="center" cellspacing="50">
+        <tr>
+            <td><img src="~/images/打地鼠/土堆.png" /><img src="~/images/打地鼠/萌地鼠.png" /></td>
+            <td><img src="~/images/打地鼠/土堆.png" /></td>
+            <td><img src="~/images/打地鼠/土堆.png" /></td>
+        </tr>
+        <tr>
+            <td><img src="~/images/打地鼠/土堆.png" /></td>
+            <td><img src="~/images/打地鼠/土堆.png" /></td>
+            <td><img src="~/images/打地鼠/土堆.png" /></td>
+        </tr>
+        <tr>
+            <td><img src="~/images/打地鼠/土堆.png" /></td>
+            <td><img src="~/images/打地鼠/土堆.png" /></td>
+            <td><img src="~/images/打地鼠/土堆.png" /></td>
+        </tr>
+    </table>
+
+    <script>
+                                            //var arr = document.getElementsByTagName('td')[0].setAttribute('src',"~/images/打地鼠/萌地鼠.png");
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+
 
 </body>
 
@@ -57,3 +156,5 @@
 
 
 
+
+</html>>

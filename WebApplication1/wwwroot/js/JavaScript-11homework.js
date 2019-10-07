@@ -57,8 +57,10 @@ var a = {
 
 
 a.fn.call();          //飞哥    默认this为window
+
 var bname = {sname:"飞哥"};
 a.fn.apply(bname);    //飞哥
+
 a.fn();    //老程
 
 
