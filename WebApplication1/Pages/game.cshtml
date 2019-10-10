@@ -3,10 +3,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <script src="~/lib/jquery/dist/"></script>
     <meta charset="utf-8" />
     <title>疯狂打地鼠！</title>
 </head>
-<body >
+<body style="background-image:url(/images/打地鼠/古风背景图片.gif)">
 
     <h1 class="size" style="color:green" align="center">疯狂打地鼠</h1>
     <h1 style="color:aqua" align="center" onclick="change()">开始游戏</h1>
@@ -22,11 +23,13 @@
         }
     </style>*@
     <script>
+        //点击更改鼠标样式
         document.getElementsByTagName('body')[0].onmousedown = function () {
-                        document.getElementsByTagName('body')[0].style.cursor = "url(/images/打地鼠/hitted.png),auto";
-                    }
+                        document.getElementsByTagName('body')[0].style.cursor = "url(/images/打地鼠/hitted.png)31 51,auto";
+        }
+        //进入页面更改鼠标样式
          document.getElementsByTagName('body')[0].onmouseup = function () {
-                        document.getElementsByTagName('body')[0].style.cursor = "url(/images/打地鼠/pending.png),auto";
+                        document.getElementsByTagName('body')[0].style.cursor = "url(/images/打地鼠/pending.png)31 51,auto";
                     }
 
         //document.getElementsByTagName('body')[0].addEventListener('mousedown', mousedown, false);
@@ -37,7 +40,7 @@
         //}
     </script>
     <script>
-
+        //标题闪烁：疯狂打地鼠
         var changeC = setInterval(function () { set() }, 300);
 
         function set() {
@@ -50,32 +53,48 @@
         }
     </script>
     <script>
-        var myVar = setInterval(function () { setColor() }, 300);
 
-        function setColor() {
-            var x = document.body;
-            x.style.backgroundColor = x.style.backgroundColor == "yellow" ? "pink" : "yellow";
-        }
 
+
+
+
+        //页面背景闪烁
+        //var myVar = setInterval(function () { setColor() }, 300);
+        //function setColor() {
+        //    var x = document.body;
+        //    x.style.backgroundColor = x.style.backgroundColor == "yellow" ? "pink" : "yellow";
+        //}
         //function stopColor() {
         //    clearInterval(myVar);
         //}
     </script>
     <script>
+        //计数器
         var text = 3;
         function change() {
             var changeTime = document.getElementsByTagName('h1')[1];
             changeTime.innerHTML = text;
             if (text < 1) {
                 //hide text
-                var removeh1 = changeTime.parentNode;
-                removeh1.removeChild(changeTime);
+                //var removeh1 = changeTime.parentNode;
+                //removeh1.removeChild(changeTime);
+
+                $(function(){
+                    var $changeTime = $(changeTime)
+                    $(this).hide();
+                });
+
+                
+
             } else {
                 text = text - 1;
                 setTimeout('change()', 1000);
             }
         }
     </script>
+    <script>
+        //最早使用div标签制作，已用table替换
+         
     @*<div style="background-image:url(/images/打地鼠/背景.jpg)">
             <div>
                 <div style="float:left;margin-right:300px"><img src="~/images/打地鼠/土堆.png" /></div>
@@ -101,9 +120,12 @@
         </div>*@
 
 
-    <table style="background-image:url(/images/打地鼠/背景.jpg)" align="center" cellspacing="50">
+    </script>
+   
+
+    <table style="background-image:url(/images/下雪背景图片.gif);background-size:100% 100% "align="center" cellspacing="50">
         <tr>
-            <td><img src="~/images/打地鼠/土堆.png" /><img src="~/images/打地鼠/萌地鼠.png" /></td>
+            <td class="toggleImage"><img src="~/images/打地鼠/土堆.png" /><img class="diglett" src="~/images/打地鼠/萌地鼠.png" /></td>
             <td><img src="~/images/打地鼠/土堆.png" /></td>
             <td><img src="~/images/打地鼠/土堆.png" /></td>
         </tr>
@@ -122,8 +144,18 @@
     <script>
                                             //var arr = document.getElementsByTagName('td')[0].setAttribute('src',"~/images/打地鼠/萌地鼠.png");
 
+        使用jQuery的toggle方法可以切换萌地鼠和哭地鼠图片
+        举例
+        $(document).ready(fucntion(){
+            $(".toggleImage").toggle(function () {
+                $(".diglett").css("src", "~/images/打地鼠/萌地鼠.png");
+            }, function () {
+                $(".diglett").css("src", "~/images/打地鼠/晕地鼠.png");
+                })；
 
 
+
+        });
 
 
     </script>

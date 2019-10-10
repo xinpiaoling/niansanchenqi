@@ -7,9 +7,11 @@
   <ItemGroup>
     <Content Remove="Pages\game.cshtml" />
     <Content Remove="Pages\JavaScript-6classdocument.cshtml" />
+    <Content Remove="Pages\test.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Pages\test.cshtml" />
     <None Include="Pages\game.cshtml" />
     <None Include="Pages\JavaScript-6classdocument.cshtml" />
     <None Include="wwwroot\images\banner1.svg" />
