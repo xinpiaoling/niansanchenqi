@@ -728,17 +728,14 @@ CREATE TABLE Article(
    Category INT
 )
 
-
-SELECT * FROM (     
- SELECT Problem1.Author,Article.Title,Suggest.Content    
- FROM Problem1 FULL JOIN Article     
- ON Problem1.Author=Article.Author) AS  PA    
-FULL JOIN Suggest    
-ON PA.Prolem1.Author =Suggest.Author  
-WHERE Suggest.Author=N'催催'    
-ORDER BY Suggest.PublishTime  DESC   
-
-
+SELECT  Title,Content FROM Problem1
+UNION
+SELECT  Title,Content FROM Suggest
+UNION
+go
+SELECT  Title,Content FROM Article
+where Author =N'XI'
+ORDER BY PublishTime
 
 
 --事务
@@ -776,8 +773,59 @@ SELECT * FROM sys.objects
 
 --用户（Reigister）发布一篇悬赏币若干的求助（Problem），他的帮帮币（BMoney）也会相应减少，
 --但他的帮帮币总额不能少于0分：请综合使用TRY...CATCH和事务完成上述需求。
-CREATE TABLE Register(
-   Id  INT  PRIMARY KEY,
-   Name NVARCHAR(256)
-
+CREATE TABLE ProblemC(
+   Id  INT  PRIMARY KEY IDENTITY,
+   UserId  INT,    
+   Title   NVARCHAR(20),
+   Body    NVARCHAR(256)
 )
+
+DROP TABLE ProblemB
+
+go
+BEGIN TRAN
+  BEGIN TRY
+      BEGIN  TRAN   
+	    SAVE TRAN INNER_TRAN
+      INSERT ProblemC  VALUES(1,N'发布6',N'文章6')   
+	  UPDATE [User] SET BMoney-=100 WHERE [Name]=N'叶飞'  
+	  COMMIT TRAN   
+  END TRY  
+  BEGIN CATCH
+      ROLLBACK TRAN INNER_TRAN;           
+  END CATCH  
+  
+COMMIT TRAN
+
+PRINT @@TRANCOUNT
+COMMIT TRAN
+
+ SELECT * FROM ProblemC
+ SELECT * FROM [User]
+
+
+
+
+
+ SET IMPLICIT_TRANSACTIONS ON              --隐式事务的开启
+       INSERT ProblemC  VALUES(1,N'发布6',N'文章6')   
+	  UPDATE [User] SET BMoney-=100 WHERE [Name]=N'叶飞'  
+	  ROLLBACK
+ SET IMPLICIT_TRANSACTIONS ON              --隐式事务的关闭
+
+ --隐式事务和显式事务是一样的。只是另一种写法，推荐使用显式事务。
+
+ --事务的四大特性：持续性，原子性，持续性，隔离性
+
+
+ DBCC USEROPTIONS      -- 查看当前连接的隔离级别
+
+
+BEGIN TRAN
+ UPDATE Student SET Score=30 WHERE [Name]=N'菜鸡'
+ 
+
+ ROLLBACK
+
+
+ SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
