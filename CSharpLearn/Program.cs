@@ -20,7 +20,6 @@ namespace CSharpLearn
         static void Main(string[] args)
         {
 
-
             //SelfIntroduce();      
             //Console.WriteLine("加："+Add(10,5));
             //Console.WriteLine("减："+Minus(10, 5));
@@ -253,6 +252,20 @@ namespace CSharpLearn
             // n = 97=>k = 95
             //n =  =>k=n-2
 
+            //int a = 10;
+            //int b = 22;
+            ////Console.WriteLine($"交换前   a:{a}   b:{b}");
+            // Swap(ref a, ref b);
+            //Console.WriteLine($"交换后   a:{a}   b:{b}");
+            //int length = 10;
+            //int[] finish = new int[length];
+            //int[] numbers = { 1, 2, 3, 4, 5, 6 };
+            //Console.WriteLine(BinarySeek(numbers,5)); 
+            //string name = "王新";
+            //int age = 25;
+            //bool isFemal = false;
+            //string fromCity = "宁夏";
+            //SelfIntroduction((name, age, isFemal, fromCity));
         }
         //自我介绍：SelfIntroduce()
         //static void SelfIntroduce()
@@ -260,7 +273,7 @@ namespace CSharpLearn
         //    string name = "王新";
         //    int age = 25;
         //    bool isFemal = false;
-        //    double height = 17.3;
+        //    double height = 1.73;
         //    string fromCity = "宁夏";
         //    Console.WriteLine("名字："+name);
         //    Console.WriteLine("年龄："+age);
@@ -325,74 +338,163 @@ namespace CSharpLearn
         //}
         //完成“猜数字”游戏，方法名GuessMe()
 
-        //static void GuessMe()
+        //static void guessme()
         //{
-        //    int m = new Random().Next(1, 20);
+        //    int m = new random().next(1, 20);
         //    for (int i = 1; i < 11; i++)
         //    {
 
-        //        Console.WriteLine("请输入一个整数");
-        //        string input = Console.ReadLine();
-        //        bool n = int.TryParse(input, out int a);
-        //        if (n == false)
+        //        console.writeline("请输入一个整数");
+        //        string input = console.readline();
+        //        bool n = int.tryparse(input, out int a);
+        //        if (!n)
         //        {
-        //            Console.WriteLine("第" + i + "次输入错误，请输入一个整数");
+        //            console.writeline("第" + i + "次输入错误，请输入一个整数");
         //        }
         //        else
         //        {
-        //            Console.Write("第" + i + "次比较：");
-        //            if (m < a)
+        //            console.write("第" + i + "次比较：");
+        //            if (m == a)
         //            {
-        //                Console.Write("大了");
-        //                Console.WriteLine();
-        //                if (i == 10)
+        //                if (i < 3)
         //                {
-        //                    Console.WriteLine("游戏结束！！！弱鸡");
+        //                    console.write("你是一个天才！！！");                          
+        //                }
+        //                else if (i < 6)
+        //                {
+        //                    console.write("你登上了珠峰！！！");
+        //                }
+        //                else if (i < 10)
+        //                {
+        //                    console.write("你是一个普通人！！！");
+        //                }
+        //                else if (i == 10)
+        //                {
+        //                    console.write("你太难了，终于猜对了！！！");
         //                }
         //                else
         //                {
-        //                    do nothing
+        //                    //i定义区间为1-10，不存在其他情况
+        //                }
+        //                console.writeline();
+        //                break;
+        //            }
+        //            else if (m < a)
+        //            {
+        //                console.write("大了");
+        //                console.writeline();
+        //                if (i == 10)
+        //                {
+        //                    console.writeline("游戏结束！！！弱鸡");
+        //                }
+        //                else
+        //                {
+        //                    //do nothing
         //                }
         //            }
         //            else if (m > a)
         //            {
-        //                Console.Write("小了");
-        //                Console.WriteLine();
+        //                console.write("小了");
+        //                console.writeline();
         //                if (i == 10)
         //                {
-        //                    Console.WriteLine("游戏结束！！！弱鸡");
+        //                    console.writeline("游戏结束！！！弱鸡");
         //                }
         //                else
         //                {
-        //                    do nothing
+        //                    //do nothing
         //                }
         //            }
         //            else
         //            {
-        //                if (i < 3)
-        //                {
-        //                    Console.Write("你是一个天才！！！");
-        //                    Console.WriteLine();
-        //                    break;
-        //                }
-        //                if (i < 6)
-        //                {
-        //                    Console.Write("你登上了珠峰！！！");
-        //                    break;
-        //                }
-        //                if (i < 10)
-        //                {
-        //                    Console.Write("你是一个普通人！！！");
-        //                    break;
-        //                }
-        //                if (i == 10)
-        //                {
-        //                    Console.WriteLine("你太难了，终于猜对了！！！");
-        //                    break;
-        //                }
+        //                //do nothing 
         //            }
         //        }
         //    }
         //}
+        //static void Valueb(ref int vv) {
+        //    vv+=5;
+
+        //}
+        //用ref调用Swap()方法交换两个同学的床位号
+        //static void Swap(ref int a, ref int b)
+        //{
+        //    int middle;
+        //    middle = b;
+        //    b = a;
+        //    a = middle;
+        //}
+        //定义一个生成数组的方法：int[] GetArray()，其元素随机生成从小到大排列。
+        //利用可选参数控制：
+        //最小值（默认为1）
+        //相邻两个元素之间的最大差值（默认为5）
+        //元素个数（默认为10个）
+        static int[] GetArray(ref int[] finish)
+        {
+            int[] finish = new int[length];
+            for (int i = 0; i < length; i++)
+            {
+
+                int m = new Random().Next(1, 100);
+                finish[i] = m;
+                Console.WriteLine(finish[i]);
+            }
+            return new finish[] { };
+        }
+        //重载GetArray()，使其返回一个string[]
+        //static string[] GetArray()
+        //{
+
+
+        //    return string[];
+        //}
+        //实现二分查找，方法名BinarySeek(int[] numbers, int target)：
+        //传入一个有序（从大到小/从小到大）数组和数组中要查找的元素
+        //如果找到，返回该元素所在的下标；否则，返回-1
+
+        //test1:
+        //int[] numbers={1,2,3,4,5,6};  5
+        //输出：4
+        //test2:
+        //int[] numbers={1,2,3,4,5,6,7};  10
+        //输出：-1
+        //static int BinarySeek(int[] numbers, int target)
+        //{
+        //    int left = 0;
+        //    int right = numbers.Length -1;  
+        //    int middle;
+        //    while (left<right)
+        //    {
+        //         middle = (left + right) / 2;  
+        //        if (target > numbers[middle])   
+        //        {
+        //            left = middle + 1;        
+        //        }
+        //        else if (target < numbers[middle])    
+        //        {
+        //            right = middle + 1;      
+        //        }
+        //        else
+        //        {
+        //            return middle;
+        //            break;
+        //        }
+        //    }
+        //    return -1;
+
+        //使用tuple作为参数，重构SelfIntroduction()方法，输出自我介绍
+        //static void SelfIntroduction((string name, int age, bool isFemal, string fromCity) self) {
+        //   Console.WriteLine(self.name+"   "+self.age+"  "+self.isFemal+"  "+self.fromCity);
+
+        //}
+
+
+
+
+
+
+
+
+
     }
 }
