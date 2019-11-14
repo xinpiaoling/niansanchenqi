@@ -4,8 +4,35 @@ namespace CSharpLearn
 {
     class Program
     {
+
+
+
+
+
+
+
+
+
+
+
+
+
         static void Main(string[] args)
         {
+
+
+            //SelfIntroduce();      
+            //Console.WriteLine("加："+Add(10,5));
+            //Console.WriteLine("减："+Minus(10, 5));
+            //Console.WriteLine("乘："+Mutiply(10, 5));
+            //Console.WriteLine("除："+Divide(10, 5));
+            //Console.WriteLine(GetUnicode("九十八"));
+            //double[] arr = { 1, 5, 10, 63, 20,98.5,1.5,0.5,-12 };
+            //Console.WriteLine(Max(new double[] { 1, 5, 10, 63, 20,98.5,1.5,0.5,-12 }));
+            //Console.WriteLine(GetUnicode('唱'));
+            //double[] scores = {12,64,35.2,51,100.5 };
+            //Console.WriteLine(GetAverage(scores));
+            //GuessMe();
             //用变量name存储你的姓名，然后输出带有你姓名的入栈口号
             //string name = "王新";
             //Console.WriteLine(name);
@@ -22,6 +49,7 @@ namespace CSharpLearn
             //Console.WriteLine(IsFemal);
             //Console.WriteLine(Height + "米");
             //Console.WriteLine(FromCity);
+
 
             //输出两个整数 / 小数的和 / 差 / 积 / 商 / 余
             //int a1 = 20;
@@ -98,9 +126,9 @@ namespace CSharpLearn
             //    { "王新", "赵敬春" },
             //    { "阿泰", "曾俊清" } };
 
-            //for (int i = 0; i < 4; i++)
+            //for (int i = 0; i < name10.getlength(0); i++)
             //{
-            //    for (int j = 0; j < 2; j++)
+            //    for (int j = 0; j < name10.getlength(1); j++)
             //    {
             //        Console.Write(name10[i,j]+"  ");
             //    }
@@ -132,9 +160,9 @@ namespace CSharpLearn
             //将源栈同学的成绩存入一个double数组中，用循环找到最高分和最低分
             //double[] scores = {50,60,70,84,64.5,58,50};
             //double max = 0; 
-            //for (int i = 0; i <scores.Length; i++)
+            //for (int i = 0; i < scores.Length; i++)
             //{
-            //    if (max<scores[i])
+            //    if (max < scores[i])
             //    {
             //        max = scores[i];
             //    }
@@ -184,30 +212,29 @@ namespace CSharpLearn
 
             ///判断一个输入的数是否是质数
             ////int n = int.Parse(Console.ReadLine());
-            int k = 0;
-            //int n = 11;
+            //int k = 0;            
             //Console.WriteLine(2);
-            for (int n = 2; n < 100; n++)
-            {
-                for (int i = 2; i < n; i++)
-                {
-                    if (!(n % i == 0))
-                    {
-                        k++;
-                    //Console.WriteLine(i);
-                    //Console.WriteLine(k);
-                        if (n - 2 == k)
-                           {
-                              Console.WriteLine(n + "是质数");
-                           }
-                    }
-                    else
-                    {                        
-                        //nothing
-                    }
-                }
-                k = 0;
-            }
+            //for (int n = 2; n < 100; n++)
+            //{
+            //    for (int i = 2; i < n; i++)
+            //    {
+            //        if (!(n % i == 0))
+            //        {
+            //            k++;
+            //        //Console.WriteLine(i);
+            //        //Console.WriteLine(k);
+            //            if (n - 2 == k)
+            //               {
+            //                  Console.WriteLine(n + "是质数");
+            //               }
+            //        }
+            //        else
+            //        {                        
+            //            //nothing
+            //        }
+            //    }
+            //    k = 0;
+            //}
             //if (n - 2 == k)
             //{
             //    Console.WriteLine(n + "是质数");
@@ -226,9 +253,146 @@ namespace CSharpLearn
             // n = 97=>k = 95
             //n =  =>k=n-2
 
-
-
-
         }
+        //自我介绍：SelfIntroduce()
+        //static void SelfIntroduce()
+        //{
+        //    string name = "王新";
+        //    int age = 25;
+        //    bool isFemal = false;
+        //    double height = 17.3;
+        //    string fromCity = "宁夏";
+        //    Console.WriteLine("名字："+name);
+        //    Console.WriteLine("年龄："+age);
+        //    Console.WriteLine("是否为女性："+isFemal);
+        //    Console.WriteLine("身高："+height);
+        //    Console.WriteLine("来自："+fromCity);
+        //}
+        //加减乘除：Add()/Minus()/Mutiply()/Divide()
+        //static int Add(int a,int b) {
+        //    return a + b;
+        //}
+        //static int Minus(int a, int b)
+        //{
+        //    return a - b;
+        //}
+        //static int Mutiply(int a, int b)
+        //{
+        //    return a * b;
+        //}
+        //static int Divide(int a, int b)
+        //{
+        //    return a / b;
+        //}
+        //取字符值：GetUnicode()
+        //static int GetUnicode(char str)
+        //{
+        //    int istr=(int)str;
+        //    return istr;
+        //}
+
+        //取最高分：GetMax()
+        /// <summary>
+        /// get max number
+        /// </summary>
+        /// <param name="arr">input array</param>
+        /// <returns>max number</returns>
+        //static double Max(double[] arr) {
+        //    double max=arr[0];
+        //    for (int i = 1; i < arr.Length; i++)
+        //    {
+        //        if (max<arr[i])
+        //        {
+        //            max = arr[i];
+        //        }
+        //        else
+        //        {
+        //            //do nothing
+        //        }
+        //    }
+        //    return  max;
+        //}
+        //计算得到源栈同学的平均成绩（精确到两位小数），方法名GetAverage()
+        //static double GetAverage(double[] scores) {
+        //    double sum=0;
+        //    for (int i = 0; i < scores.Length; i++)
+        //    {
+        //        sum=sum+scores[i];
+        //    }
+        //    double average =Math.Round( sum / scores.Length,2);
+
+        //    return average;
+        //}
+        //完成“猜数字”游戏，方法名GuessMe()
+
+        //static void GuessMe()
+        //{
+        //    int m = new Random().Next(1, 20);
+        //    for (int i = 1; i < 11; i++)
+        //    {
+
+        //        Console.WriteLine("请输入一个整数");
+        //        string input = Console.ReadLine();
+        //        bool n = int.TryParse(input, out int a);
+        //        if (n == false)
+        //        {
+        //            Console.WriteLine("第" + i + "次输入错误，请输入一个整数");
+        //        }
+        //        else
+        //        {
+        //            Console.Write("第" + i + "次比较：");
+        //            if (m < a)
+        //            {
+        //                Console.Write("大了");
+        //                Console.WriteLine();
+        //                if (i == 10)
+        //                {
+        //                    Console.WriteLine("游戏结束！！！弱鸡");
+        //                }
+        //                else
+        //                {
+        //                    do nothing
+        //                }
+        //            }
+        //            else if (m > a)
+        //            {
+        //                Console.Write("小了");
+        //                Console.WriteLine();
+        //                if (i == 10)
+        //                {
+        //                    Console.WriteLine("游戏结束！！！弱鸡");
+        //                }
+        //                else
+        //                {
+        //                    do nothing
+        //                }
+        //            }
+        //            else
+        //            {
+        //                if (i < 3)
+        //                {
+        //                    Console.Write("你是一个天才！！！");
+        //                    Console.WriteLine();
+        //                    break;
+        //                }
+        //                if (i < 6)
+        //                {
+        //                    Console.Write("你登上了珠峰！！！");
+        //                    break;
+        //                }
+        //                if (i < 10)
+        //                {
+        //                    Console.Write("你是一个普通人！！！");
+        //                    break;
+        //                }
+        //                if (i == 10)
+        //                {
+        //                    Console.WriteLine("你太难了，终于猜对了！！！");
+        //                    break;
+        //                }
+        //            }
+        //        }
+        //    }
+        //}
     }
 }
