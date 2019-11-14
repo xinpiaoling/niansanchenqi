@@ -266,6 +266,8 @@ namespace CSharpLearn
             //bool isFemal = false;
             //string fromCity = "宁夏";
             //SelfIntroduction((name, age, isFemal, fromCity));
+
+            GetArray();
         }
         //自我介绍：SelfIntroduce()
         //static void SelfIntroduce()
@@ -340,7 +342,7 @@ namespace CSharpLearn
 
         //static void guessme()
         //{
-        //    int m = new random().next(1, 20);
+        //    int m = new random().next(1, 100);
         //    for (int i = 1; i < 11; i++)
         //    {
 
@@ -429,17 +431,57 @@ namespace CSharpLearn
         //最小值（默认为1）
         //相邻两个元素之间的最大差值（默认为5）
         //元素个数（默认为10个）
-        static int[] GetArray(ref int[] finish)
+        static void GetArray()
         {
-            int[] finish = new int[length];
-            for (int i = 0; i < length; i++)
+            int i = 0;
+            int[] finish = new int[10];
+            while (i<10)
             {
+                int random = new Random().Next(1, 10);
+                if ( i==0)
+                {
+                    finish[i] = random;
+                    Console.WriteLine(finish[i]);
+                    i++;
+                }
+                else
+                {
+                        
+                    if ((random - finish[i - 1]) < 6 && (random - finish[i - 1]) >= 0)
+                    {
+                        finish[i] = random;
+                        Console.WriteLine(finish[i]);
+                        i++;
+                    }
+                    else
+                    {
+                        //do nothing
+                    }
 
-                int m = new Random().Next(1, 100);
-                finish[i] = m;
-                Console.WriteLine(finish[i]);
+                }
+               
             }
-            return new finish[] { };
+            //return finish[i];
+
+
+
+
+
+
+
+
+
+
+
+            //int[] finish = new int[length];
+            //for (int i = 0; i < length; i++)
+            //{
+
+            //    int m = new Random().Next(1, 100);
+            //    finish[i] = m;
+            //    Console.WriteLine(finish[i]);
+            //}
+            //return new finish[] { };
         }
         //重载GetArray()，使其返回一个string[]
         //static string[] GetArray()
