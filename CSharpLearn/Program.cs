@@ -265,9 +265,18 @@ namespace CSharpLearn
             //int age = 25;
             //bool isFemal = false;
             //string fromCity = "宁夏";
-            //SelfIntroduction((name, age, isFemal, fromCity));
+            //SelfIntroduction((name, age, isFemal, fromCity));        //输入元祖参数的两种方法：1
+            //SelfIntroduction(self: (name, age, isFemal, fromCity));    //输入元祖参数的两种方法：2
+            //GetArray(10,1,150);
+            //Test(5);
 
-            GetArray();
+            //int[] rule = {10,48,15,41,35,15,62 };
+            //var indexOfNu=IndexOf(rule,35);
+            //Console.WriteLine(indexOfNu);
+////////////////////////////////////////////
+///////////////////////////////////////////////
+////////////////////////////////////////////
+////////////////////////////////////////////
         }
         //自我介绍：SelfIntroduce()
         //static void SelfIntroduce()
@@ -418,6 +427,20 @@ namespace CSharpLearn
         //    vv+=5;
 
         //}
+        //默认参数和不写参数会执行哪一个函数
+        //优先执行不写参数的那个函数，如test2
+        //static void  Test(int i=1,string j="等")
+        //{
+        //    Console.WriteLine("test1");
+
+        //}
+        //static void Test(int i=10 )
+        //{
+        //    Console.WriteLine("test2");
+
+        //}
+
+
         //用ref调用Swap()方法交换两个同学的床位号
         //static void Swap(ref int a, ref int b)
         //{
@@ -431,64 +454,75 @@ namespace CSharpLearn
         //最小值（默认为1）
         //相邻两个元素之间的最大差值（默认为5）
         //元素个数（默认为10个）
-        static void GetArray()
-        {
-            int i = 0;
-            int[] finish = new int[10];
-            while (i<10)
-            {
-                int random = new Random().Next(1, 10);
-                if ( i==0)
-                {
-                    finish[i] = random;
-                    Console.WriteLine(finish[i]);
-                    i++;
-                }
-                else
-                {
-                        
-                    if ((random - finish[i - 1]) < 6 && (random - finish[i - 1]) >= 0)
-                    {
-                        finish[i] = random;
-                        Console.WriteLine(finish[i]);
-                        i++;
-                    }
-                    else
-                    {
-                        //do nothing
-                    }
-
-                }
-               
-            }
-            //return finish[i];
-
-
-
-
-
-
-
-
-
-
-
-            //int[] finish = new int[length];
-            //for (int i = 0; i < length; i++)
-            //{
-
-            //    int m = new Random().Next(1, 100);
-            //    finish[i] = m;
-            //    Console.WriteLine(finish[i]);
-            //}
-            //return new finish[] { };
-        }
-        //重载GetArray()，使其返回一个string[]
-        //static string[] GetArray()
+        //static int[] GetArray(int i = 0, int length = 10, int min = 1, int max = 100)
         //{
 
+        //    int[] finish = new int[length];
+        //    while (i < length)
+        //    {
+        //        int random = new Random().Next(min, max);
+        //        if (i == 0)
+        //        {
+        //            finish[i] = random;
+        //            Console.Write("整数类型："+finish[i]+",  ");
+        //            i++;
+        //        }
+        //        else
+        //        {
+        //            if ((random - finish[i - 1]) < 6 && (random - finish[i - 1] >= 0))
+        //            {
+        //                finish[i] = random;
+        //                Console.Write(+finish[i]+",  ");
+        //                i++;
+        //            }
+        //            else
+        //            {
+        //                //do nothing
+        //            }
 
-        //    return string[];
+        //        }
+
+        //    }
+        //    return finish;
+        //}
+
+        //重载GetArray()，使其返回一个string[]
+        //static string[] GetArray(int length = 10, int min = 1, int max = 100)
+        //{
+        //    int i = 0;
+        //    int[] finish = new int[length];
+        //    string[] strFinish = new string[length];
+        //    while (i < length)
+        //    {
+        //        int random = new Random().Next(min, max);
+        //        if (i == 0)
+        //        {
+        //            finish[i] = random;
+
+
+        //            strFinish[i]= Convert.ToString(random);
+        //            Console.Write("字符串类型："+strFinish[i]+",  ");
+        //            i++;
+        //        }
+        //        else
+        //        {
+        //            if ((random - finish[i - 1]) < 6 && (random - finish[i - 1] >= 0))
+        //            {
+        //                finish[i] = random;
+
+        //                strFinish[i] = Convert.ToString(random);
+        //                Console.Write(strFinish[i]+",  ");
+        //                i++;
+        //            }
+        //            else
+        //            {
+        //                //do nothing
+        //            }
+
+        //        }
+
+        //    }
+        //    return strFinish;
         //}
         //实现二分查找，方法名BinarySeek(int[] numbers, int target)：
         //传入一个有序（从大到小/从小到大）数组和数组中要查找的元素
@@ -503,33 +537,91 @@ namespace CSharpLearn
         //static int BinarySeek(int[] numbers, int target)
         //{
         //    int left = 0;
-        //    int right = numbers.Length -1;  
+        //    int right = numbers.Length - 1;
         //    int middle;
-        //    while (left<right)
+        //    while (left < right)
         //    {
-        //         middle = (left + right) / 2;  
-        //        if (target > numbers[middle])   
+        //        middle = (left + right) / 2;
+        //        if (target > numbers[middle])
         //        {
-        //            left = middle + 1;        
+        //            left = middle + 1;
         //        }
-        //        else if (target < numbers[middle])    
+        //        else if (target < numbers[middle])
         //        {
-        //            right = middle + 1;      
+        //            right = middle + 1;
         //        }
         //        else
         //        {
         //            return middle;
-        //            break;
+        //            
         //        }
         //    }
         //    return -1;
-
-        //使用tuple作为参数，重构SelfIntroduction()方法，输出自我介绍
-        //static void SelfIntroduction((string name, int age, bool isFemal, string fromCity) self) {
-        //   Console.WriteLine(self.name+"   "+self.age+"  "+self.isFemal+"  "+self.fromCity);
-
         //}
 
+        //使用tuple作为参数，重构SelfIntroduction()方法，输出自我介绍
+        //static void SelfIntroduction((string name, int age, bool isFemal, string fromCity) self)
+        //{
+        //    Console.WriteLine("名字：      "+self.name + "年龄： " + self.age + "是否为女性：" + self.isFemal + "来自：  " + self.fromCity);
+        //    Console.WriteLine("年龄：      " + self.age);
+        //    Console.WriteLine("是否为女性： " + self.isFemal);
+        //    Console.WriteLine("来自：      " + self.fromCity);
+
+        //    ///SelfIntroduction(self: 23);    //再次调用方法
+        //}
+        //IndexOf()，通过遍历在无序数组中   找到某个值的下标，找不到返回-1
+        //test1: {10,48,62,41,35,15,62 },62  =>2  明确需求：返回重复数字的第一个值下标
+        //test2: {10,48,62,41,35,15,62 },48  =>1  返回下标1
+        //test3: {"10","48","62","41","35","15","62" },56 =>error 明确需求： 数组为整数数组，值为整数类型
+
+        //static int IndexOf(int[] rule,int number)
+        //{
+        //    int i = 0;
+        //    while( i < rule.Length)
+        //    {
+        //        if (number==rule[i])
+        //        {
+        //            return i;
+        //        }
+        //        else
+        //        {
+        //           //do nothing
+        //        }
+        //        i++;
+        //    }
+        //    return -1;
+        //}
+
+        //快速排序
+        ///start 7,5,8,3,6,2,9,1     key =a[0]=>7     
+        ///i=0 j=7 从后向前找
+        ///one   1,5,8,3,6,2,9,7       //j   a[7]<key   交换
+        ///i=0 j=6 从前向后找
+        ///two   1,5,8,3,6,2,9,7       //i   a[0]<key   不交换
+        ///i=1 j=6 从前向后找      
+        ///three 1,5,8,3,6,2,9,7       //i   a[2]>key    交换
+        ///
+        static void order()
+        {
+            int[] quickRule = { 7, 5, 8, 3, 6, 2, 9, 1 };
+            int i = 0;
+            int j;
+            j = quickRule.Length - 1;
+            int key = quickRule[0];
+            int middle;
+            if (quickRule[j]<key)
+            {
+                middle = quickRule[i];
+                quickRule[i] = quickRule[j];
+                quickRule[j] = middle;
+                j--; 
+            }
+
+
+
+
+        }
+       
 
 
 
