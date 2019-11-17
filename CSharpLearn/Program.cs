@@ -1,24 +1,34 @@
 ﻿using System;
-
+using CSharpLearn;
 namespace CSharpLearn
 {
     class Program
     {
 
+        Program()
+        {
 
-
-
-
-
-
-
-
-
-
-
-
+        }
         static void Main(string[] args)
         {
+            Value yf = new Value(12);
+           
+            Console.WriteLine(yf.age);
+
+            Student wx=new Student();
+            //对象是类的实例
+            //wx是一个变量名
+            //这是一个引用类型的变量
+            //wx存在的是一个指向地址。指向值存在的地址。
+            new Student("ss",);
+            
+            
+
+
+
+
+
+
 
             //SelfIntroduce();      
             //Console.WriteLine("加："+Add(10,5));
@@ -273,11 +283,21 @@ namespace CSharpLearn
             //int[] rule = {10,48,15,41,35,15,62 };
             //var indexOfNu=IndexOf(rule,35);
             //Console.WriteLine(indexOfNu);
-            order();
-////////////////////////////////////////////
-///////////////////////////////////////////////
-////////////////////////////////////////////
-////////////////////////////////////////////
+            //order();
+            //int[] array = { 49, 38, 65, 97, 76, 13, 27 };
+            //sort(array, 0, array.Length - 1);
+            //Console.ReadLine();
+
+            //int[] arr = { 15, 3, 64, 42, 87, 21, 6, 70, 32 };
+            //int low = 0;
+            //int high = arr.Length - 1;
+            //sort(arr, low, high);
+            ////////////////////////////////////////////
+            ///////////////////////////////////////////////
+            ////////////////////////////////////////////
+            ////////////////////////////////////////////
+            //int i = 0;
+            //State(i);
         }
         //自我介绍：SelfIntroduce()
         //static void SelfIntroduce()
@@ -593,6 +613,17 @@ namespace CSharpLearn
         //    return -1;
         //}
 
+
+
+
+   
+
+
+
+
+
+
+
         //快速排序
         ///start 7,5,8,3,6,2,9,1     key =a[0]=>7     
         ///i=0 j=7 从后向前找
@@ -604,168 +635,242 @@ namespace CSharpLearn
         ///
         static void order()
         {
-            int[] arr = { 5,8,7,3,1,9,6,2,4};
+            //int[] arr = { 5, 8, 7, 3, 1, 9, 6, 2, 4 };
+            int[] arr = { 4, 2, 1, 3, 5, 9, 6, 7, 8 };
             int i = 0;
-            int j = arr.Length - 1;        
-            int key = arr[0];          
+            int j = 4 - 1;
+            int key = arr[0];
             int middle;
             int[] anser = new int[arr.Length];
 
-            while (!(i == 0 && j == 0))
+
+            while (i < j)
             {
-                while (i != j)
-                {
-                    while (key < arr[j])    //key=2   i=0,j=1   {2,1}      
-                    {                         //key=1   i=0,j=1   {1,2}  //key=1   i=0,j=0  {1}
-                        j--;
-                        //i=0,j=0
-                    }
-                    //if (i==j&&i==0)
-                    //{
-                    //    break;
-                    //}
-                    middle = arr[i];
-                    arr[i] = arr[j];
-                    arr[j] = middle;
-                    while (key > arr[i])   //key=1,i=0,j=0  {1,2} 
-                    {
-
-                        //if (j == 0)
-                        //{
-                        //    break;
-                        //}
-                        //else
-                        //{
-                        i++;
-                        //}                 //  i=0  ,j=0
-
-                    }
-                    if (i == j && i == 1)
-                    {
-                        break;
-                    }
-                    //if (i==j&&i==0)
-                    //{
-                    //    anser[i] = arr[i];
-                    //    Console.WriteLine(anser[i]);
-                    //    i++;
-                    //    anser[i] = arr[i];
-                    //    Console.WriteLine(anser[i]);
-                    //    break;
-                    //}
-                    middle = arr[i];
-                    arr[i] = arr[j];
-                    arr[j] = middle;
-
+                while (key < arr[j] && i < j)    //key=2   i=0,j=1   {2,1}      
+                {                         //key=1   i=0,j=1   {1,2}  //key=1   i=0,j=0  {1}
+                    j--;
+                    //i=0,j=0
                 }
-                if (i==j&&j==0)
-                {
-                    anser[i+1] = arr[i+1];
-                    //Console.WriteLine(anser[i+1]);
-                }
-                anser[i] = arr[i];
-                //Console.WriteLine(anser[i]);
-
-                if (i == 0 && j == 0)
-                {
-                    //    for (int m = 0; m < arr.Length; m++)
-                    //    {
-                    //        Console.Write(arr[m] + ",  ");
-                    //    }
-                    break;
-                }
-
-                key = arr[0];
-                i = 0;
-                j = arr.Length - 1;
-
-
-            }
-
-
-            i = arr.Length / 2+1;
-            j = arr.Length - 1;
-            key = arr[arr.Length / 2+1];
-            while (!(i == arr.Length / 2 && j == arr.Length / 2))
-            {
-                while (i != j)
-                {
-                    while (key < arr[j])    //key=2   i=0,j=1   {2,1}      
-                    {                         //key=1   i=0,j=1   {1,2}  //key=1   i=0,j=0  {1}
-                        j--;
-                        //i=0,j=0
-                    }
-                    //if (i==j&&i==0)
-                    //{
-                    //    break;
-                    //}
-                    middle = arr[i];
-                    arr[i] = arr[j];
-                    arr[j] = middle;
-                    while (key > arr[i])   //key=1,i=0,j=0  {1,2} 
-                    {
-
-                        //if (j == 0)
-                        //{
-                        //    break;
-                        //}
-                        //else
-                        //{
-                        i++;
-                        //}                 //  i=0  ,j=0
-
-                    }
-                    if (i == j && i == 1)
-                    {
-                        break;
-                    }
-                    //if (i==j&&i==0)
-                    //{
-                    //    anser[i] = arr[i];
-                    //    Console.WriteLine(anser[i]);
-                    //    i++;
-                    //    anser[i] = arr[i];
-                    //    Console.WriteLine(anser[i]);
-                    //    break;
-                    //}
-                    middle = arr[i];
-                    arr[i] = arr[j];
-                    arr[j] = middle;
-
-                }
-                //if (i == j && j == 0)
+                //if (i==j&&i==0)
                 //{
-                //    anser[i + 1] = arr[i + 1];
-                //    Console.WriteLine(anser[i + 1]);
+                //    break;
                 //}
-                anser[i] = arr[i];
-                //Console.WriteLine(anser[i]);
-
-                if (i == arr.Length / 2+1 && j == arr.Length / 2+1)
+                middle = arr[i];
+                arr[i] = arr[j];
+                arr[j] = middle;
+                while (key > arr[i] && i < j)   //key=1,i=0,j=0  {1,2} 
                 {
-                    //    for (int m = 0; m < arr.length; m++)
-                    //    {
-                    //        console.write(arr[m] + ",  ");
-                    //    }
-                    break;
+
+                    //if (j == 0)
+                    //{
+                    //    break;
+                    //}
+                    //else
+                    //{
+                    i++;
+                    //}                 //  i=0  ,j=0
+
                 }
-                
-                key = arr[arr.Length / 2+1];
-                i = arr.Length / 2+1;
-                j = arr.Length - 1;
-
+                //if (i == j && i == 1)
+                //{
+                //    break;
+                //}
+                //if (i==j&&i==0)
+                //{
+                //    anser[i] = arr[i];
+                //    Console.WriteLine(anser[i]);
+                //    i++;
+                //    anser[i] = arr[i];
+                //    Console.WriteLine(anser[i]);
+                //    break;
+                //}
+                middle = arr[i];
+                arr[i] = arr[j];
+                arr[j] = middle;
 
             }
-            for (int m = 0; m < anser.Length; m++)
+            //if (i == j && j == 0)
+            //{
+            //    anser[i + 1] = arr[i + 1];
+            //    //Console.WriteLine(anser[i+1]);
+            //}
+            anser[i] = arr[i];
+            //Console.WriteLine(anser[i]);
+
+            //if (i == 0 && j == 0)
+            //{
+            for (int m = 0; m < arr.Length; m++)
             {
-                Console.Write(anser[m] + ",  ");
+                Console.Write(arr[m] + ",  ");
             }
+            //    break;
+            //}
+
+            //key = arr[0];
+            //i = 0;
+            //j = arr.Length - 1;
+
+
         }
-       
 
 
+        //    i = arr.Length / 2+1;
+        //    j = arr.Length - 1;
+        //    key = arr[arr.Length / 2+1];
+        //    while (!(i == arr.Length / 2 && j == arr.Length / 2))
+        //    {
+        //        while (i != j)
+        //        {
+        //            while (key < arr[j])    //key=2   i=0,j=1   {2,1}      
+        //            {                         //key=1   i=0,j=1   {1,2}  //key=1   i=0,j=0  {1}
+        //                j--;
+        //                //i=0,j=0
+        //            }
+        //            //if (i==j&&i==0)
+        //            //{
+        //            //    break;
+        //            //}
+        //            middle = arr[i];
+        //            arr[i] = arr[j];
+        //            arr[j] = middle;
+        //            while (key > arr[i])   //key=1,i=0,j=0  {1,2} 
+        //            {
+
+        //                //if (j == 0)
+        //                //{
+        //                //    break;
+        //                //}
+        //                //else
+        //                //{
+        //                i++;
+        //                //}                 //  i=0  ,j=0
+
+        //            }
+        //            if (i == j && i == 1)
+        //            {
+        //                break;
+        //            }
+        //            //if (i==j&&i==0)
+        //            //{
+        //            //    anser[i] = arr[i];
+        //            //    Console.WriteLine(anser[i]);
+        //            //    i++;
+        //            //    anser[i] = arr[i];
+        //            //    Console.WriteLine(anser[i]);
+        //            //    break;
+        //            //}
+        //            middle = arr[i];
+        //            arr[i] = arr[j];
+        //            arr[j] = middle;
+
+        //        }
+        //        //if (i == j && j == 0)
+        //        //{
+        //        //    anser[i + 1] = arr[i + 1];
+        //        //    Console.WriteLine(anser[i + 1]);
+        //        //}
+        //        anser[i] = arr[i];
+        //        //Console.WriteLine(anser[i]);
+
+        //        if (i == arr.Length / 2+1 && j == arr.Length / 2+1)
+        //        {
+        //            //    for (int m = 0; m < arr.length; m++)
+        //            //    {
+        //            //        console.write(arr[m] + ",  ");
+        //            //    }
+        //            break;
+        //        }
+
+        //        key = arr[arr.Length / 2+1];
+        //        i = arr.Length / 2+1;
+        //        j = arr.Length - 1;
 
 
+        //    }
+        //    for (int m = 0; m < anser.Length; m++)
+        //    {
+        //        Console.Write(anser[m] + ",  ");
+        //    }
+        //}
+        //        *一次排序单元，完成此方法，key左边都比key小，key右边都比key大。
+
+
+        //**@param array排序数组 
+
+
+        //**@param low排序起始位置 
+
+
+        //**@param high排序结束位置
+
+        //**@return单元排序后的数组
+//        private static int sortunit(int[] array, int low, int high)
+//        {
+//            int key = array[low];
+
+//            while (low < high)
+//            {
+//                /*从后向前搜索比key小的值*/
+//                while (array[high] >= key && high > low)
+//                    --high;
+//                /*比key小的放左边*/
+//                array[low] = array[high];
+//                /*从前向后搜索比key大的值，比key大的放右边*/
+//                while (array[low] <= key && high > low)
+//                    ++low;
+//                /*比key大的放右边*/
+//                array[high] = array[low];
+//            }
+//            /*左边都比key小，右边都比key大。//将key放在游标当前位置。//此时low等于high */
+//            array[low] = key;
+
+
+//            foreach (int i in array)
+//            {
+//                Console.Write("{0}\t", i);
+//            }
+//            Console.WriteLine();
+//            return high;
+//        }
+//        /**快速排序 
+//*@paramarry 
+//*@return */
+//        public static void sort(int[] array, int low, int high)
+//        {
+//            if (low >= high)
+//            {
+//                return;
+
+//            }
+//            /*完成一次单元排序*/
+//            int index = sortunit(array, low, high);
+           
+//            /*对左边单元进行排序*/
+//            sort(array, low, index - 1);
+//            /*对右边单元进行排序*/
+//            sort(array, index + 1, high);
+//        }
+
+
+        //static void State(int i)
+        //{
+        //    if (i > 3)
+        //    {
+        //        return;
+        //    }
+        //    int a=Stack(i);
+        //    State(a);
+        //    Console.WriteLine( "无知");
+        //}
+
+
+        //static int Stack(int i)
+        //{
+        //    i++;
+        //    Console.WriteLine("第" + i + "次：你好，嵌套函数");
+        //    return i;
+        //}
+        
 
 
 
