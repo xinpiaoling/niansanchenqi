@@ -11,25 +11,54 @@ namespace CSharpLearn
         }
         static void Main(string[] args)
         {
-            Value yf = new Value(12);
-           
-            Console.WriteLine(yf.age);
+            //Value yf = new Value(12);
 
-            Student wx=new Student();
+            //Console.WriteLine(yf.age);
+
+            //Student wx=new Student();
             //对象是类的实例
             //wx是一个变量名
             //这是一个引用类型的变量
             //wx存在的是一个指向地址。指向值存在的地址。
-            new Student("ss",);
-            
-            
+            //new Student("ss");
+
+            //yf.age = 38;
+
+            //Value bcy = new Value(15);
+            //bcy.age = 18;
+            //C#把new Value("白云")的存放地址给bcy了。。。不是给值，所以是引用类型
+            ///Console.WriteLine(bcy.age);
+
+            //值类型的值传递    //传递的是值的副本
 
 
+            //值类型的引用传递         //传递的是本身的值
+            //int a = 10;
+            //Console.WriteLine(ref Change(a));
+            //引用类型的值传递          //传递的是值保存的地址的被命名变量的副本
+            //Value bb = new Value();
+            //bb.age = 10;
+            //Add( bb);
+            //Console.WriteLine(bb.age);
 
+            //引用类型的引用传递         //传递的是值保存的地址的被命名变量的副本
+            //Value bb = new Value();
+            //bb.age = 10;
+            //Add(ref bb);
+            //Console.WriteLine(bb.age);
+            //return
+            //int cc = 5;
+            //Ca(ref cc);
+            //Console.WriteLine(cc);
 
-
-
-
+            //Problem Change = new Problem("wx");
+            ////Change.setName("");
+            //Change.Name = "";
+            //Console.WriteLine(Change.Name);
+            HelpMoney wx = new HelpMoney();
+            wx.Name = "王新";
+            wx.age = 18;
+            Console.WriteLine(wx.Name+wx.age);
             //SelfIntroduce();      
             //Console.WriteLine("加："+Add(10,5));
             //Console.WriteLine("减："+Minus(10, 5));
@@ -336,6 +365,7 @@ namespace CSharpLearn
         //    return istr;
         //}
 
+
         //取最高分：GetMax()
         /// <summary>
         /// get max number
@@ -616,7 +646,7 @@ namespace CSharpLearn
 
 
 
-   
+
 
 
 
@@ -633,85 +663,85 @@ namespace CSharpLearn
         ///i=1 j=6 从前向后找      
         ///three 1,5,8,3,6,2,9,7       //i   a[2]>key    交换
         ///
-        static void order()
-        {
-            //int[] arr = { 5, 8, 7, 3, 1, 9, 6, 2, 4 };
-            int[] arr = { 4, 2, 1, 3, 5, 9, 6, 7, 8 };
-            int i = 0;
-            int j = 4 - 1;
-            int key = arr[0];
-            int middle;
-            int[] anser = new int[arr.Length];
+        //static void order()
+        //{
+        //    //int[] arr = { 5, 8, 7, 3, 1, 9, 6, 2, 4 };
+        //    int[] arr = { 4, 2, 1, 3, 5, 9, 6, 7, 8 };
+        //    int i = 0;
+        //    int j = 4 - 1;
+        //    int key = arr[0];
+        //    int middle;
+        //    int[] anser = new int[arr.Length];
 
 
-            while (i < j)
-            {
-                while (key < arr[j] && i < j)    //key=2   i=0,j=1   {2,1}      
-                {                         //key=1   i=0,j=1   {1,2}  //key=1   i=0,j=0  {1}
-                    j--;
-                    //i=0,j=0
-                }
-                //if (i==j&&i==0)
-                //{
-                //    break;
-                //}
-                middle = arr[i];
-                arr[i] = arr[j];
-                arr[j] = middle;
-                while (key > arr[i] && i < j)   //key=1,i=0,j=0  {1,2} 
-                {
+        //    while (i < j)
+        //    {
+        //        while (key < arr[j] && i < j)    //key=2   i=0,j=1   {2,1}      
+        //        {                         //key=1   i=0,j=1   {1,2}  //key=1   i=0,j=0  {1}
+        //            j--;
+        //            //i=0,j=0
+        //        }
+        //        //if (i==j&&i==0)
+        //        //{
+        //        //    break;
+        //        //}
+        //        middle = arr[i];
+        //        arr[i] = arr[j];
+        //        arr[j] = middle;
+        //        while (key > arr[i] && i < j)   //key=1,i=0,j=0  {1,2} 
+        //        {
 
-                    //if (j == 0)
-                    //{
-                    //    break;
-                    //}
-                    //else
-                    //{
-                    i++;
-                    //}                 //  i=0  ,j=0
+        //            //if (j == 0)
+        //            //{
+        //            //    break;
+        //            //}
+        //            //else
+        //            //{
+        //            i++;
+        //            //}                 //  i=0  ,j=0
 
-                }
-                //if (i == j && i == 1)
-                //{
-                //    break;
-                //}
-                //if (i==j&&i==0)
-                //{
-                //    anser[i] = arr[i];
-                //    Console.WriteLine(anser[i]);
-                //    i++;
-                //    anser[i] = arr[i];
-                //    Console.WriteLine(anser[i]);
-                //    break;
-                //}
-                middle = arr[i];
-                arr[i] = arr[j];
-                arr[j] = middle;
+        //        }
+        //        //if (i == j && i == 1)
+        //        //{
+        //        //    break;
+        //        //}
+        //        //if (i==j&&i==0)
+        //        //{
+        //        //    anser[i] = arr[i];
+        //        //    Console.WriteLine(anser[i]);
+        //        //    i++;
+        //        //    anser[i] = arr[i];
+        //        //    Console.WriteLine(anser[i]);
+        //        //    break;
+        //        //}
+        //        middle = arr[i];
+        //        arr[i] = arr[j];
+        //        arr[j] = middle;
 
-            }
-            //if (i == j && j == 0)
-            //{
-            //    anser[i + 1] = arr[i + 1];
-            //    //Console.WriteLine(anser[i+1]);
-            //}
-            anser[i] = arr[i];
-            //Console.WriteLine(anser[i]);
+        //    }
+        //    //if (i == j && j == 0)
+        //    //{
+        //    //    anser[i + 1] = arr[i + 1];
+        //    //    //Console.WriteLine(anser[i+1]);
+        //    //}
+        //    anser[i] = arr[i];
+        //    //Console.WriteLine(anser[i]);
 
-            //if (i == 0 && j == 0)
-            //{
-            for (int m = 0; m < arr.Length; m++)
-            {
-                Console.Write(arr[m] + ",  ");
-            }
-            //    break;
-            //}
+        //    //if (i == 0 && j == 0)
+        //    //{
+        //    for (int m = 0; m < arr.Length; m++)
+        //    {
+        //        Console.Write(arr[m] + ",  ");
+        //    }
+        //    //    break;
+        //    //}
 
-            //key = arr[0];
-            //i = 0;
-            //j = arr.Length - 1;
+        //    //key = arr[0];
+        //    //i = 0;
+        //    //j = arr.Length - 1;
 
 
-        }
+        //}
 
 
         //    i = arr.Length / 2+1;
@@ -804,52 +834,52 @@ namespace CSharpLearn
         //**@param high排序结束位置
 
         //**@return单元排序后的数组
-//        private static int sortunit(int[] array, int low, int high)
-//        {
-//            int key = array[low];
+        //        private static int sortunit(int[] array, int low, int high)
+        //        {
+        //            int key = array[low];
 
-//            while (low < high)
-//            {
-//                /*从后向前搜索比key小的值*/
-//                while (array[high] >= key && high > low)
-//                    --high;
-//                /*比key小的放左边*/
-//                array[low] = array[high];
-//                /*从前向后搜索比key大的值，比key大的放右边*/
-//                while (array[low] <= key && high > low)
-//                    ++low;
-//                /*比key大的放右边*/
-//                array[high] = array[low];
-//            }
-//            /*左边都比key小，右边都比key大。//将key放在游标当前位置。//此时low等于high */
-//            array[low] = key;
+        //            while (low < high)
+        //            {
+        //                /*从后向前搜索比key小的值*/
+        //                while (array[high] >= key && high > low)
+        //                    --high;
+        //                /*比key小的放左边*/
+        //                array[low] = array[high];
+        //                /*从前向后搜索比key大的值，比key大的放右边*/
+        //                while (array[low] <= key && high > low)
+        //                    ++low;
+        //                /*比key大的放右边*/
+        //                array[high] = array[low];
+        //            }
+        //            /*左边都比key小，右边都比key大。//将key放在游标当前位置。//此时low等于high */
+        //            array[low] = key;
 
 
-//            foreach (int i in array)
-//            {
-//                Console.Write("{0}\t", i);
-//            }
-//            Console.WriteLine();
-//            return high;
-//        }
-//        /**快速排序 
-//*@paramarry 
-//*@return */
-//        public static void sort(int[] array, int low, int high)
-//        {
-//            if (low >= high)
-//            {
-//                return;
+        //            foreach (int i in array)
+        //            {
+        //                Console.Write("{0}\t", i);
+        //            }
+        //            Console.WriteLine();
+        //            return high;
+        //        }
+        //        /**快速排序 
+        //*@paramarry 
+        //*@return */
+        //        public static void sort(int[] array, int low, int high)
+        //        {
+        //            if (low >= high)
+        //            {
+        //                return;
 
-//            }
-//            /*完成一次单元排序*/
-//            int index = sortunit(array, low, high);
-           
-//            /*对左边单元进行排序*/
-//            sort(array, low, index - 1);
-//            /*对右边单元进行排序*/
-//            sort(array, index + 1, high);
-//        }
+        //            }
+        //            /*完成一次单元排序*/
+        //            int index = sortunit(array, low, high);
+
+        //            /*对左边单元进行排序*/
+        //            sort(array, low, index - 1);
+        //            /*对右边单元进行排序*/
+        //            sort(array, index + 1, high);
+        //        }
 
 
         //static void State(int i)
@@ -870,8 +900,28 @@ namespace CSharpLearn
         //    Console.WriteLine("第" + i + "次：你好，嵌套函数");
         //    return i;
         //}
-        
 
+
+
+        //值传递的引用类型
+        //static void Change(int a)
+        //{
+        //    a++;
+        //}
+        //引用类型的引用类型,把自身地址的变量名字传入后，变量名字被重新定义一个新的值的地址（默认0），所以
+        //现在新的age是0，和以前的age没有关系。
+        ///传入的还是地址
+        static void Add(ref Value wx)
+        {
+            wx = new Value();
+            wx.age++;
+            Console.WriteLine(wx.age);
+        }
+        static void Ca(ref int dd)
+        {
+            dd = dd + dd;
+            Console.WriteLine(dd);
+        }
 
 
 
