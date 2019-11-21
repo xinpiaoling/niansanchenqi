@@ -10,37 +10,20 @@ namespace CSharpLearn
     /// </summary>
     class Problem
     {
-        //属性
-        internal string name;
-        internal string Name
+        private string title;
+        private string body;
+        private int reward;
+        private DateTime publishDateTime;
+        User author;
+       public string Title { get; set; }
+       public string Body { get; set; }
+       public int Reward { get; set; }
+       public DateTime PublishDateTime { get; set; }
+       public string Author { get; set; }
+
+        void Publish()
         {
 
-            get
-            {
-                return "举世无双" + name;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(name))
-                {
-                    Console.WriteLine("姓名不能为空");
-                    return;
-                }
-
-                //this.Name = Name;
-                name = value; 
-            }
-
         }
-
-        public Problem(string name)
-        {
-            //this.name = name;
-
-        }
-
-
-
-
     }
 }

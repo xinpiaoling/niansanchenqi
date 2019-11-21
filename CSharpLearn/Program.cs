@@ -55,10 +55,21 @@ namespace CSharpLearn
             ////Change.setName("");
             //Change.Name = "";
             //Console.WriteLine(Change.Name);
-            HelpMoney wx = new HelpMoney();
-            wx.Name = "王新";
-            wx.age = 18;
-            Console.WriteLine(wx.Name+wx.age);
+            //HelpMoney wx = new HelpMoney();
+            //wx.Name = "王新";
+            //wx.age = 18;
+            //wx.num = 55;
+            //Console.WriteLine(wx.Name+wx.age);
+
+            HelpMoney ww=new HelpMoney("线条");
+            HelpMoney ee = new HelpMoney("面积");
+
+            //Console.WriteLine(ww.Line+"    "+ee.Line);
+            ////Console.WriteLine(ww.GetLength());
+
+            //HelpMoney rr = okz;
+
+            
             //SelfIntroduce();      
             //Console.WriteLine("加："+Add(10,5));
             //Console.WriteLine("减："+Minus(10, 5));
@@ -112,7 +123,7 @@ namespace CSharpLearn
             //Console.WriteLine(Math.Round(w, 5));
 
             //输入一个字符，显示这个字符的unicode值
-            //string s = "唱";
+            string s = "唱";
             //char m = '地';
             //Console.WriteLine((int)m);
 
@@ -511,7 +522,7 @@ namespace CSharpLearn
         //    int[] finish = new int[length];
         //    while (i < length)
         //    {
-        //        int random = new Random().Next(min, max);
+        //        int random = new Random().Next(finish[i], finish[i]+5);
         //        if (i == 0)
         //        {
         //            finish[i] = random;
