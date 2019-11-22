@@ -1,16 +1,19 @@
 ﻿using System;
 using CSharpLearn;
 namespace CSharpLearn
+
 {
-    class Program
+
+    public class Program
     {
 
-        Program()
-        {
 
-        }
+
         static void Main(string[] args)
         {
+
+
+
             //Value yf = new Value(12);
 
             //Console.WriteLine(yf.age);
@@ -68,8 +71,25 @@ namespace CSharpLearn
             ////Console.WriteLine(ww.GetLength());
 
             //HelpMoney rr = okz;
+            //User wx = new User();
+            //wx.Name = "admin";
+            //wx.ChangePassword("min");
+            //分别调用实例字段和静态字段，查看两者区别。
+            //FactoryContext use = new FactoryContext();  
+            //FactoryContext use2 = new FactoryContext();
+            //use.num = 15;
+            //use2.num = 20;
+            //Console.WriteLine(use.num);
+            //Console.WriteLine(use2.num);
+            //use.Count();
+            //use2.Count();
+            //Console.WriteLine(use.getNum());
+            //Console.WriteLine(use2.getNum());
 
             
+
+            //Console.WriteLine(wx.Name);
+
             //SelfIntroduce();      
             //Console.WriteLine("加："+Add(10,5));
             //Console.WriteLine("减："+Minus(10, 5));

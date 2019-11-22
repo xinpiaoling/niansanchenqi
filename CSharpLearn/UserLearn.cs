@@ -106,7 +106,8 @@ namespace CSharpLearn
                                                //public string Attribute { get => Attribute; }     //一种简写方法
 
         public string Nature
-        { set
+        {
+            set
             {
                 if (value == "wx")
                 {
@@ -130,17 +131,52 @@ namespace CSharpLearn
 
          //静态字段
          public static string  Field;  //静态的字段常用来定义常量，通过类调用，不同的对象使用的是同一个字段，这一点与实例字段不同。
-        public static string At="源栈";       //换一种理解：静态成员是唯一的，实例的成员根据不同对象是不唯一的                       
+        public static string At="源栈";       //换一种理解：静态成员是唯一的，实例的成员根据不同对象是不唯一的      
+        private UserLearn unknown;             //类的字段，静态只读...不知道能做什么
         //静态方法
         public static void enroll()          //静态的方法只能调用静态字段，不能调用实例字段
-        {
+        {                                    //静态函数无需实例化即可调用类成员函数
             Console.WriteLine("王新在"+At);   //深刻理解：实例成员可以调用静态成员，静态成员不可以调用实例成员
         }
+
+
+        //用一个静态数组存放所有入栈学生                     //尝试多次，还是不会调用这种方式
+        static Student[] students = new Student[18];
+        //要逐渐习惯使用简单类型以外的自定义类型
+        internal static void enroll(Student newbie)
+        {
+            for (int i = 0; i < students.Length; i++)
+            {
+                //找到一个为null值的“空位”
+                if (students[i] == null)
+                {
+                    //把新同学放到空位中
+                    students[i] = newbie;
+                    return;
+                }
+            }
+        }
+
+ 
 
         //析构函数                     //作用是清除很久不用的实例对象的调用占用的内存，释放内存。
         ~UserLearn()                 //析构函数是默认自带的，不需要被显示申明。
         {                        
             Console.WriteLine("GAME OVER!!!");
         }
-    }    //值类型变量会在出栈时被自动清空，其所占用的内存就会被释放
-}        //引用类型的变量的对象在引用类型的变量出栈时不会被自动清空，内存就不会被释放，这既是内存泄漏。
+
+
+        //值类型变量会在出栈时被自动清空，其所占用的内存就会被释放
+        //引用类型的变量的对象在引用类型的变量出栈时不会被自动清空，内存就不会被释放，这既是内存泄漏。
+
+
+        public class Child : UserLearn
+        {
+
+        }
+
+
+
+
+    }
+}        

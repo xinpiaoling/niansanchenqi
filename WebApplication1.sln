@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.29215.179
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{5227C252-8EA8-4CFD-8F87-A0BD23A7A85B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpLearn", "CSharpLearn\CSharpLearn.csproj", "{EE1FBDDB-E06D-46D6-B36F-D9DB7FF77AD0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharpLearn", "CSharpLearn\CSharpLearn.csproj", "{EE1FBDDB-E06D-46D6-B36F-D9DB7FF77AD0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSHARP_11.21", "CSHARP_11.21\CSHARP_11.21.csproj", "{CB1DE7FF-553A-4905-8EA4-21BE1FFF6CE2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{EE1FBDDB-E06D-46D6-B36F-D9DB7FF77AD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE1FBDDB-E06D-46D6-B36F-D9DB7FF77AD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE1FBDDB-E06D-46D6-B36F-D9DB7FF77AD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB1DE7FF-553A-4905-8EA4-21BE1FFF6CE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB1DE7FF-553A-4905-8EA4-21BE1FFF6CE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB1DE7FF-553A-4905-8EA4-21BE1FFF6CE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB1DE7FF-553A-4905-8EA4-21BE1FFF6CE2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
