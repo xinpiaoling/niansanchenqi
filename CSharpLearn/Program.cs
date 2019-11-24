@@ -143,7 +143,7 @@ namespace CSharpLearn
             //Console.WriteLine(Math.Round(w, 5));
 
             //输入一个字符，显示这个字符的unicode值
-            string s = "唱";
+            //string s = "唱";
             //char m = '地';
             //Console.WriteLine((int)m);
 

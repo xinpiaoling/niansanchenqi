@@ -15,28 +15,43 @@ namespace CSHARP_11._21
             //Console.WriteLine(ch.Add());
             //Console.WriteLine(ch.Adds(100));
             //Console.WriteLine(td.Add());
-            Console.WriteLine("很奇怪的用法{0}");
+            //Console.WriteLine("很奇怪的用法{0}");
+            //Father should = new Father();
+            //should.Eat();
+            // should = new Child();
+            //should.Eat();
+
+            Problem tom = new Problem("val");
+            tom.Kind="cat";
+            Console.WriteLine("tom出生的日期:"+tom.PublishTime);
+            Problem jack = new Problem("val");
+            jack.method();
+            Console.WriteLine("它是一只："+tom.Kind);
+            Article myl = new Article("val");
+            Console.WriteLine("-------------------------");
+
+            Content Father = new Content("val");
+            Father.Eat();
+            tom.Eat();
+            myl.Eat();
 
 
-            Console.WriteLine("Hello World!");
+            
         }
     }
 
-    class Father
-    {
-        public int width;
-        public int height;
-        public int Add()
-        {
-            return width + height;
-        }
-        public string Date { get; set; }
-    }
-    class Child : Father
-    {
-        public string Adds(int par)
-        {
-            return Date + par;
-        }
-    }
+    //class Father
+    //{
+    //    internal virtual void Eat()
+    //    {
+    //        Console.WriteLine("父亲吃饭！！");
+    //    }
+    //}
+    //class Child : Father
+    //{
+    //    internal override void Eat()
+    //    {
+    //        Console.WriteLine("孩子吃饭");
+    //    }
+    //}
 }

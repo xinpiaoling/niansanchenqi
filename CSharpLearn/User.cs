@@ -4,7 +4,8 @@ using System.Text;
 
 namespace CSharpLearn
 {
-    class User
+    ///让User类无法被继承
+    sealed class User
     {
         //user.Password在类的外部只能读不能改，且为User类添加ChangePasword()方法，以修改其密码
         private string password;
@@ -54,6 +55,10 @@ namespace CSharpLearn
 
     }
 
+    //lass Wx:User
+    //{
+
+    //}
 
 
 }
