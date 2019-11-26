@@ -21,23 +21,73 @@ namespace CSHARP_11._21
             // should = new Child();
             //should.Eat();
 
-            Problem tom = new Problem("val");
-            tom.Kind="cat";
-            Console.WriteLine("tom出生的日期:"+tom.PublishTime);
-            Problem jack = new Problem("val");
-            jack.method();
-            Console.WriteLine("它是一只："+tom.Kind);
-            Article myl = new Article("val");
-            Console.WriteLine("-------------------------");
+            //Problem tom = new Problem("val");
+            //tom.Kind="cat";
+            //Console.WriteLine("tom出生的日期:"+tom.PublishTime);
+            //Problem jack = new Problem("val");
+            //jack.method();
+            //Console.WriteLine("它是一只："+tom.Kind);
+            //Article myl = new Article("val");
+            //Console.WriteLine("-------------------------");
 
-            Content Father = new Content("val");
-            Father.Eat();
-            tom.Eat();
-            myl.Eat();
+            //Content Father = new Content("val");
+            //Father.Eat();
+            //tom.Eat();
+            //myl.Eat();
+
+            //Add BOX1 = new Add();
+            //Add BOX2 = new Add();
+            //Add BOX3 = new Add();
+            //BOX1.SetA (10);
+            //BOX1.SetB (15);
+            //BOX2.SetA (100);
+            //BOX2.SetB (150);
+            //BOX3 = BOX2 + BOX1;
+            //Console.WriteLine(BOX3.GetA());
+            //Console.WriteLine(BOX3.GetType());
 
 
+            Content wx = new Content("");
+            //显示不能为空值
             
         }
+    }
+    class Add
+    {
+
+        private int a;
+        private int b;
+
+        public void SetA(int a)
+        {
+            this.a = a;
+        }
+        public void SetB(int b)
+        {
+            this.b = b;
+        }
+        public int GetA()
+        {
+            return a;
+        }
+
+
+        /// <summary>
+        /// 运算符重载是对相同的参数类型，根据同一方法名和运算符的不同组合进行运算，达到重载的作用。
+        /// 实际上还是在方法内部对对象的值类型参数进行了运算。
+        /// 
+        /// </summary>
+        /// <param name="Box1"></param>
+        /// <param name="Box2"></param>
+        /// <returns></returns>
+        public static Add operator+(Add Box1, Add Box2)
+        {
+            Add Box3 = new Add();
+            Box3.a = Box1.a + Box2.a;
+            Box3.b = Box1.b + Box2.b;
+            return Box3; 
+        }
+       
     }
 
     //class Father
