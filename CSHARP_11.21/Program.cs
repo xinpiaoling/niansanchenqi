@@ -47,29 +47,36 @@ namespace CSHARP_11._21
             //Console.WriteLine(BOX3.GetType());
 
 
-            Content wx = new Content("");
-            //显示不能为空值
+
+            Animal[] animals = new Animal[3];
+            animals[0] = new Animal();
+            animals[1] = new Cat();
+            animals[2] = new Dog();
+            for (int i = 0; i <animals.Length ; i++)
+            {
+                animals[i].Eat();
+            }
             
         }
     }
     class Add
     {
 
-        private int a;
-        private int b;
+        //private int a;
+        //private int b;
 
-        public void SetA(int a)
-        {
-            this.a = a;
-        }
-        public void SetB(int b)
-        {
-            this.b = b;
-        }
-        public int GetA()
-        {
-            return a;
-        }
+        //public void SetA(int a)
+        //{
+        //    this.a = a;
+        //}
+        //public void SetB(int b)
+        //{
+        //    this.b = b;
+        //}
+        //public int GetA()
+        //{
+        //    return a;
+        //}
 
 
         /// <summary>
@@ -80,13 +87,13 @@ namespace CSHARP_11._21
         /// <param name="Box1"></param>
         /// <param name="Box2"></param>
         /// <returns></returns>
-        public static Add operator+(Add Box1, Add Box2)
-        {
-            Add Box3 = new Add();
-            Box3.a = Box1.a + Box2.a;
-            Box3.b = Box1.b + Box2.b;
-            return Box3; 
-        }
+        //public static Add operator+(Add Box1, Add Box2)
+        //{
+        //    Add Box3 = new Add();
+        //    Box3.a = Box1.a + Box2.a;
+        //    Box3.b = Box1.b + Box2.b;
+        //    return Box3; 
+        //}
        
     }
 
