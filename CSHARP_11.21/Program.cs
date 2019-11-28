@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 
 namespace CSHARP_11._21
 {
@@ -48,15 +49,33 @@ namespace CSHARP_11._21
 
 
 
-            Animal[] animals = new Animal[3];
-            animals[0] = new Animal();
-            animals[1] = new Cat();
-            animals[2] = new Dog();
-            for (int i = 0; i <animals.Length ; i++)
-            {
-                animals[i].Eat();
-            }
-            
+            //Animal[] animals = new Animal[3];
+            //animals[0] = new Animal();
+            //animals[1] = new Cat();
+            //animals[2] = new Dog();
+            //for (int i = 0; i <animals.Length ; i++)
+            //{
+            //    animals[i].Eat();
+            //}
+
+
+
+            //Assemly程序集。是.net中最小的执行单元
+            //Console.WriteLine("".GetType().Name);
+            //Console.WriteLine(typeof(Int32).Assembly);
+
+            //Animal example = new Animal();
+            //Console.WriteLine(example.GetType().       //得到类型信息
+            //    GetField("kind",    //取非公开的，实例的字段
+            //    BindingFlags.NonPublic |BindingFlags.Instance )
+            //    .GetValue(example));   //从对象cat里面取值
+
+
+            //Type typeinfo= typeof(Animal);
+            //Console.WriteLine(typeinfo);
+
+            Animal wx = new Cat();
+            Console.WriteLine(wx.GetType());
         }
     }
     class Add

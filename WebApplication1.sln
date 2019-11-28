@@ -7,9 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication1", "WebAppli
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharpLearn", "CSharpLearn\CSharpLearn.csproj", "{EE1FBDDB-E06D-46D6-B36F-D9DB7FF77AD0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSHARP_11.21", "CSHARP_11.21\CSHARP_11.21.csproj", "{CB1DE7FF-553A-4905-8EA4-21BE1FFF6CE2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSHARP_11.21", "CSHARP_11.21\CSHARP_11.21.csproj", "{CB1DE7FF-553A-4905-8EA4-21BE1FFF6CE2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnitTestProject1", "NUnitTestProject1\NUnitTestProject1.csproj", "{0E877FFF-C213-4275-A503-D7055BA353F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NUnitTestProject1", "NUnitTestProject1\NUnitTestProject1.csproj", "{0E877FFF-C213-4275-A503-D7055BA353F9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
