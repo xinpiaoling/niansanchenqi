@@ -16,6 +16,9 @@ namespace CSHARP_11._21
             Console.WriteLine("吃饭时间到了");
         }
 
+        dynamic i = 15;
+
+
     }
 
 

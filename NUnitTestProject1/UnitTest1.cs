@@ -15,4 +15,4 @@ namespace Tests
             Assert.Pass();
         }
     }
-}
+}0
