@@ -95,12 +95,72 @@ namespace CSHARP_11._21
         /// <summary>
         /// 删除当前节点
         /// </summary>
-        public void Delete()
+        public void Delete(DoubleLinked node)
         {
+            //old  删除old
+            if (node.Next == null && node.Previous == null)
+            {
+               //do nothing
+            }
+
+
+            else if (node.Previous == null)
+            {
+                //old 1 2  删除头部old
+                this.Previous = null;
+                node.Next = null;
+            }
+            else if (node.Next == null)
+            {
+                //2 1 old 删除尾部old
+                this.Next = null;
+                node.Previous = null;
+            }
+            else  //(node.Next != null && node.Previous != null)
+            {
+                //1  old  2
+                this.Previous = null;
+                this.Previous = node.Previous;
+
+                node.Next = null;
+                node.Previous.Next = this;
+            }
 
         }
+
+        
         public void Swap(DoubleLinked a,DoubleLinked b)
         {
+            
+            if (this.Previous==null)
+            {
+                //old 1 2头部交换为1 old 2
+                //old.Swap(currenta, currentb);
+                //之前的状态
+                //a.Previous = this;
+                //b.Previous = a;
+                //this.Next = a;
+                //a.Next = b;
+                a.Next = this;
+                this.Next = b;
+                b.Previous = this;
+                this.Previous = a;
+            }
+            else if (b.Next==null)
+            {
+                //1 old 2 尾部交换为 1 2 old
+                //current1.Swap(current2, old);
+                this.Next = a;
+                a.Next = b;
+                b.Previous = a;
+                a.Previous = this;
+            }
+            else
+            {
+                //do nothing
+            }
+
+            
 
         }
     }
