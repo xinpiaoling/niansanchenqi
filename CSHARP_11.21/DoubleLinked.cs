@@ -4,23 +4,15 @@ using System.Text;
 
 namespace CSHARP_11._21
 {
+
+
+
     //链表的节点
-    public  class DoubleLinked
+    public class DoubleLinked 
     {
       public DoubleLinked Previous { get;private set; }
       public DoubleLinked Next { get;private set; }
       
-        public int Length
-        {
-            get
-            {
-                
-            }
-
-
-
-
-        }
 
         public bool IsHead
         {
@@ -55,6 +47,27 @@ namespace CSHARP_11._21
         public void InserAfter(DoubleLinked node)
         {
             
+            
+            if (node.Next==null)
+            {
+                //current1.InserAfter(old);
+                node.Next = this;         //this指代current1
+                this.Previous = node;
+            }
+            else
+            {
+                //current2.InserAfter(old);
+
+                this.Next = node.Next;
+                node.Next = this;
+                this.Next.Previous = this;
+                this.Previous = node;
+
+                //还可以重构代码，使用单元测试检测功能是否损坏
+               
+            }
+
+
         }
         /// <summary>
         /// 插入当前节点前面
@@ -62,6 +75,21 @@ namespace CSHARP_11._21
         /// <param name="node"></param>
         public void InserBefore(DoubleLinked node)
         {
+
+            if (node.Previous == null)
+            {
+                node.Previous = this;
+                this.Next = node;
+            }
+            else
+            {
+                this.Previous = node.Previous;
+                node.Previous = this;
+                this.Next = node;
+                this.Previous.Next = this;
+            }
+
+
 
         }
         /// <summary>

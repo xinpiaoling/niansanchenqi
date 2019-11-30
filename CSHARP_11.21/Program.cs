@@ -74,15 +74,43 @@ namespace CSHARP_11._21
             //Type typeinfo= typeof(Animal);
             //Console.WriteLine(typeinfo);
 
-            Animal wx = new Cat();
-            Console.WriteLine(wx.GetType());
+            //Animal wx = new Cat();
+            //Console.WriteLine(wx.GetType());
+
+
+            //下面的对比struct是值类型和class是引用类型
+
+
+            //Major是sruct类型，Name是属性
+            //Major Book=new Major();
+            //Major Book1=new Major();
+            //Book.name = "闪烁";
+            //Book1 = Book;
+            //Book1.name = "不闪烁";
+            //Console.WriteLine(Book.name);
+            //Console.WriteLine(Book1.name);
+            ////Book.Name ;
+            ////Book.Math();
+            //Add Try = new Add();
+            //Add Try1 = new Add();
+            //Try.a = "熄灭";
+            //Try1 = Try;
+            //Try1.a = "不熄灭";
+            //Console.WriteLine(Try.a);
+            //Console.WriteLine("--------------");
+            //Console.WriteLine(Try1.a);
+
         }
     }
     class Add
     {
+        ///public string a;
+
+
 
         //private int a;
         //private int b;
+        //public string Try { get; set; }
 
         //public void SetA(int a)
         //{
