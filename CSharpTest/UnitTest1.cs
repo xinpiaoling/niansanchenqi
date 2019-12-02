@@ -16,8 +16,8 @@ namespace Tests
             //assert¶ÏÑÔ
             Assert.Pass();
         }
-        [Test]
 
+        [Test]
         public void InsertAfter()
         {
             DoubleLinked old = new DoubleLinked();

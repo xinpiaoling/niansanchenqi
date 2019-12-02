@@ -100,8 +100,36 @@ namespace CSHARP_11._21
             //Console.WriteLine("--------------");
             //Console.WriteLine(Try1.a);
 
+            DateTime dt = new DateTime(2019,12,1,15,30,20);
+            Console.WriteLine(dt.Ticks);
+            DateTime s=dt.AddDays(10);
+            Console.WriteLine(s);
+            DateTime nu = new DateTime(1324719700);
+            Console.WriteLine(nu.ToString("yyyy/mm/dd hh;mm;ss"));
+
+
+
+
+
+
         }
     }
+     public  enum DayofWeek
+    {
+        sunday,
+        monday,
+        tuesday,
+        wednesday,
+        thursday,
+        friday,
+        saturday
+        
+    }
+
+
+
+
+
     class Add
     {
         ///public string a;
