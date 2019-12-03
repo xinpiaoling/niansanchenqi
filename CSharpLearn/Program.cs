@@ -11,6 +11,87 @@ namespace CSharpLearn
 
         static void Main(string[] args)
         {
+            //【练习1】李四的年终工作评定,如果定为A级,则工资涨500元,
+            //如果定为B级,则工资涨200元,如果定为C级,工资不变,
+            //如果定为D级工资降200元,如果定为E级工资降500元.
+            //设李四的原工资为5000,请用户输入李四的评级,然后显示李四来年的工资.
+
+
+            //练习使用switch  case default的用法
+            //int salary = 5000;
+            //bool b = true;
+            //Console.WriteLine("请输入李四的年终工作评定：A/B/C/D/E");
+            //string input = Console.ReadLine();
+            //switch (input)
+            //{
+            //    case "A":
+                    
+            //            salary += 500;
+            //            break;
+                    
+            //    case "B":
+                    
+            //            salary += 200;
+            //            break;
+                    
+            //    case "C":
+                    
+            //            salary +=0; 
+            //            break;
+                    
+            //    case "D":
+                    
+            //            salary -= 200;
+            //            break;
+                    
+            //    case "E":
+                    
+            //            salary -= 500;
+            //            break;
+                    
+            //    default:
+                    
+            //            Console.WriteLine("输入错误，重新输入！！！");
+            //            b = false;
+            //            break;
+                    
+
+            //}
+
+            //if (b)
+            //{
+            //    Console.WriteLine("李四的来年工资为：" + salary);
+            //}
+            
+
+
+            //dynamic ss1 = "是么";
+            //ss1 = 150;
+            //Console.WriteLine(ss1);
+            ////使用动态dynamic和var的区别。由于使用较少，暂时没有看出实际使用场景。
+            //var ww1 = 99;
+            //// ww = "www";
+            //Console.WriteLine(ww1);
+
+
+            //DateTime date = new DateTime(2019,1,1);
+            ////date.DayOfWeek;
+            //Console.WriteLine(date.DayOfWeek==DayOfWeek.Monday);
+            //while (date.Year==2019)
+            //{
+            //    Console.WriteLine(date.ToString("yyyy年mm月dd天"));
+            //    date = date.AddDays(7);
+            //}
+
+
+            ////偶然看到的整数类型强转为字符类型，从而变成a,b,c等字符
+            //char w =(char) 98;
+            //Console.WriteLine(w);  //输出结果为b
+
+            
+
+
+
 
 
 
@@ -64,7 +145,7 @@ namespace CSharpLearn
             //wx.num = 55;
             //Console.WriteLine(wx.Name+wx.age);
 
-            HelpMoney ww=new HelpMoney("线条");
+            HelpMoney ww =new HelpMoney("线条");
             HelpMoney ee = new HelpMoney("面积");
 
             //Console.WriteLine(ww.Line+"    "+ee.Line);

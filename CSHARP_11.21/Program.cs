@@ -100,21 +100,122 @@ namespace CSHARP_11._21
             //Console.WriteLine("--------------");
             //Console.WriteLine(Try1.a);
 
-            DateTime dt = new DateTime(2019,12,1,15,30,20);
-            Console.WriteLine(dt.Ticks);
-            DateTime s=dt.AddDays(10);
-            Console.WriteLine(s);
-            DateTime nu = new DateTime(1324719700);
-            Console.WriteLine(nu.ToString("yyyy/mm/dd hh;mm;ss"));
+
+
+            //时间类型的使用
+
+
+
+            //DateTime dt = new DateTime(2019,12,1,15,30,20);
+            ////显示以奈秒计算的时间单位
+            //Console.WriteLine(dt.Ticks);
+            ////可以在原有日期上加天数或者年份，，，小时分秒等都可以
+            //DateTime s=dt.AddDays(10);
+            //DateTime s1 = dt.AddYears(1);
+            //Console.WriteLine(s);
+            //Console.WriteLine(s1);
+            ////通过纳秒，再通过ToString()转换为日期格式
+            //DateTime nu = new DateTime(1132471111111);
+            //Console.WriteLine(nu.ToString("yyyy/mm/dd hh;mm;ss"));
+
+            //Console.WriteLine(dt.ToString("yyyy/MM/dd"));
+            ////两个日期可以相减，得到一个时间差
+            //TimeSpan span = DateTime.Now - new DateTime(2019,1,1);
+            //Console.WriteLine(span.TotalSeconds);
 
 
 
 
 
+            //装箱拆箱的过程
+            //理解为object和值类型之间的转换。与其他类无关，了解知识
+            //object i = new object();
+            //int p = (int)i;
+            //int ii = 10;
+            //Console.WriteLine(p);
+            //Console.WriteLine(ii.GetType());
+            //Console.WriteLine(i.GetType()); 
+
+
+
+            ////用代码证明struct定义的类型是值类型
+            //library shanxi = new library();
+            //library beijing = new library();
+
+            //shanxi.RoomNumber = 52;
+            //beijing = shanxi;
+
+            //beijing.RoomNumber = 53;
+            //Console.WriteLine(shanxi.RoomNumber);
+            //Console.WriteLine(beijing.RoomNumber);
+            ////library是struct类型，libraryC是class类型
+            ////值类型的对象改变，与引用类型的对象改变，两者的值不一样
+            //libraryC chongqing = new libraryC();
+            //libraryC sichuan=new libraryC();
+            //chongqing.RoomNumber = 100;
+            //sichuan = chongqing;
+            //chongqing.RoomNumber = 101;
+            //Console.WriteLine(chongqing.RoomNumber);
+            //Console.WriteLine(sichuan.RoomNumber);
+
+
+            //构造一个能装任何数据的数组，并完成数据的读写
+            //arr b = new arr();
+            //b.Array[0] = 15;
+            //b.Array[1] = "ss";
+            ////b.Array[3] = 15.33;
+            //foreach (var item in b.Array)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+
+
+            //Console.WriteLine(DateTime.Now.DayOfWeek);
+            //DateTime.Now.DayOfWeek;
+
+
+            //    源栈的学费是按周计费的，所以请实现这两个功能：
+            //函数GetDate()，能计算一个日期若干（日/周/月）后的日期
+            //给定任意一个年份，就能按周排列显示每周的起始日期，如下图所示：
+            //DateTime year = new DateTime();
+
+            //bool y = DateTime.TryParse(Console.ReadLine(),out DateTime year);
+            //Console.WriteLine(y+ "------------"+year);
+
+            //bool s = int.TryParse(Console.ReadLine(),out int a);
+            //Console.WriteLine(s+"----------"+a);
+            // void  GetDate()  
+            // {
+            //    if (y)
+            //    {
+            //        //while (year.DayOfWeek==)
+            //        {
+            //            Console.WriteLine(date.ToString("yyyy年mm月dd天"));
+            //            date+=date.AddDayys(7);
+            //        }
+
+
+            //    }
+
+
+
+            //}
+
+
+            GenericTry<string> wx = new GenericTry<string>("ss");
+            GenericTry<int> pzq = new GenericTry<int>(125);
+
+            wx.Number = 640122;
+            wx.eat("wx");
+            pzq.eat(10);
+            GenericTry<int>.sleep(125);
+            Console.WriteLine(wx.Number);
+            Console.WriteLine(wx.GetType());
 
         }
     }
-     public  enum DayofWeek
+    public enum DayofWeek
     {
         sunday,
         monday,
@@ -123,9 +224,28 @@ namespace CSHARP_11._21
         thursday,
         friday,
         saturday
-        
-    }
 
+    }
+    public class GenericTry< T> where T:Problem
+    {
+        private T name;
+        public int Number { get; set; }
+        public GenericTry(T pa)
+            {
+            name = pa;
+
+            }
+        internal T eat( T  I)
+        {
+            Console.WriteLine(I+"去吃饭");
+            return I;
+        }
+        public  static  T sleep( T  o)
+        {
+            Console.WriteLine("快去睡觉");
+            return o;
+        }
+     }
 
 
 
