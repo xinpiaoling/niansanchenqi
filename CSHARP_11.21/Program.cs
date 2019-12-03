@@ -226,24 +226,28 @@ namespace CSHARP_11._21
         saturday
 
     }
-    public class GenericTry< T> where T:Problem
+    public  class Employee
+    {
+
+    }
+    public class GenericTry<T> where T : Employee
     {
         private T name;
         public int Number { get; set; }
-        public GenericTry(T pa)
+        public GenericTry(T parameter)
             {
-            name = pa;
+            name = parameter;
 
             }
-        internal T eat( T  I)
+        internal T eat( T  name)
         {
             Console.WriteLine(I+"去吃饭");
-            return I;
+            return name;
         }
-        public  static  T sleep( T  o)
+        public  static  T sleep( T  parameter)
         {
             Console.WriteLine("快去睡觉");
-            return o;
+            return parameter;
         }
      }
 
