@@ -179,9 +179,15 @@ namespace CSHARP_11._21
             //函数GetDate()，能计算一个日期若干（日/周/月）后的日期
             //给定任意一个年份，就能按周排列显示每周的起始日期，如下图所示：
 
-            yearGetWeek.GetDate();
-            
+            //yearGetWeek.GetDate();
 
+
+
+
+
+
+
+            
 
         }
     }
