@@ -178,78 +178,15 @@ namespace CSHARP_11._21
             //    源栈的学费是按周计费的，所以请实现这两个功能：
             //函数GetDate()，能计算一个日期若干（日/周/月）后的日期
             //给定任意一个年份，就能按周排列显示每周的起始日期，如下图所示：
-            //DateTime year = new DateTime();
 
-            //bool y = DateTime.TryParse(Console.ReadLine(),out DateTime year);
-            //Console.WriteLine(y+ "------------"+year);
+            yearGetWeek.GetDate();
+            
 
-            //bool s = int.TryParse(Console.ReadLine(),out int a);
-            //Console.WriteLine(s+"----------"+a);
-            // void  GetDate()  
-            // {
-            //    if (y)
-            //    {
-            //        //while (year.DayOfWeek==)
-            //        {
-            //            Console.WriteLine(date.ToString("yyyy年mm月dd天"));
-            //            date+=date.AddDayys(7);
-            //        }
-
-
-            //    }
-
-
-
-            //}
-
-
-            GenericTry<string> wx = new GenericTry<string>("ss");
-            GenericTry<int> pzq = new GenericTry<int>(125);
-
-            wx.Number = 640122;
-            wx.eat("wx");
-            pzq.eat(10);
-            GenericTry<int>.sleep(125);
-            Console.WriteLine(wx.Number);
-            Console.WriteLine(wx.GetType());
 
         }
     }
-    public enum DayofWeek
-    {
-        sunday,
-        monday,
-        tuesday,
-        wednesday,
-        thursday,
-        friday,
-        saturday
 
-    }
-    public  class Employee
-    {
 
-    }
-    public class GenericTry<T> where T : Employee
-    {
-        private T name;
-        public int Number { get; set; }
-        public GenericTry(T parameter)
-            {
-            name = parameter;
-
-            }
-        internal T eat( T  name)
-        {
-            Console.WriteLine(I+"去吃饭");
-            return name;
-        }
-        public  static  T sleep( T  parameter)
-        {
-            Console.WriteLine("快去睡觉");
-            return parameter;
-        }
-     }
 
 
 
@@ -293,7 +230,7 @@ namespace CSHARP_11._21
         //    Box3.b = Box1.b + Box2.b;
         //    return Box3; 
         //}
-       
+
     }
 
     //class Father

@@ -50,6 +50,40 @@ namespace CSHARP_11._21
      //    源栈的学费是按周计费的，所以请实现这两个功能：
     //函数GetDate()，能计算一个日期若干（日/周/月）后的日期
     //给定任意一个年份，就能按周排列显示每周的起始日期，如下图所示：
+    static class yearGetWeek
+    {
+        public static void GetDate()
+        {
+            Console.WriteLine("请输入年份：");
+            bool checkInput = int.TryParse(Console.ReadLine(), out int year);
+            if (checkInput)
+            {
+                DateTime dateFirstDay = new DateTime(year, 1, 1);
+                DateTime dateFinallyDay = new DateTime(year + 1, 1, 1);
 
+                while (dateFirstDay.DayOfWeek != DayOfWeek.Monday)
+                {
+                    dateFirstDay = dateFirstDay.AddDays(1);
+                }
+                for (int i = 1; dateFirstDay < dateFinallyDay; i++)
+                {
+
+                    Console.WriteLine($"第{i}周:");
+                    Console.Write(dateFirstDay.ToString("yyyy年MM月dd日"));
+                    dateFirstDay = dateFirstDay.AddDays(6);
+                    Console.Write("---");
+                    Console.WriteLine(dateFirstDay.ToString("yyyy年MM月dd日"));
+                    dateFirstDay = dateFirstDay.AddDays(1);
+                }
+            }
+            else
+            {
+                Console.WriteLine("请输入正确的年份");
+            }
+        } 
+
+
+
+    }
 
 }
