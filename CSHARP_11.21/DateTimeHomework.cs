@@ -82,6 +82,7 @@ namespace CSHARP_11._21
             }
         }
         //声明一个令牌（Token）枚举，包含值：SuperAdmin、Admin、Blogger、Newbie、Registered。
+        [Flags]
         enum Token 
         {
             SuperAdmin=1,
@@ -93,6 +94,7 @@ namespace CSHARP_11._21
         ///声明一个令牌管理（TokenManager）类：
         ///使用私有的Token枚举_tokens存储所具有的权限暴露Add(Token)、Remove(Token)和Has(Token)方法，
         ///可以添加、删除和查看其权限 将TokenManager作为User类的属性
+        
         class TokenManager
         {
             private Token _tokens;

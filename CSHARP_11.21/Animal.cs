@@ -17,7 +17,10 @@ namespace CSHARP_11._21
         }
 
         dynamic i = 15;
-
+        public Animal(string kind)
+        {
+            this.kind = kind;
+        }
 
     }
 

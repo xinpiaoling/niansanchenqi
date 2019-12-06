@@ -183,8 +183,14 @@ namespace CSHARP_11._21
 
 
 
+            Animal cat = new Animal("猫");
+            Type typeOf = cat.GetType();
+            FieldInfo getInfo= typeOf.GetField("kind",BindingFlags.NonPublic | BindingFlags.Instance);
 
 
+
+
+            Console.WriteLine(getInfo.GetValue(cat)); 
 
 
             
