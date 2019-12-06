@@ -25,21 +25,20 @@ namespace Tests
             
             current1.InserAfter(old);
             //old - current1
-
+            Assert.AreEqual(old.Previous,null);
             Assert.AreEqual(current1.Previous,old);
             Assert.AreEqual(old.Next, current1);
+            Assert.AreEqual(current1.Next,null);
 
             DoubleLinked current2 = new DoubleLinked();
             current2.InserAfter(old);
             //old 2 1
-
+            Assert.AreEqual(old.Previous,null);
             Assert.AreEqual(current2.Previous,old);
+            Assert.AreEqual(current1.Previous,current2);
+            Assert.AreEqual(current1.Next,null);
             Assert.AreEqual(current2.Next, current1);
-            
-
-
-            Assert.AreEqual(old.Next, current2);
-            Assert.AreEqual(current1.Previous, current2);
+            Assert.AreEqual(old.Next,current2);
 
 
         }
