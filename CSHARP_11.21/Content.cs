@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 namespace CSHARP_11._21
 {
@@ -46,6 +45,8 @@ namespace CSHARP_11._21
         {
             throw new NotImplementedException();
         }
+        //将HelpMoneyChanged应用于Publish()方法
+        [HelpMoneyChanged(2)]
         public override void Publish()
         {
            Author.HelpMoney -= Reward;
@@ -127,6 +128,7 @@ namespace CSHARP_11._21
         public int HelpMoney { get; set; }
         public TokenManager Manger { get; set; }
     }
-
-
+    //之前的Content类，其中的CreateTime（创建时间）和PublishTime（发布时间）都是只读的属性，
+    //想一想他们应该在哪里赋值比较好，并完成相应代码
+    
 }

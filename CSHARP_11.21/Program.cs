@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Reflection;
+
 
 namespace CSHARP_11._21
 {
@@ -8,15 +8,23 @@ namespace CSHARP_11._21
         static void Main(string[] args)
         {
 
-            TokenManager wx = new TokenManager();
-            Console.WriteLine("初始状态："+wx._tokens);
-            wx.Add(Token.SuperAdmin);
-            Console.WriteLine(wx._tokens);
-            Console.WriteLine(wx.Has(Token.Admin));
-            //wx.Remove(Token.Blogger);
-            wx.Remove(Token.SuperAdmin);
-            Console.WriteLine(wx._tokens);
-            //Child ch = new Child();
+            //用反射获取Publish()上的特性实例，输出其中包含的信息
+            Attribute attribute = HelpMoneyChangedAttribute.GetCustomAttribute(
+                typeof(Problem),
+                typeof(HelpMoneyChangedAttribute));
+            Console.WriteLine(((HelpMoneyChangedAttribute)attribute).Message);
+
+
+
+            //TokenManager wx = new TokenManager();
+            //Console.WriteLine("初始状态："+wx._tokens);
+            //wx.Add(Token.SuperAdmin);
+            //Console.WriteLine(wx._tokens);
+            //Console.WriteLine(wx.Has(Token.Admin));
+            ////wx.Remove(Token.Blogger);
+            //wx.Remove(Token.SuperAdmin);
+            //Console.WriteLine(wx._tokens);
+            ////Child ch = new Child();
             //Father td = new Father();
 
             //ch.height = 15;
@@ -197,7 +205,7 @@ namespace CSHARP_11._21
             //获得类型
             //Type typeOf = cat.GetType();
             //获得字段     BindingFlags,注意这个enum，他使用了位运算的权限管理功能。
-           // FieldInfo getInfo= typeOf.GetField("kind",BindingFlags.NonPublic | BindingFlags.Instance);
+            // FieldInfo getInfo= typeOf.GetField("kind",BindingFlags.NonPublic | BindingFlags.Instance);
             //通过GetValue()方法，得到这个私有字段的值
             //Console.WriteLine(getInfo.GetValue(cat));
 
@@ -220,9 +228,9 @@ namespace CSHARP_11._21
     [Flags]
     enum Roles
     {
-        Student=1,
-        Teacher=2,
-        Cleaner=4
+        Student = 1,
+        Teacher = 2,
+        Cleaner = 4
     }
 
 
