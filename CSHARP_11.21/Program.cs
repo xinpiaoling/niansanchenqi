@@ -182,30 +182,46 @@ namespace CSHARP_11._21
             //yearGetWeek.GetDate();
 
 
+            //反射的简单使用，获得类的私有字段方法
+            //例
+            //Animal cat = new Animal("猫");
+            //获得类型
+            //Type typeOf = cat.GetType();
+            //获得字段     BindingFlags,注意这个enum，他使用了位运算的权限管理功能。
+           // FieldInfo getInfo= typeOf.GetField("kind",BindingFlags.NonPublic | BindingFlags.Instance);
+            //通过GetValue()方法，得到这个私有字段的值
+            //Console.WriteLine(getInfo.GetValue(cat));
 
-            Animal cat = new Animal("猫");
-            Type typeOf = cat.GetType();
-            FieldInfo getInfo= typeOf.GetField("kind",BindingFlags.NonPublic | BindingFlags.Instance);
+            //Attribute attribute = FlagsAttribute.GetCustomAttribute(typeof(Attribute),typeof(AttributeUsageAttribute));
 
+            //Console.WriteLine(((AttributeUsageAttribute)attribute).Inherited);
 
+            //Console.WriteLine(Roles.Student|Roles.Teacher);
 
-
-            Console.WriteLine(getInfo.GetValue(cat)); 
-
-
-            
-
+            Add t1 = new Add();
+            t1.a = "reference";
+            Add t2 = new Add();
+            t2.a = "reference";
+            Console.WriteLine(t1.a==t2.a);
+            Console.WriteLine(t1.a.Equals(t2.a));
+            //==与equals的区别：值类型没有区别。引用类型==判断的是栈中的引用地址是否一样。
+            //               equals判断的是两个对象在堆中的数据是否一样，即两个引用类型是否是对同一个对象的引用。
         }
     }
-
-
+    [Flags]
+    enum Roles
+    {
+        Student=1,
+        Teacher=2,
+        Cleaner=4
+    }
 
 
 
 
     class Add
     {
-        ///public string a;
+        public string a;
 
 
 

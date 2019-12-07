@@ -33,7 +33,7 @@ namespace CSHARP_11._21
 
 
 
-
+    
     [Cute]   //本质还是一个类
     internal class Cat : Animal
     {
