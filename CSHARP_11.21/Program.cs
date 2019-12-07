@@ -7,6 +7,15 @@ namespace CSHARP_11._21
     {
         static void Main(string[] args)
         {
+
+            TokenManager wx = new TokenManager();
+            Console.WriteLine("初始状态："+wx._tokens);
+            wx.Add(Token.SuperAdmin);
+            Console.WriteLine(wx._tokens);
+            Console.WriteLine(wx.Has(Token.Admin));
+            //wx.Remove(Token.Blogger);
+            wx.Remove(Token.SuperAdmin);
+            Console.WriteLine(wx._tokens);
             //Child ch = new Child();
             //Father td = new Father();
 
@@ -198,12 +207,12 @@ namespace CSHARP_11._21
 
             //Console.WriteLine(Roles.Student|Roles.Teacher);
 
-            Add t1 = new Add();
-            t1.a = "reference";
-            Add t2 = new Add();
-            t2.a = "reference";
-            Console.WriteLine(t1.a==t2.a);
-            Console.WriteLine(t1.a.Equals(t2.a));
+            //Add t1 = new Add();
+            //t1.a = "reference";
+            //Add t2 = new Add();
+            //t2.a = "reference";
+            //Console.WriteLine(t1.a==t2.a);
+            //Console.WriteLine(t1.a.Equals(t2.a));
             //==与equals的区别：值类型没有区别。引用类型==判断的是栈中的引用地址是否一样。
             //               equals判断的是两个对象在堆中的数据是否一样，即两个引用类型是否是对同一个对象的引用。
         }

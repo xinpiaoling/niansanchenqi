@@ -118,17 +118,15 @@ namespace CSHARP_11._21
         public virtual void Publish(Content content)
         {
             content.Publish();
-
         }
-
     }
 
+    //将TokenManager作为User类的属性
     class User
     {
         public int HelpMoney { get; set; }
+        public TokenManager Manger { get; set; }
     }
-
-
 
 
 }

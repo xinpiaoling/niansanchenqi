@@ -47,7 +47,7 @@ namespace CSHARP_11._21
         Published,
         Admin
     }
-     //    源栈的学费是按周计费的，所以请实现这两个功能：
+    //    源栈的学费是按周计费的，所以请实现这两个功能：
     //函数GetDate()，能计算一个日期若干（日/周/月）后的日期
     //给定任意一个年份，就能按周排列显示每周的起始日期，如下图所示：
     static class yearGetWeek
@@ -81,47 +81,52 @@ namespace CSHARP_11._21
                 Console.WriteLine("请输入正确的年份");
             }
         }
-        //声明一个令牌（Token）枚举，包含值：SuperAdmin、Admin、Blogger、Newbie、Registered。
-        [Flags]
-        enum Token 
-        {
-            SuperAdmin=1,
-            Admin=2,
-            Blogger=4,
-            Newbie=8,
-            Registered=16
-        }
-        ///声明一个令牌管理（TokenManager）类：
-        ///使用私有的Token枚举_tokens存储所具有的权限暴露Add(Token)、Remove(Token)和Has(Token)方法，
-        ///可以添加、删除和查看其权限 将TokenManager作为User类的属性
-        
-        class TokenManager
-        {
-            private Token _tokens;
-            public void Add(Token Permissions)
-            {
-                _tokens = Permissions | _tokens;
-            }
 
-            public void Remove(Token Permissions)
+    }
+    //声明一个令牌（Token）枚举，包含值：SuperAdmin、Admin、Blogger、Newbie、Registered。
+    [Flags]
+    public enum Token
+    {
+        SuperAdmin = 1,
+        Admin = 2,
+        Blogger = 4,
+        Newbie = 8,
+        Registered = 16
+    }
+    ///声明一个令牌管理（TokenManager）类：
+    ///使用私有的Token枚举_tokens存储所具有的权限暴露Add(Token)、Remove(Token)和Has(Token)方法，
+    ///可以添加、删除和查看其权限 将TokenManager作为User类的属性
+
+    public class TokenManager
+    {
+        public Token _tokens;
+        public void Add(Token Permissions)
+        {
+            _tokens = Permissions | _tokens;
+        }
+
+        public void Remove(Token Permissions)
+        {
+            if (this.Has(Permissions))
             {
                 _tokens = Permissions ^ _tokens;
             }
-
-            public void Has(Token Permissions)
+            else
             {
-                _tokens = Permissions & _tokens;
+                throw new Exception("没有这个权限  ");
             }
-
-
-
-
-
         }
-        //将TokenManager作为User类的属性
-        class User
+
+        public bool Has(Token Permissions)
         {
-            public  TokenManager Manger { get; set; }
+            if (Permissions == (_tokens & Permissions))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 
