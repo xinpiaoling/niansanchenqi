@@ -9,10 +9,60 @@ namespace CSHARP_11._21
         {
 
             //用反射获取Publish()上的特性实例，输出其中包含的信息
-            Attribute attribute = HelpMoneyChangedAttribute.GetCustomAttribute(
-                typeof(Problem),
-                typeof(HelpMoneyChangedAttribute));
-            Console.WriteLine(((HelpMoneyChangedAttribute)attribute).Message);
+            //Attribute attribute = HelpMoneyChangedAttribute.GetCustomAttribute(
+            //    typeof(Problem),
+            //    typeof(HelpMoneyChangedAttribute));
+            //Console.WriteLine(((HelpMoneyChangedAttribute)attribute).Message);
+
+            //object[] students = new object[10];
+            //students[0] = "string类型";
+            //students[2] = 15;
+            //students[5] = new object();
+
+
+            //object[] teachers = { "ooo", 10.22, new object(), null };
+
+            //foreach (var item in students)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            //foreach (var item in teachers)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            //GenericClassLearn<string> wx = new GenericClassLearn<string>();
+            //wx.Name = "王新";
+            //wx.Add("");
+            //GenericClassLearn<int> ii = new GenericClassLearn<int>();
+            //ii.Name = 25;
+            //ii.Add(10);
+
+
+
+            //int a = 1;
+            //object b=(object)a;         //装箱：值类型转换成引用类型
+            //int c = (int)b;             //拆箱：引用类型转换成值类型
+
+            ///匿名类，只读，里面字段随便写
+            ///拥有相同属性字段
+            //var tt =new {Name="套套",age="",score=15 };
+            //tt.Name = "";
+            //Console.WriteLine(tt.Name);
+
+            ///索引器调用方式
+            Index wx = new Index();
+            //wx[4] = "json";
+            //foreach (var item in wx)      不能被遍历
+            //{
+            //    Console.WriteLine(item);
+
+            //}
+            //for (int i = 0; i <2; i++)
+            //{
+            //    Console.WriteLine(wx[i]);
+            //}
+            Console.WriteLine(wx[5]);
 
 
 
