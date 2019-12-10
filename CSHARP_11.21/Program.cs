@@ -9,37 +9,64 @@ namespace CSHARP_11._21
 
         static void Main(string[] args)
         {
+            ////可空类型
+            //int i;  //默认值为0
+            //int? ii;   //默认值为null
+            //Nullable<int> iii = new Nullable<int>();
+
+            
+            //int? num1 = null;
+            //int? num2 = 45;
+            //double? num3 = new double?();
+            //double? num4 = 3.14157;
+
+            //bool? boolval = new bool?();
+
+            //// 显示值
+
+            //Console.WriteLine("显示可空类型的值： {0}, {1}, {2}, {3}",
+            //                   num1, num2, num3, num4);
+            //Console.WriteLine("一个可空的布尔值： {0}", boolval);
+            //Console.ReadLine();
+
+            ////合并运算符 如果第一个变量的值为null，则返回第二个变量的值。否则返回第一个值。
+            //num3 = num1 ?? num2;
+            //Console.WriteLine(num3);
+            //num3 = num4 ?? num3;
+            //Console.WriteLine(num3);
+
+
 
 
             ///stack的方法使用
-           // Stack i = new Stack();
-           // Stack st = new Stack();
-           // i.Push(22);
-           // i.Push("erer");
-           // i.Push(true);
-           // Console.WriteLine(i.Peek());
-           // Console.WriteLine();
-           // foreach (var item in i)
-           // {
-           //     Console.WriteLine(item);
-           // }
-           // Console.WriteLine();
+            // Stack i = new Stack();
+            // Stack st = new Stack();
+            // i.Push(22);
+            // i.Push("erer");
+            // i.Push(true);
+            // Console.WriteLine(i.Peek());
+            // Console.WriteLine();
+            // foreach (var item in i)
+            // {
+            //     Console.WriteLine(item);
+            // }
+            // Console.WriteLine();
 
-           // i.Pop();
-           // foreach (var item in i)
-           // {
-           //     Console.WriteLine(item);
+            // i.Pop();
+            // foreach (var item in i)
+            // {
+            //     Console.WriteLine(item);
 
-           // }
-           // Console.WriteLine();
-           // Console.WriteLine(i.Count);
-           // Console.WriteLine();
+            // }
+            // Console.WriteLine();
+            // Console.WriteLine(i.Count);
+            // Console.WriteLine();
 
-           //object[] ii=i.ToArray();
-           // foreach (var item in ii)
-           // {
-           //     Console.WriteLine(item);
-           // }
+            //object[] ii=i.ToArray();
+            // foreach (var item in ii)
+            // {
+            //     Console.WriteLine(item);
+            // }
             //用反射获取Publish()上的特性实例，输出其中包含的信息
             //Attribute attribute = HelpMoneyChangedAttribute.GetCustomAttribute(
             //    typeof(Problem),
