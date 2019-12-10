@@ -1,13 +1,45 @@
 ﻿using System;
-
+using System.Collections;
 
 namespace CSHARP_11._21
 {
     class Program
     {
+
+
         static void Main(string[] args)
         {
 
+
+            ///stack的方法使用
+           // Stack i = new Stack();
+           // Stack st = new Stack();
+           // i.Push(22);
+           // i.Push("erer");
+           // i.Push(true);
+           // Console.WriteLine(i.Peek());
+           // Console.WriteLine();
+           // foreach (var item in i)
+           // {
+           //     Console.WriteLine(item);
+           // }
+           // Console.WriteLine();
+
+           // i.Pop();
+           // foreach (var item in i)
+           // {
+           //     Console.WriteLine(item);
+
+           // }
+           // Console.WriteLine();
+           // Console.WriteLine(i.Count);
+           // Console.WriteLine();
+
+           //object[] ii=i.ToArray();
+           // foreach (var item in ii)
+           // {
+           //     Console.WriteLine(item);
+           // }
             //用反射获取Publish()上的特性实例，输出其中包含的信息
             //Attribute attribute = HelpMoneyChangedAttribute.GetCustomAttribute(
             //    typeof(Problem),
@@ -51,7 +83,7 @@ namespace CSHARP_11._21
             //Console.WriteLine(tt.Name);
 
             ///索引器调用方式
-            Index wx = new Index();
+            //Index wx = new Index();
             //wx[4] = "json";
             //foreach (var item in wx)      不能被遍历
             //{
@@ -62,7 +94,16 @@ namespace CSHARP_11._21
             //{
             //    Console.WriteLine(wx[i]);
             //}
-            Console.WriteLine(wx[5]);
+
+
+
+            //wx[0] = "c#";
+            //wx[1] = "python";
+            //wx[2]= "c++";
+            //wx[12] = "ssss";
+            //Console.WriteLine(wx[12]);
+
+
 
 
 
