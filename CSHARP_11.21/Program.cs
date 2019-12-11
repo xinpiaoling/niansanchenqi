@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace CSHARP_11._21
 {
@@ -9,12 +10,20 @@ namespace CSHARP_11._21
 
         static void Main(string[] args)
         {
+            ////调用委托。。。其实委托可以调用多种静态方法，只要符合返回参数类型和输入参数类型。
+            //Buy XiaoZhang = new Buy(MrsWang.BuyMovieTicket);
+            //XiaoZhang();
+            //XiaoZhang += MrsWang.BuyMeal;
+            //XiaoZhang();
+
+
+
             ////可空类型
             //int i;  //默认值为0
             //int? ii;   //默认值为null
             //Nullable<int> iii = new Nullable<int>();
 
-            
+
             //int? num1 = null;
             //int? num2 = 45;
             //double? num3 = new double?();
@@ -112,12 +121,12 @@ namespace CSHARP_11._21
             ///索引器调用方式
             //Index wx = new Index();
             //wx[4] = "json";
-            //foreach (var item in wx)      不能被遍历
+            //foreach (var item in wx) 不能被遍历
             //{
             //    Console.WriteLine(item);
 
             //}
-            //for (int i = 0; i <2; i++)
+            //for (int i = 0; i < 2; i++)
             //{
             //    Console.WriteLine(wx[i]);
             //}
