@@ -10,7 +10,25 @@ namespace CSHARP_11._21
 
         static void Main(string[] args)
         {
-            ////调用委托。。。其实委托可以调用多种静态方法，只要符合返回参数类型和输入参数类型。
+            EventLearn wx = new EventLearn();
+            //ChangeNumber ww = new ChangeNumber(wx.OnClick);
+
+            wx.Click += EventLearn.UserClick;
+            wx.Click += EventLearn.TeacherClicl;
+
+            wx.OnClick();
+
+            wx.Click -= EventLearn.UserClick;
+            wx.Click -= EventLearn.TeacherClicl;
+
+            wx.OnClick();
+
+
+
+
+
+            ////调用委托。。。其实委托可以调用多种方法，只要符合返回参数类型和输入参数类型。
+            //MrsWang wx = new MrsWang();
             //Buy XiaoZhang = new Buy(MrsWang.BuyMovieTicket);
             //XiaoZhang();
             //XiaoZhang += MrsWang.BuyMeal;
