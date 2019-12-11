@@ -10,18 +10,49 @@ namespace CSHARP_11._21
 
         static void Main(string[] args)
         {
-            EventLearn wx = new EventLearn();
-            //ChangeNumber ww = new ChangeNumber(wx.OnClick);
 
-            wx.Click += EventLearn.UserClick;
-            wx.Click += EventLearn.TeacherClicl;
+            //泛型接口的协变和逆变
+            ICollection<int> ts = new List<int>();
+            //可以这样写：     I父类<int>  ts=new  孙子类<>()  
+            //返回类型可以写基类和其父类等
+            //参数类型可以写基类和其子类等
 
-            wx.OnClick();
+            ////委托的协变和逆变同上
+            //Func<object, string> ii = (a) => { Console.WriteLine("变体lambda的使用");return ""; };
+            //Func<string, object> jj = ii;
+            //jj("");
 
-            wx.Click -= EventLearn.UserClick;
-            wx.Click -= EventLearn.TeacherClicl;
+            ////匿名方法
+            //Buy buy = delegate () { Console.WriteLine("这是匿名方法，通过委托调用！"); };
+            //buy();
 
-            wx.OnClick();
+            ////lambda表达式
+            //Buy buy1 = () => { Console.WriteLine("这是lambda表达式！！！"); };
+            //buy1();
+
+            //Action aa = () => { Console.WriteLine("这是使用.net内置的无返回值委托，通过lambad调用"); };
+            //aa();
+            //Action<string, string> aa1 = (a, b) => { Console.WriteLine("试试泛型效果"+a+b); };
+            //aa1("有参数","无返回值");
+
+
+            //Func <int,int, int>  bb = (para,ppa) => { Console.WriteLine("这是使用.net内置的有返回值委托，通过lambda调用");return 5; };
+            //bb(10,15);
+
+
+            ////事件    在事件上绑定多个
+            //EventLearn wx = new EventLearn();
+            ////ChangeNumber ww = new ChangeNumber(wx.OnClick);
+
+            //wx.Click += EventLearn.UserClick;
+            //wx.Click += EventLearn.TeacherClicl;
+
+            //wx.OnClick();
+
+            //wx.Click -= EventLearn.UserClick;
+            //wx.Click -= EventLearn.TeacherClicl;
+
+            //wx.OnClick();
 
 
 
