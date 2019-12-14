@@ -6,10 +6,91 @@ namespace CSHARP_11._21
 {
     class Program
     {
+        static void Get(IEnumerable<string> tt)
+        {
 
+        }
 
         static void Main(string[] args)
         {
+
+            //泛型集合
+            List<string> learn = new List<string>();
+            List<int> learn1 = new List<int> { 15, 30, 100 };
+            IList<int> learn2 = learn1;
+            learn2.Add(55);
+            learn2.Insert(1,10);
+            Console.WriteLine(learn2.Count ); 
+            foreach (int item in learn2)
+            {
+                Console.WriteLine(item);
+            }
+            learn2.GetEnumerator();
+
+            IEnumerable<int> enumerable = new List<int>();   //这样写让程序保持一种灵活性
+            ((List<int>)enumerable).Add(0);
+            //enumerable = new LinkedList<int>();   //父类变量可以装不同的子类对象
+            //enumerable.Max();
+            
+
+            Get(new List<string>());
+            Get(new LinkedList<string>());
+
+            Dictionary<int,Animal> students = new Dictionary<int,Animal>();
+            students.Add(0,new Animal());
+            students.Add(1,new Animal());
+            students.Add(2,new Animal());
+            var i = students.Keys;
+            foreach (var item in i)
+            {
+                Console.WriteLine(students[item]);
+            }
+           
+           
+
+            //Animal ii = new Animal() { kind="ss"};
+            
+
+            //数组集合   ArrayList
+            //ArrayList Num = new ArrayList();
+            //Num.Add(20);
+            //Num.Add(100);
+            //Num.Add(12);
+            //Num.Add(12);
+
+            //Num.Add(5);
+
+            //Console.WriteLine(Num.Count);
+            //Num.Sort();
+            //foreach (var item in Num)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+
+
+            ////哈希表  Hashtable
+            //Hashtable ht = new Hashtable();
+            //ht.Add(10, "阿西吧");
+            //ht.Add(2, "醉了");
+            //Console.WriteLine(ht.ContainsKey(3));
+            //var i = ht.Keys;
+            //foreach (var item in i)
+            //{
+            //    Console.WriteLine();
+            //    Console.WriteLine("键：" + item + "          键对应的值：" + ht[item]);
+            //}
+
+            //排序列表 
+            //SortedList sl = new SortedList();
+            //sl.Add(5,"ss");
+            //sl.Add(1, "bb");
+            //IEnumerable key = sl.Keys;
+            //foreach (var item in key)
+            //{
+            //    Console.WriteLine(sl[item]);
+            //}
+
 
             //泛型接口的协变和逆变
             ICollection<int> ts = new List<int>();
@@ -163,7 +244,7 @@ namespace CSHARP_11._21
 
             ///匿名类，只读，里面字段随便写
             ///拥有相同属性字段
-            //var tt =new {Name="套套",age="",score=15 };
+            //var tt =new {Name="tt",age="",score=15 };
             //tt.Name = "";
             //Console.WriteLine(tt.Name);
 

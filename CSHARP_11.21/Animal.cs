@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CSHARP_11._21
 {
-    class Animal
+    public  class Animal
     {
         private string kind;
         public Animal()

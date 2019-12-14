@@ -88,79 +88,102 @@ namespace CSHARP_11._21
                 this.Next = node;
                 this.Previous.Next = this;
             }
-
-
-
         }
         /// <summary>
         /// 删除当前节点
         /// </summary>
-        public void Delete(DoubleLinked node)
+        public void Delete()
         {
             //old  删除old
-            if (node.Next == null && node.Previous == null)
+            if (this.Next == null && this.Previous == null)
             {
+                throw new Exception("只有一个无法删除。");
                //do nothing
             }
-
-
-            else if (node.Previous == null)
+            else if (this.Previous == null)
             {
-                //old 1 2  删除头部old
-                this.Previous = null;
-                node.Next = null;
+                //old 1 2 删除头部old
+                this.Next.Previous = null;
+                //this.Previous = null;
+                //this.Next = null;
             }
-            else if (node.Next == null)
+            else if (this.Next == null)
             {
                 //2 1 old 删除尾部old
-                this.Next = null;
-                node.Previous = null;
+                this.Previous.Next = null;
+                //this.Next = null;
+                //this.Previous = null;
             }
             else  //(node.Next != null && node.Previous != null)
             {
                 //1  old  2
-                this.Previous = null;
-                this.Previous = node.Previous;
-
-                node.Next = null;
-                node.Previous.Next = this;
+                this.Previous.Next = this.Next;
+                this.Next.Previous = this.Previous;
+                //this.Next = null;
+                //this.Previous = null;
             }
-
+            this.Previous = null;
+            this.Next = null;
         }
 
         
-        public void Swap(DoubleLinked a,DoubleLinked b)
+        public void Swap(DoubleLinked another)
         {
-            
-            if (this.Previous==null)
-            {
-                //old 1 2头部交换为1 old 2
-                //old.Swap(currenta, currentb);
-                //之前的状态
-                //a.Previous = this;
-                //b.Previous = a;
-                //this.Next = a;
-                //a.Next = b;
-                a.Next = this;
-                this.Next = b;
-                b.Previous = this;
-                this.Previous = a;
-            }
-            else if (b.Next==null)
-            {
-                //1 old 2 尾部交换为 1 2 old
-                //current1.Swap(current2, old);
-                this.Next = a;
-                a.Next = b;
-                b.Previous = a;
-                a.Previous = this;
-            }
-            else
-            {
-                //do nothing
-            }
 
-            
+            //只有两个值的时候  old  1 交换为  1   old
+            //this.Next = null;
+            //this.Previous = another;
+            //another.Previous = null;
+            //another.Next = this;
+
+            //三个值的时候  2  3  4头部交换为3  2  4
+            //doublelinked temp ;
+            //temp = another.next;
+            //another.next = this;
+            //this.next = temp;
+            //this.next.previous=this  ;
+            //this.previous = another;
+            //another.previous = null;
+
+
+
+            ////5  6  7 尾部交换为 5  7  6
+            //DoubleLinked temp;
+            //temp = this.Previous;
+            //this.Previous = another;
+            //another.Previous = temp;
+            //temp.Next = another;
+            //another.Next = this;
+            //this.Next = null;
+
+
+            //8  9  10  11 中间交换为  8  10  9  11
+            //DoubleLinked before;
+            //DoubleLinked after;
+            //before = this.Previous;
+            //after = another.Next;
+
+            //another.Next = this;
+            //this.Next = after;
+            //before.Next = another;
+            ////after.Next = null;
+            //this.Next.Previous=this;
+            //another = this.Previous;
+            //before = another.Previous;
+            ////before.Previous = null;
+
+
+            DoubleLinked temp;
+            temp = another.Previous;
+            this.Delete();
+            another.Delete();
+            another.InserBefore(temp);
+            this.InserAfter(temp);
+            temp.Delete();
+
+
+
+
 
         }
     }
