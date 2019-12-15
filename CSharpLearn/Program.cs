@@ -25,36 +25,36 @@ namespace CSharpLearn
             //switch (input)
             //{
             //    case "A":
-                    
+
             //            salary += 500;
             //            break;
-                    
+
             //    case "B":
-                    
+
             //            salary += 200;
             //            break;
-                    
+
             //    case "C":
-                    
+
             //            salary +=0; 
             //            break;
-                    
+
             //    case "D":
-                    
+
             //            salary -= 200;
             //            break;
-                    
+
             //    case "E":
-                    
+
             //            salary -= 500;
             //            break;
-                    
+
             //    default:
-                    
+
             //            Console.WriteLine("输入错误，重新输入！！！");
             //            b = false;
             //            break;
-                    
+
 
             //}
 
@@ -62,7 +62,7 @@ namespace CSharpLearn
             //{
             //    Console.WriteLine("李四的来年工资为：" + salary);
             //}
-            
+
 
 
             //dynamic ss1 = "是么";
@@ -88,9 +88,9 @@ namespace CSharpLearn
             //char w =(char) 98;
             //Console.WriteLine(w);  //输出结果为b
 
-            
 
 
+            Console.WriteLine(" 1111111111");
 
 
 

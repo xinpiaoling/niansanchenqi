@@ -1,7 +1,7 @@
 ﻿using System;
 
 
-namespace CSHARP_11._21
+namespace CSHARPLearn
 {
     interface IAgreeOrDisagree
     {
@@ -46,7 +46,7 @@ namespace CSHARP_11._21
             throw new NotImplementedException();
         }
         //将HelpMoneyChanged应用于Publish()方法
-        [HelpMoneyChanged(2)]
+        //[HelpMoneyChanged(2)]
         public override void Publish()
         {
            Author.HelpMoney -= Reward;
@@ -114,13 +114,13 @@ namespace CSHARP_11._21
     //赞和踩都会增减作者及评价者的帮帮点。能不能对其进行抽象？如何实现？
 
 
-
+ 
 
     //将TokenManager作为User类的属性
     class User
     {
         public int HelpMoney { get; set; }
-        public TokenManager Manger { get; set; }
+        //public TokenManager Manger { get; set; }
     }
     //之前的Content类，其中的CreateTime（创建时间）和PublishTime（发布时间）都是只读的属性，
     //想一想他们应该在哪里赋值比较好，并完成相应代码

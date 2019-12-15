@@ -65,5 +65,8 @@ namespace CSharpLearn
 
         //在这里调用仓库类的静态方法
 
+
+
+
     }
 }

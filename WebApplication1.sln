@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication1", "WebAppli
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharpLearn", "CSharpLearn\CSharpLearn.csproj", "{EE1FBDDB-E06D-46D6-B36F-D9DB7FF77AD0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSHARP_11.21", "CSHARP_11.21\CSHARP_11.21.csproj", "{CB1DE7FF-553A-4905-8EA4-21BE1FFF6CE2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharpPractice", "CSHARP_11.21\CSharpPractice.csproj", "{CB1DE7FF-553A-4905-8EA4-21BE1FFF6CE2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharpTest", "CSharpTest\CSharpTest.csproj", "{998C9C8E-1A74-475E-84F8-370C61A7556E}"
 EndProject
@@ -17,11 +17,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BinaryTree", "BinaryTree\Bi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeworkTest", "HomeworkTest\HomeworkTest.csproj", "{FB46D780-86D0-4F72-85B3-F9F50C4F456C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Practice", "Practice", "{BC5F8478-D69A-4B41-92AF-A3D456B44310}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MyselfPractice", "MyselfPractice", "{BC5F8478-D69A-4B41-92AF-A3D456B44310}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dailyLearn", "dailyLearn", "{8A22E95D-549D-472A-90F4-FD0F03E6CE39}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CopyStack", "CopyStack\CopyStack.csproj", "{87594DCC-EA01-4FA9-A727-677564328AFA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CopyStack", "CopyStack\CopyStack.csproj", "{87594DCC-EA01-4FA9-A727-677564328AFA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

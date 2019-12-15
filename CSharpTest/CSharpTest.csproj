@@ -14,7 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CSharpLearn\CSharpLearn.csproj" />
-    <ProjectReference Include="..\CSHARP_11.21\CSHARP_11.21.csproj" />
+    <ProjectReference Include="..\CSHARP_11.21\CSharpPractice.csproj" />
     <ProjectReference Include="..\WebApplication1\WebApplication1.csproj" />
   </ItemGroup>
 
