@@ -16,6 +16,8 @@ namespace CSHARPLearn
         public  string kind;
         public Content(string  content)
         {
+            //在NEW一个对象时通过子类调用父类构造为createTime赋值
+            _createTime = DateTime.Now;
             if (content==string.Empty)
             {
                 Console.WriteLine("不能为空值");
@@ -27,10 +29,16 @@ namespace CSHARPLearn
             }
         }
 
-        private DateTime createTime;
+        private DateTime _createTime;
+        public DateTime CreateTime { get { return _createTime; } }
         public abstract DateTime PublishTime();
+        private DateTime _publicTime;
+        public DateTime PublicTime { get { return _publicTime; } }
         public User Author { get; set; }
+        public int AgreeCount { get; set; }
+        public int DisagreeCount { get; set; }
         public abstract void Publish();
+    
     }
     class Problem:Content,IAgreeOrDisagree
     {
@@ -49,7 +57,12 @@ namespace CSHARPLearn
         //[HelpMoneyChanged(2)]
         public override void Publish()
         {
-           Author.HelpMoney -= Reward;
+            if (Author==null)
+            {
+                throw new Exception();
+            }
+            Author.HelpMoney -= Reward;
+            Console.WriteLine("棒棒币减少："+Reward);
         }
         public void Agree()
         {
@@ -73,13 +86,18 @@ namespace CSHARPLearn
         }
         public override   void Publish()
         {
+            if (Author==null)
+            {
+                throw new ArgumentNullException("作者不能为空");
+            }
             Author.HelpMoney -= 1;
+
         }
 
         public void Agree()
         {
             Author.HelpMoney += 1;
-            //评价者的帮帮点不会
+            
         }
 
         public void Disagree()
@@ -101,7 +119,18 @@ namespace CSHARPLearn
         }
         public override void Publish()
         {
-            
+            if (Author == null)
+            {
+                throw new ArgumentNullException("作者不能为空");
+            }
+        }
+        public void Agree(User voter)
+        {
+            Author.HelpMoney += 1;
+        }
+        public void Disagree(User voter)
+        {
+            Author.HelpMoney -= 1;
         }
     }
 
