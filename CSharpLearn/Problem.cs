@@ -17,7 +17,21 @@ namespace CSharpLearn
         User author;
        public string Title { get; set; }
        public string Body { get; set; }
-       public int Reward { get; set; }
+        //修改之前的属性验证：problem.Reward为负数时直接抛出“参数越界”异常
+       public int Reward { 
+            get 
+            {
+                return reward ;
+            } 
+            set 
+            {
+                if (value<0)
+                {
+                    throw new ArgumentOutOfRangeException("参数越界");
+                }
+                reward = value;
+            } 
+        }
        public DateTime PublishDateTime { get; set; }
        public string Author { get; set; }
         //Publish()：发布一篇求助，并将其保存到数据库
