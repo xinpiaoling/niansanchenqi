@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CSharpLearn;
+using System;
+using System.Collections.Generic;
 
 
 namespace CSHARPLearn
@@ -8,7 +10,7 @@ namespace CSHARPLearn
         void Agree();
         void Disagree();
     }
-    abstract class Content
+     internal  abstract class Content
     {
         //Content中有一个字段：kind，记录内容的种类（problem/article/suggest等），只能被子类使用
         //确保每个Content对象都有kind的非空值
@@ -37,6 +39,7 @@ namespace CSHARPLearn
         public User Author { get; set; }
         public int AgreeCount { get; set; }
         public int DisagreeCount { get; set; }
+        public string Keyword { get; set; }
         public abstract void Publish();
     
     }
@@ -73,8 +76,12 @@ namespace CSHARPLearn
 
         }
     }
-    class Article:Content,IAgreeOrDisagree
+     internal  class Article:Content,IAgreeOrDisagree
     {
+
+        public List<Keyword> Keyword { get; set; }//文章有多个关键字
+        public List<Comment> Comment { get; set; }//文章有多个评论
+
         public User Author { get; set; }
         public Article(string content) : base(content)
         {
@@ -91,7 +98,6 @@ namespace CSHARPLearn
                 throw new ArgumentNullException("作者不能为空");
             }
             Author.HelpMoney -= 1;
-
         }
 
         public void Agree()
@@ -106,7 +112,7 @@ namespace CSHARPLearn
 
         }
     }
-    class Suggest : Content
+     internal class Suggest : Content
     {
         public User Author { get; set; }
         public Suggest(string content) :base(content)
@@ -146,7 +152,7 @@ namespace CSHARPLearn
  
 
     //将TokenManager作为User类的属性
-    class User
+     internal class User
     {
         public int HelpMoney { get; set; }
         //public TokenManager Manger { get; set; }
