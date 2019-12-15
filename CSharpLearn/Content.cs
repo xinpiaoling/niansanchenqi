@@ -82,7 +82,8 @@ namespace CSHARPLearn
         public List<Keyword> Keyword { get; set; }//文章有多个关键字
         public List<Comment> Comment { get; set; }//文章有多个评论
 
-        public User Author { get; set; }
+        //public User Author { get; set; }
+        public int Words { get; set; }
         public Article(string content) : base(content)
         {
 
@@ -152,11 +153,16 @@ namespace CSHARPLearn
  
 
     //将TokenManager作为User类的属性
-     internal class User
-    {
-        public int HelpMoney { get; set; }
-        //public TokenManager Manger { get; set; }
-    }
+    // internal class User
+    //{
+    //    public int HelpMoney { get; set; }
+
+    //    public static implicit operator User(CSharpLearn.User v)
+    //    {
+    //        throw new NotImplementedException();
+    //    }
+    //    //public TokenManager Manger { get; set; }
+    //}
     //之前的Content类，其中的CreateTime（创建时间）和PublishTime（发布时间）都是只读的属性，
     //想一想他们应该在哪里赋值比较好，并完成相应代码
     
