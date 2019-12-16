@@ -34,8 +34,8 @@ namespace CSHARPLearn
         private DateTime _createTime;
         public DateTime CreateTime { get { return _createTime; } }
         public abstract DateTime PublishTime();
-        private DateTime _publicTime;
-        public DateTime PublicTime { get { return _publicTime; } }
+        private DateTime _publishTime;
+        //public DateTime PublishTime { get { return _publishTime; } }
         public User Author { get; set; }
         public int AgreeCount { get; set; }
         public int DisagreeCount { get; set; }
@@ -54,7 +54,7 @@ namespace CSHARPLearn
         }
         public override DateTime PublishTime()
         {
-            throw new NotImplementedException();
+            
         }
         //将HelpMoneyChanged应用于Publish()方法
         //[HelpMoneyChanged(2)]
@@ -66,6 +66,7 @@ namespace CSHARPLearn
             }
             Author.HelpMoney -= Reward;
             Console.WriteLine("棒棒币减少："+Reward);
+            PublicTime
         }
         public void Agree()
         {

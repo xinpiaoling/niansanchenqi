@@ -37,11 +37,12 @@ namespace CSharpLearn
 
             }//找出“飞哥”发布的文章
 
-            var FindTimeArticle=from a in articles
-                                where a._createTime > Convert.ToDateTime("2019年1月1日") && a.Author.Name="小余"
+            //var FindTimeArticle=from a in articles
+            //                    where a._createTime > Convert.ToDateTime("2019年1月1日") && a.Author.Name="小余"
 
 
-
+            
+            
 
 
 

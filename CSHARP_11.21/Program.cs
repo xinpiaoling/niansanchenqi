@@ -14,37 +14,45 @@ namespace CSHARP_11._21
         static void Main(string[] args)
         {
 
-            //泛型集合
-            List<string> learn = new List<string>();
-            List<int> learn1 = new List<int> { 15, 30, 100 };
-            IList<int> learn2 = learn1;
-            learn2.Add(55);
-            learn2.Insert(1,10);
-            Console.WriteLine(learn2.Count ); 
-            foreach (int item in learn2)
-            {
-                Console.WriteLine(item);
-            }
-            learn2.GetEnumerator();
+            //单例模式的调用
+            //Singles a=Singles.SetInstance();
+            //Singles b=Singles.SetInstance();
+            
+            //Console.Write(a.GetHashCode()+"   "+b.GetHashCode());
+            //Console.WriteLine();
 
-            IEnumerable<int> enumerable = new List<int>();   //这样写让程序保持一种灵活性
-            ((List<int>)enumerable).Add(0);
-            //enumerable = new LinkedList<int>();   //父类变量可以装不同的子类对象
-            //enumerable.Max();
+
+            ////泛型集合
+            //List<string> learn = new List<string>();
+            //List<int> learn1 = new List<int> { 15, 30, 100 };
+            //IList<int> learn2 = learn1;
+            //learn2.Add(55);
+            //learn2.Insert(1,10);
+            //Console.WriteLine(learn2.Count ); 
+            //foreach (int item in learn2)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            //learn2.GetEnumerator();
+
+            //IEnumerable<int> enumerable = new List<int>();   //这样写让程序保持一种灵活性
+            //((List<int>)enumerable).Add(0);
+            ////enumerable = new LinkedList<int>();   //父类变量可以装不同的子类对象
+            ////enumerable.Max();
             
 
-            Get(new List<string>());
-            Get(new LinkedList<string>());
+            //Get(new List<string>());
+            //Get(new LinkedList<string>());
 
-            Dictionary<int,Animal> students = new Dictionary<int,Animal>();
-            students.Add(0,new Animal());
-            students.Add(1,new Animal());
-            students.Add(2,new Animal());
-            var i = students.Keys;
-            foreach (var item in i)
-            {
-                Console.WriteLine(students[item]);
-            }
+            //Dictionary<int,Animal> students = new Dictionary<int,Animal>();
+            //students.Add(0,new Animal());
+            //students.Add(1,new Animal());
+            //students.Add(2,new Animal());
+            //var i = students.Keys;
+            //foreach (var item in i)
+            //{
+            //    Console.WriteLine(students[item]);
+            //}
            
            
 
