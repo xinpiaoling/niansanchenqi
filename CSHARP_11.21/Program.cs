@@ -14,10 +14,12 @@ namespace CSHARP_11._21
         static void Main(string[] args)
         {
 
+            
+
             //单例模式的调用
             //Singles a=Singles.SetInstance();
             //Singles b=Singles.SetInstance();
-            
+
             //Console.Write(a.GetHashCode()+"   "+b.GetHashCode());
             //Console.WriteLine();
 
@@ -39,7 +41,7 @@ namespace CSHARP_11._21
             //((List<int>)enumerable).Add(0);
             ////enumerable = new LinkedList<int>();   //父类变量可以装不同的子类对象
             ////enumerable.Max();
-            
+
 
             //Get(new List<string>());
             //Get(new LinkedList<string>());
@@ -53,11 +55,11 @@ namespace CSHARP_11._21
             //{
             //    Console.WriteLine(students[item]);
             //}
-           
-           
+
+
 
             //Animal ii = new Animal() { kind="ss"};
-            
+
 
             //数组集合   ArrayList
             //ArrayList Num = new ArrayList();
@@ -144,7 +146,7 @@ namespace CSHARP_11._21
             //wx.OnClick();
 
 
-            
+
 
 
             ////调用委托。。。其实委托可以调用多种方法，只要符合返回参数类型和输入参数类型。

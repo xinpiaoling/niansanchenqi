@@ -4,6 +4,7 @@ using System.Linq;
 using CSharpLearn;
 using CSHARPLearn;
 
+
 namespace CSharpLearn
 
 {
@@ -16,9 +17,20 @@ namespace CSharpLearn
         static void Main(string[] args)
         {
 
-            ExerciseOfLinq.ExerciseOfLinqDo();
-
-
+            //ExerciseOfLinq.ExerciseOfLinqDo();
+            LambdaHomework<Person> wx = new LambdaHomework<Person>();
+            Person cy = new Person();
+            ProvideWater<Person> pzq= new ProvideWater<Person>(LambdaHomework<Person>.GetWater<Person>);
+            pzq(cy);
+            //方法调用
+            LambdaHomework<Person>.GetWater(cy);
+            //匿名方法调用
+            //string name = string.Empty;
+            ProvideWater<Person> ww = delegate (Person name) { return 32; };
+            ww(cy);
+            //lambd表达式
+            ProvideWater<Person> cc = (Person name) => { return 20; };
+            cc(cy);
 
             //【练习1】李四的年终工作评定,如果定为A级,则工资涨500元,
             //如果定为B级,则工资涨200元,如果定为C级,工资不变,
@@ -154,8 +166,8 @@ namespace CSharpLearn
             //wx.num = 55;
             //Console.WriteLine(wx.Name+wx.age);
 
-            HelpMoney ww = new HelpMoney("线条");
-            HelpMoney ee = new HelpMoney("面积");
+            //HelpMoney ww = new HelpMoney("线条");
+            //HelpMoney ee = new HelpMoney("面积");
 
             //Console.WriteLine(ww.Line+"    "+ee.Line);
             ////Console.WriteLine(ww.GetLength());
