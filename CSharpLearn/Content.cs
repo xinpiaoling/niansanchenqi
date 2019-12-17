@@ -10,17 +10,17 @@ namespace CSHARPLearn
         void Agree();
         void Disagree();
     }
-     internal  abstract class Content
+    internal abstract class Content
     {
         //Content中有一个字段：kind，记录内容的种类（problem/article/suggest等），只能被子类使用
         //确保每个Content对象都有kind的非空值
         //Content中的createTime，不能被子类使用，但只读属性PublishTime使用它为外部提供内容的发布时间
-        public  string kind;
-        public Content(string  content)
+        protected string kind;
+        public Content(string content)
         {
             //在NEW一个对象时通过子类调用父类构造为createTime赋值
             _createTime = DateTime.Now;
-            if (content==string.Empty)
+            if (content == string.Empty)
             {
                 Console.WriteLine("不能为空值");
                 return;
@@ -30,58 +30,55 @@ namespace CSHARPLearn
                 this.kind = content;
             }
         }
-
-        private DateTime _createTime;
+        public string Title { get; set; }
+        protected DateTime _createTime;
         public DateTime CreateTime { get { return _createTime; } }
-        public abstract DateTime PublishTime();
-        private DateTime _publishTime;
-        //public DateTime PublishTime { get { return _publishTime; } }
+
+        protected DateTime _publishTime;
+        public DateTime PublishTime { get { return _publishTime; } }
         public User Author { get; set; }
         public int AgreeCount { get; set; }
         public int DisagreeCount { get; set; }
-        public string Keyword { get; set; }
+        public string[] _keyword { get; set; }
         public abstract void Publish();
-    
+
     }
-    class Problem:Content,IAgreeOrDisagree
+    class Problem : Content, IAgreeOrDisagree
     {
 
         public User Author { get; set; }
         public int Reward { get; set; }
-        public Problem(string content):base(content)
+        public Problem(string content) : base(content)
         {
 
         }
-        public override DateTime PublishTime()
-        {
-            
-        }
+
         //将HelpMoneyChanged应用于Publish()方法
         //[HelpMoneyChanged(2)]
         public override void Publish()
         {
-            if (Author==null)
+            if (Author == null)
             {
                 throw new Exception();
             }
             Author.HelpMoney -= Reward;
-            Console.WriteLine("棒棒币减少："+Reward);
-            PublicTime
+            Console.WriteLine("棒棒币减少：" + Reward);
+            _publishTime = DateTime.Now;
         }
         public void Agree()
         {
-            
+
         }
         public void Disagree()
         {
 
         }
     }
-     internal  class Article:Content,IAgreeOrDisagree
+    internal class Article : Content, IAgreeOrDisagree
     {
 
         public List<Keyword> Keyword { get; set; }//文章有多个关键字
-        public List<Comment> Comment { get; set; }//文章有多个评论
+        public List<Comment> Comments { get; set; }//文章有多个评论
 
         //public User Author { get; set; }
         public int Words { get; set; }
@@ -89,23 +86,21 @@ namespace CSHARPLearn
         {
 
         }
-        public override DateTime PublishTime()
+
+        public override void Publish()
         {
-            throw new NotImplementedException();
-        }
-        public override   void Publish()
-        {
-            if (Author==null)
+            if (Author == null)
             {
                 throw new ArgumentNullException("作者不能为空");
             }
             Author.HelpMoney -= 1;
+            _publishTime = DateTime.Now;
         }
 
         public void Agree()
         {
             Author.HelpMoney += 1;
-            
+
         }
 
         public void Disagree()
@@ -114,16 +109,12 @@ namespace CSHARPLearn
 
         }
     }
-     internal class Suggest : Content
+    internal class Suggest : Content
     {
         public User Author { get; set; }
-        public Suggest(string content) :base(content)
+        public Suggest(string content) : base(content)
         {
-           
-        }
-        public override DateTime PublishTime()
-        {
-            throw new NotImplementedException();
+
         }
         public override void Publish()
         {
@@ -131,6 +122,7 @@ namespace CSHARPLearn
             {
                 throw new ArgumentNullException("作者不能为空");
             }
+            _publishTime = DateTime.Now;
         }
         public void Agree(User voter)
         {
@@ -151,7 +143,7 @@ namespace CSHARPLearn
     //赞和踩都会增减作者及评价者的帮帮点。能不能对其进行抽象？如何实现？
 
 
- 
+
 
     //将TokenManager作为User类的属性
     // internal class User
@@ -166,5 +158,5 @@ namespace CSHARPLearn
     //}
     //之前的Content类，其中的CreateTime（创建时间）和PublishTime（发布时间）都是只读的属性，
     //想一想他们应该在哪里赋值比较好，并完成相应代码
-    
+
 }

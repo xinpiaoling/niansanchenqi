@@ -7,10 +7,10 @@ namespace CSharpLearn
 {
      public   class Keyword
     {
-        public string Content { get; set; }
-        public int Used { get; set; }
-        public Keyword Upper { get; set; }
-        internal List<Article> Articles { get; set; }
+        public string Content { get; set; }//关键字的内容
+        public int Used { get; set; }//关键字的使用次数
+        public Keyword Upper { get; set; }//关键字的上一级
+        internal List<Article> Articles { get; set; }//关键字对应多个文章
 
     }
 }

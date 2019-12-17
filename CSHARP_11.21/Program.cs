@@ -101,7 +101,7 @@ namespace CSHARP_11._21
 
 
             //泛型接口的协变和逆变
-            ICollection<int> ts = new List<int>();
+            //ICollection<int> ts = new List<int>();
             //可以这样写：     I父类<int>  ts=new  孙子类<>()  
             //返回类型可以写基类和其父类等
             //参数类型可以写基类和其子类等

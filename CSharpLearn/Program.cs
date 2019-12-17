@@ -15,43 +15,8 @@ namespace CSharpLearn
 
         static void Main(string[] args)
         {
-            //在之前“文章 / 评价 / 评论 / 用户 / 关键字”对象模型的基础上，添加相应的数据，然后完成以下操作：
 
-            //找出“飞哥”发布的文章
-            //找出2019年1月1日以后“小鱼”发布的文章
-            //按发布时间升序 / 降序排列显示文章
-            //统计每个用户各发布了多少篇文章
-            //找出包含关键字“C#”或“.NET”的文章
-            //找出评论数量最多的文章
-            Article Sql = new Article("文章") { Author = new User {Name="飞哥" },Words=521,};
-            Article Csharp = new Article("文章") { Author = new User { Name = "飞哥" }, Words = 520 };
-            Article Js = new Article("文章") { Author = new User { Name = "小余" }, Words = 1314 };
-            Article Java = new Article("文章") { Author = new User { Name = "飞哥" }, Words = 2019 };
-            IEnumerable<Article> articles = new List<Article> {Sql,Csharp,Js,Java };
-            var  feiArticle = from a in articles
-                          where a.Author.Name == "飞哥"
-                          select a;
-            foreach (var item in feiArticle)
-            {
-                Console.WriteLine(item.Author.Name+item.Words);
-
-            }//找出“飞哥”发布的文章
-
-            //var FindTimeArticle=from a in articles
-            //                    where a._createTime > Convert.ToDateTime("2019年1月1日") && a.Author.Name="小余"
-
-
-            
-            
-
-
-
-
-
-
-
-
-
+            ExerciseOfLinq.ExerciseOfLinqDo();
 
 
 
@@ -189,7 +154,7 @@ namespace CSharpLearn
             //wx.num = 55;
             //Console.WriteLine(wx.Name+wx.age);
 
-            HelpMoney ww =new HelpMoney("线条");
+            HelpMoney ww = new HelpMoney("线条");
             HelpMoney ee = new HelpMoney("面积");
 
             //Console.WriteLine(ww.Line+"    "+ee.Line);
@@ -211,7 +176,7 @@ namespace CSharpLearn
             //Console.WriteLine(use.getNum());
             //Console.WriteLine(use2.getNum());
 
-            
+
 
             //Console.WriteLine(wx.Name);
 
