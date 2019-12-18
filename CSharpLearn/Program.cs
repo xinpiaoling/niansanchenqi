@@ -17,20 +17,44 @@ namespace CSharpLearn
         static void Main(string[] args)
         {
 
+            //string和stringBuileder
+            string str = "      距离回去，还有12天！   ";
+            Console.WriteLine(str.Remove(1));
+            Console.WriteLine(str.Remove(1,3));
+            Console.WriteLine(str.Insert(0,"王新"));
+            Console.WriteLine(str.Replace("回去","回西安"));
+            Console.WriteLine(str.Substring(5));
+            Console.WriteLine("!!!"+str.TrimEnd()+"###");
+            Console.WriteLine("-------");
+
+            string a = "源栈";
+            string b = "，";
+            string c = "欢迎您!";
+
+            //直接把abc连接起来
+            Console.WriteLine(string.Concat(a, b, c));
+            //把abc用' '连接起来
+            string joined = string.Join("----", a, b, c);
+            Console.WriteLine(joined);   //注意空格：源栈 ， 欢迎您!
+
+
+
+
+
             //ExerciseOfLinq.ExerciseOfLinqDo();
-            LambdaHomework<Person> wx = new LambdaHomework<Person>();
-            Person cy = new Person();
-            ProvideWater<Person> pzq= new ProvideWater<Person>(LambdaHomework<Person>.GetWater<Person>);
-            pzq(cy);
-            //方法调用
-            LambdaHomework<Person>.GetWater(cy);
-            //匿名方法调用
-            //string name = string.Empty;
-            ProvideWater<Person> ww = delegate (Person name) { return 32; };
-            ww(cy);
-            //lambd表达式
-            ProvideWater<Person> cc = (Person name) => { return 20; };
-            cc(cy);
+            //LambdaHomework<Person> wx = new LambdaHomework<Person>();
+            //Person cy = new Person();
+            //ProvideWater<Person> pzq= new ProvideWater<Person>(LambdaHomework<Person>.GetWater<Person>);
+            //pzq(cy);
+            ////方法调用
+            //LambdaHomework<Person>.GetWater(cy);
+            ////匿名方法调用
+            ////string name = string.Empty;
+            //ProvideWater<Person> ww = delegate (Person name) { return 32; };
+            //ww(cy);
+            ////lambd表达式
+            //ProvideWater<Person> cc = (Person name) => { return 20; };
+            //cc(cy);
 
             //【练习1】李四的年终工作评定,如果定为A级,则工资涨500元,
             //如果定为B级,则工资涨200元,如果定为C级,工资不变,
