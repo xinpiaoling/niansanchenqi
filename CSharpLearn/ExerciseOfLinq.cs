@@ -88,6 +88,8 @@ namespace CSharpLearn
             var feiArticle = from a in articles
                              where a.Author.Name == "飞哥"
                              select a;
+            var feiArticle1 = articles
+                              .Where(a => a.Author.Name == "飞哥");
             foreach (var item in feiArticle)
             {
                 Console.WriteLine(item.Author.Name + item.Words);
@@ -100,6 +102,8 @@ namespace CSharpLearn
             var ArticlesByXiaoYuByTime = from a in articles
                                          where a.PublishTime > new DateTime(2019 / 1 / 1) && a.Author.Name == "小余"
                                          select a;
+            var ArticlesByXiaoYuByTime1 = articles.
+                                      Where(a => a.PublishTime > new DateTime(2019 / 1 / 1) && a.Author.Name == "小余");
             foreach (var item in ArticlesByXiaoYuByTime)
             {
                 Console.WriteLine(item.Author.Name + "  " + item.Words);
@@ -112,6 +116,7 @@ namespace CSharpLearn
             var ArticlesByTimeAsc = from a in articles
                                     orderby a.PublishTime ascending
                                     select a;
+            var ArticlesByTimeAsc1 = articles.OrderBy(a => a.PublishTime);
             foreach (var item in ArticlesByTimeAsc)
             {
                 Console.WriteLine(item.Author.Name + "  " + item.Words);
@@ -123,6 +128,7 @@ namespace CSharpLearn
             var ArticlesByTimeDesc = from a in articles
                                      orderby a.PublishTime descending
                                      select a;
+            var ArticlesByTimeDesc1 = articles.OrderByDescending(a => a.PublishTime);
             foreach (var item in ArticlesByTimeDesc)
             {
                 Console.WriteLine(item.Author.Name + "  " + item.Words);
@@ -138,6 +144,12 @@ namespace CSharpLearn
                                            Author = an.Key,
                                            count = an.Count()
                                        };
+            var ArticleByAuthorCount1 = articles.GroupBy(a => a.Author.Name)
+                                         .Select(ag => new
+                                         {
+                                             Key = ag.Key,
+                                             Count = ag.Count()
+                                         });
             foreach (var item in ArticleByAuthorCount)
             {
                 Console.WriteLine(item.Author + "  " + item.count);
@@ -149,6 +161,7 @@ namespace CSharpLearn
             var ArticleByFindKeyword = from a in articles
                                        where a.Keyword.Contains(net) || a.Keyword.Contains(csharp)
                                        select a;
+            var ArticleByFindKeyword1 = articles.Where(a => a.Keyword.Contains(net) || a.Keyword.Contains(csharp));
             foreach (var item in ArticleByFindKeyword)
             {
                 Console.WriteLine(item.Author.Name + "------" + item.Words);
@@ -160,8 +173,27 @@ namespace CSharpLearn
             var ArticleByMostComments = (from a in articles
                                          orderby a.Comments.Count() descending
                                          select a).First();
+            var ArticleByMostComments1 = (articles.OrderByDescending(a => a.Comments.Count())).First();
             Console.WriteLine(ArticleByMostComments.Title);
         }
+        //找出每个作者最近发布的一篇文章
+        private static void ArticlesByAuthorRecently()
+        {
+            Console.WriteLine("---------");
+            //var ArticlesByAuthorRecently=from a in articles
+            //                             group a by a.Author.Name into ag
+            //                             orderby ag.
+            var ArticlesByAuthorRecently = articles.GroupBy(a => a.Author.Name)
+                                          .Select(ag => new
+                                          {
+                                              Recently = ag.Max(a => a.PublishTime)
+                                          });
+            foreach (var item in ArticlesByAuthorRecently)
+            {
+                Console.WriteLine(item.Recently);
+            }
+        }
+
         //为求助（Problem）添加悬赏（Reward）属性，并找出每一篇求助的悬赏都大于5个帮帮币的文章作者
 
     }
