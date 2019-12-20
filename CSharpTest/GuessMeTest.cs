@@ -25,7 +25,6 @@ namespace CSharpTest
             Assert.AreEqual(GuessMe.GuessWrong(50,60,10),GuessMe.Input6);
             Assert.AreEqual(GuessMe.GuessWrong(50, 60, 1), GuessMe.BigInput);
             Assert.AreEqual(GuessMe.GuessWrong(60, 50, 1), GuessMe.SmallInput);
-
         }
     }
 }

@@ -19,7 +19,18 @@ namespace CSharpLearn
 
         static void Main(string[] args)
         {
-            GuessMe.DoGuessMe();
+            StringMethod.MimicJoin(StringMethod._character,StringMethod._array);
+
+
+
+
+
+
+
+
+            //GuessMe.DoGuessMe();
+
+
 
             //string path = "c:\\17bang";
             //path = path + @"\test";
