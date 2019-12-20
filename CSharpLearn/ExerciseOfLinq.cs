@@ -171,10 +171,19 @@ namespace CSharpLearn
         private static void ArticleByMostComments()
         {
             var ArticleByMostComments = (from a in articles
-                                         orderby a.Comments.Count() descending
+                                         orderby a.Comments?.Count() descending
                                          select a).First();
             var ArticleByMostComments1 = (articles.OrderByDescending(a => a.Comments.Count())).First();
             Console.WriteLine(ArticleByMostComments.Title);
+        }
+        //找出每个作者评论数量最多的文章
+        private static void ArticlesByAuthorMostComments()
+        {
+            var ArticlesByAuthorMostComments = from a in articles
+                                               group a by a.Author into ag
+                                               select (from aga in ag
+                                                       orderby aga.Comments.Count
+                                                       select aga).First();
         }
         //找出每个作者最近发布的一篇文章
         private static void ArticlesByAuthorRecently()

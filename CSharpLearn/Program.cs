@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 using CSharpLearn;
 using CSHARPLearn;
 
@@ -16,26 +19,31 @@ namespace CSharpLearn
 
         static void Main(string[] args)
         {
+            GuessMe.DoGuessMe();
 
-            //string和stringBuileder
-            string str = "      距离回去，还有12天！   ";
-            Console.WriteLine(str.Remove(1));
-            Console.WriteLine(str.Remove(1,3));
-            Console.WriteLine(str.Insert(0,"王新"));
-            Console.WriteLine(str.Replace("回去","回西安"));
-            Console.WriteLine(str.Substring(5));
-            Console.WriteLine("!!!"+str.TrimEnd()+"###");
-            Console.WriteLine("-------");
+            //string path = "c:\\17bang";
+            //path = path + @"\test";
+            //string subpath = Path.Join(path,@"test.text");
+            
+            ////string和stringBuileder
+            //string str = "      距离回去，还有12天！   ";
+            //Console.WriteLine(str.Remove(1));
+            //Console.WriteLine(str.Remove(1,3));
+            //Console.WriteLine(str.Insert(0,"王新"));
+            //Console.WriteLine(str.Replace("回去","回西安"));
+            //Console.WriteLine(str.Substring(5));
+            //Console.WriteLine("!!!"+str.TrimEnd()+"###");
+            //Console.WriteLine("-------");
 
-            string a = "源栈";
-            string b = "，";
-            string c = "欢迎您!";
+            //string a = "源栈";
+            //string b = "，";
+            //string c = "欢迎您!";
 
-            //直接把abc连接起来
-            Console.WriteLine(string.Concat(a, b, c));
-            //把abc用' '连接起来
-            string joined = string.Join("----", a, b, c);
-            Console.WriteLine(joined);   //注意空格：源栈 ， 欢迎您!
+            ////直接把abc连接起来
+            //Console.WriteLine(string.Concat(a, b, c));
+            ////把abc用' '连接起来
+            //string joined = string.Join("----", a, b, c);
+            //Console.WriteLine(joined);   //注意空格：源栈 ， 欢迎您!
 
 
 
@@ -555,82 +563,7 @@ namespace CSharpLearn
 
         //    return average;
         //}
-        //完成“猜数字”游戏，方法名GuessMe()
-
-        //static void guessme()
-        //{
-        //    int m = new random().next(1, 100);
-        //    for (int i = 1; i < 11; i++)
-        //    {
-
-        //        console.writeline("请输入一个整数");
-        //        string input = console.readline();
-        //        bool n = int.tryparse(input, out int a);
-        //        if (!n)
-        //        {
-        //            console.writeline("第" + i + "次输入错误，请输入一个整数");
-        //        }
-        //        else
-        //        {
-        //            console.write("第" + i + "次比较：");
-        //            if (m == a)
-        //            {
-        //                if (i < 3)
-        //                {
-        //                    console.write("你是一个天才！！！");                          
-        //                }
-        //                else if (i < 6)
-        //                {
-        //                    console.write("你登上了珠峰！！！");
-        //                }
-        //                else if (i < 10)
-        //                {
-        //                    console.write("你是一个普通人！！！");
-        //                }
-        //                else if (i == 10)
-        //                {
-        //                    console.write("你太难了，终于猜对了！！！");
-        //                }
-        //                else
-        //                {
-        //                    //i定义区间为1-10，不存在其他情况
-        //                }
-        //                console.writeline();
-        //                break;
-        //            }
-        //            else if (m < a)
-        //            {
-        //                console.write("大了");
-        //                console.writeline();
-        //                if (i == 10)
-        //                {
-        //                    console.writeline("游戏结束！！！弱鸡");
-        //                }
-        //                else
-        //                {
-        //                    //do nothing
-        //                }
-        //            }
-        //            else if (m > a)
-        //            {
-        //                console.write("小了");
-        //                console.writeline();
-        //                if (i == 10)
-        //                {
-        //                    console.writeline("游戏结束！！！弱鸡");
-        //                }
-        //                else
-        //                {
-        //                    //do nothing
-        //                }
-        //            }
-        //            else
-        //            {
-        //                //do nothing 
-        //            }
-        //        }
-        //    }
-        //}
+        //
         //static void Valueb(ref int vv) {
         //    vv+=5;
 

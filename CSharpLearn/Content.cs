@@ -30,7 +30,28 @@ namespace CSHARPLearn
                 this.kind = content;
             }
         }
-        public string Title { get; set; }
+        private string _title;
+        public string Title
+        {
+            get
+            {
+                return _title;
+            }
+            set
+            {
+                //确保文章（Article）的标题不能为null值
+                //，也不能为一个或多个空字符组成的字符串
+                //，而且如果标题前后有空格，也予以删除
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new Exception("_title is not null!");
+                }
+                else
+                {
+                    _title = value.Trim();
+                }
+            }
+        }
         protected DateTime _createTime;
         public DateTime CreateTime { get { return _createTime; } }
 
@@ -43,96 +64,9 @@ namespace CSHARPLearn
         public abstract void Publish();
 
     }
-    class Problem : Content, IAgreeOrDisagree
-    {
+   
 
-        public User Author { get; set; }
-        public int Reward { get; set; }
-        public Problem(string content) : base(content)
-        {
 
-        }
-
-        //将HelpMoneyChanged应用于Publish()方法
-        //[HelpMoneyChanged(2)]
-        public override void Publish()
-        {
-            if (Author == null)
-            {
-                throw new Exception();
-            }
-            Author.HelpMoney -= Reward;
-            Console.WriteLine("棒棒币减少：" + Reward);
-            _publishTime = DateTime.Now;
-        }
-        public void Agree()
-        {
-
-        }
-        public void Disagree()
-        {
-
-        }
-    }
-    internal class Article : Content, IAgreeOrDisagree
-    {
-
-        public List<Keyword> Keyword { get; set; }//文章有多个关键字
-        public List<Comment> Comments { get; set; }//文章有多个评论
-
-        //public User Author { get; set; }
-        public int Words { get; set; }
-        public Article(string content) : base(content)
-        {
-
-        }
-
-        public override void Publish()
-        {
-            if (Author == null)
-            {
-                throw new ArgumentNullException("作者不能为空");
-            }
-            Author.HelpMoney -= 1;
-            _publishTime = DateTime.Now;
-        }
-
-        public void Agree()
-        {
-            Author.HelpMoney += 1;
-
-        }
-
-        public void Disagree()
-        {
-            Author.HelpMoney -= 1;
-
-        }
-    }
-    internal class Suggest : Content
-    {
-        public User Author { get; set; }
-        public Suggest(string content) : base(content)
-        {
-
-        }
-        public override void Publish()
-        {
-            if (Author == null)
-            {
-                throw new ArgumentNullException("作者不能为空");
-            }
-            _publishTime = DateTime.Now;
-        }
-        public void Agree(User voter)
-        {
-            Author.HelpMoney += 1;
-        }
-        public void Disagree(User voter)
-        {
-            Author.HelpMoney -= 1;
-        }
-    }
 
 
     //添加一个新类ContentService，其中有一个发布（Publish()）方法：
