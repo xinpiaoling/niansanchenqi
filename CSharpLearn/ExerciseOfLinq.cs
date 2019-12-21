@@ -12,8 +12,12 @@ namespace CSharpLearn
         static User fg, xy;
         static Keyword sql, csharp, net, java, js;
         static Article Sql, Java, Js, Csharp;
+        static Problem Learn, Game,Tree,Stack;
         static Comment wx, atai, pzq, cy;
         static IEnumerable<Article> articles;
+        private static IEnumerable<Problem> problems;
+        private static string item;
+
         static ExerciseOfLinq()
         {
             //在之前“文章 / 评价 / 评论 / 用户 / 关键字”对象模型的基础上，添加相应的数据，然后完成以下操作：
@@ -50,9 +54,15 @@ namespace CSharpLearn
             Js.Comments = new List<Comment>() { atai };
             Java.Comments = new List<Comment>() { cy };
             Csharp.Comments = new List<Comment>() { };
-
+            //给Problem赋值
+            Learn = new Problem("求助") {Title="如何学习高效",Reward=11,Author=xy };
+            Game = new Problem("求助") {Title="如何不玩游戏",Reward=3,Author=fg };
+            Tree = new Problem("求助") {Title="如何写二叉树",Reward=5,Author=fg };
+            Stack = new Problem("求助") { Title = "如何写一个栈", Reward = 8, Author = xy };
             //“文章”集合
             articles = new List<Article> { Sql, Csharp, Js, Java };
+            //"求助"集合
+            problems = new List<Problem> {Learn,Game,Tree,Stack };
             //实际状态
             //IEnumerable<Article> articles = new List<Article> 
             //{   Sql,//Title="Sql",Author=new User(){Name="飞哥"},
@@ -74,13 +84,16 @@ namespace CSharpLearn
         //外部调用入口方法
         public static void ExerciseOfLinqDo()
         {
-            ArticleByFeiGe();
-            ArticlesByXiaoYuByTime();
-            ArticlesByTimeAsc();
-            ArticlesByTimeDesc();
-            ArticleByAuthorCount();
-            ArticleByFindKeyword();
-            ArticleByMostComments();
+            //ArticleByFeiGe();
+            //ArticlesByXiaoYuByTime();
+            //ArticlesByTimeAsc();
+            //ArticlesByTimeDesc();
+            //ArticleByAuthorCount();
+            //ArticleByFindKeyword();
+            //ArticleByMostComments();
+            //ArticlesByAuthorMostComments();
+            //ArticlesByAuthorRecently();
+            AuthorProblemRewardOverFive();
         }
         //找出“飞哥”发布的文章
         private static void ArticleByFeiGe()
@@ -204,6 +217,20 @@ namespace CSharpLearn
         }
 
         //为求助（Problem）添加悬赏（Reward）属性，并找出每一篇求助的悬赏都大于5个帮帮币的文章作者
+        public static string AuthorProblemRewardOverFive()
+        {
+            var AuthorProblemRewardOverFive = problems.GroupBy(p => p.Author)
+                                           .Where(pa => pa.Min(r => r.Reward) > 5)
+                                           .Select(a => a.Key.Name);
 
+            foreach (var i in AuthorProblemRewardOverFive)
+            {
+                Console.WriteLine(i);
+                item = i;
+            }
+            return item;
+            //Console.WriteLine(AuthorProblemRewardOverFive);
+            //return AuthorProblemRewardOverFive;
+        }
     }
 }

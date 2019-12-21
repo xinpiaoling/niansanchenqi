@@ -19,7 +19,7 @@ namespace CSharpLearn
 
         static void Main(string[] args)
         {
-            StringMethod.MimicJoin(StringMethod._character,StringMethod._array);
+           // StringMethod.MimicJoin(StringMethod._character,StringMethod._array);
 
 
 
@@ -60,7 +60,7 @@ namespace CSharpLearn
 
 
 
-            //ExerciseOfLinq.ExerciseOfLinqDo();
+            ExerciseOfLinq.ExerciseOfLinqDo();
             //LambdaHomework<Person> wx = new LambdaHomework<Person>();
             //Person cy = new Person();
             //ProvideWater<Person> pzq= new ProvideWater<Person>(LambdaHomework<Person>.GetWater<Person>);
