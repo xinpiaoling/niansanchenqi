@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using CSharpLearn;
 
 namespace CSharpLearn
 {
@@ -20,13 +21,14 @@ namespace CSharpLearn
             {
                 throw new Exception("密码长度不可以低于6位");
             }
-            if (password.Contains("a"))
+            if (!PasswordCheck.PasswordCheckMethod(password))
             {
-
+                throw new Exception("密码必须由大小写英语单词、数字" +
+                    "和特殊符号（~!@#$%^&*()_+）组成");
             }
             this._password = password;
-
         }
+
         //如果user.Name为“admin”，输入时修改为“系统管理员”
         private string _name;
         public string Name
@@ -82,6 +84,7 @@ namespace CSharpLearn
         //    throw new NotImplementedException();
         //}
         //public TokenManager Manger { get; set; }
+        //判断是否含有大小写字母和特殊符号
 
     }
 
@@ -89,6 +92,5 @@ namespace CSharpLearn
     //{
 
     //}
-
 
 }

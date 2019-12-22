@@ -19,14 +19,14 @@ namespace CSharpLearn
 
         static void Main(string[] args)
         {
-           // StringMethod.MimicJoin(StringMethod._character,StringMethod._array);
+            //StringMethod.MimicJoin(StringMethod._character,StringMethod._array);
 
+            string wx = "a";
+            Console.WriteLine(wx.Contains("a")&&wx.Contains("A"));
+            char ww = 'A';
 
-
-
-
-
-
+            Func<string, string, int> length = (a, b) => a.Length + b.Length;
+            Console.WriteLine(length("abcde","abcdefghij"));
 
             //GuessMe.DoGuessMe();
 
@@ -60,7 +60,7 @@ namespace CSharpLearn
 
 
 
-            ExerciseOfLinq.ExerciseOfLinqDo();
+            //ExerciseOfLinq.ExerciseOfLinqDo();
             //LambdaHomework<Person> wx = new LambdaHomework<Person>();
             //Person cy = new Person();
             //ProvideWater<Person> pzq= new ProvideWater<Person>(LambdaHomework<Person>.GetWater<Person>);
