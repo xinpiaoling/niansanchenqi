@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using CSharpLearn;
 using CSHARPLearn;
 
@@ -21,15 +22,16 @@ namespace CSharpLearn
         {
             //StringMethod.MimicJoin(StringMethod._character,StringMethod._array);
 
-            string wx = "a";
-            Console.WriteLine(wx.Contains("a")&&wx.Contains("A"));
-            char ww = 'A';
+            //string wx = "a";
+            //Console.WriteLine(wx.Contains("a")&&wx.Contains("A"));
+            //char ww = 'A';
 
-            Func<string, string, int> length = (a, b) => a.Length + b.Length;
-            Console.WriteLine(length("abcde","abcdefghij"));
+            //Func<string, string, int> length = (a, b) => a.Length + b.Length;
+            //Console.WriteLine(length("abcde","abcdefghij"));
 
             //GuessMe.DoGuessMe();
 
+            XElementLearn.XElementDo();
 
 
             //string path = "c:\\17bang";
