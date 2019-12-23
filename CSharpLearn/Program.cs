@@ -20,6 +20,34 @@ namespace CSharpLearn
 
         static void Main(string[] args)
         {
+
+            string path1 = @"c:\temp\MyTest.txt";
+            string path2 = @"c:\temp\MyTest";
+            string path3 = @"temp";
+
+            string disk = @"c:\";
+
+            Console.WriteLine(Path.Combine(disk,path3));
+            Console.WriteLine(Path.GetDirectoryName(path1));
+            Console.WriteLine(Path.GetFileName(path1));
+            Console.WriteLine(Path.GetExtension(path1));
+
+            //Directory.CreateDirectory(path2);
+            ////Directory.Delete(path2);
+            //Console.WriteLine(Directory.Exists(path1));
+            //Console.WriteLine(Directory.EnumerateDirectories(disk));
+            //Directory.SetCreationTime(path2,new DateTime(1994,6,7));
+            ////Directory.CreateDirectory(path1);
+            //Directory.SetLastWriteTime(path1,new DateTime(2001,4,2));
+
+            //IEnumerable<string> directory=Directory.EnumerateDirectories(path1);
+            //foreach (var item in directory)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            //File.Create(path1);
+            //File.AppendText(path1);
+            File.AppendAllText(path1,"今天晚上不熬夜早点睡。");
             //StringMethod.MimicJoin(StringMethod._character,StringMethod._array);
 
             //string wx = "a";
@@ -31,7 +59,7 @@ namespace CSharpLearn
 
             //GuessMe.DoGuessMe();
 
-            XElementLearn.XElementDo();
+            //XElementLearn.XElementDo();
 
 
             //string path = "c:\\17bang";
