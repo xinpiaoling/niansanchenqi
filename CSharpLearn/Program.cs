@@ -48,6 +48,12 @@ namespace CSharpLearn
             //File.Create(path1);
             //File.AppendText(path1);
             File.AppendAllText(path1,"今天晚上不熬夜早点睡。");
+            FileStream fileStream = File.Create(path1);
+
+
+
+
+
             //StringMethod.MimicJoin(StringMethod._character,StringMethod._array);
 
             //string wx = "a";
