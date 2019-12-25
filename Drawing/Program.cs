@@ -20,20 +20,31 @@ namespace Drawing
             Bitmap image = new Bitmap(200, 100);
             Graphics g = Graphics.FromImage(image);
             g.Clear(Color.AliceBlue);
-            g.DrawLine(new Pen(Color.Black), new Point(0, 0), new Point(10, 80));
+            Random random1 = new Random();
+            for (int i = 0; i < 10; i++)
+            {
+                g.DrawLine(new Pen(Color.Black), new Point(random1.Next(200)
+                    , random1.Next(100)),
+                    new Point(random1.Next(200),
+                    random1.Next(100)));
+                Thread.Sleep(1);
+            }
             g.DrawString(
                 Program.GetDrawString(),
                 new Font("宋体",50),
                 new SolidBrush(Color.Black),
                 new PointF(30, 10));
+            
             //随机点
             for (int i = 0; i < 200; i++)
             {
-                int random1 = new Random().Next(0, 200);
-                Thread.Sleep(30);
-                int random2 = new Random().Next(0, 100);
-                image.SetPixel(random1, random2, Color.Black);
-                Thread.Sleep(20);
+             
+                image.SetPixel(random1.Next(200),
+                    random1.Next(100), 
+                    Color.FromArgb(random1.Next(255),
+                      random1.Next(255),
+                      random1.Next(255)));
+                Thread.Sleep(1);
             }
             image.Save(@"C:\17bang\hello.jpg", ImageFormat.Jpeg);
         }
