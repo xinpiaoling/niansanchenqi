@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Common;
+using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Threading;
@@ -7,7 +10,7 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 using CSharpLearn;
 using CSHARPLearn;
-
+using MySql.Data.MySqlClient;
 
 namespace CSharpLearn
 
@@ -15,22 +18,73 @@ namespace CSharpLearn
 
     public class Program
     {
-
-
-
         static void Main(string[] args)
         {
+            //ADO.NET
+            //string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;
+            //                     Initial Catalog=Learn;Integrated Security=True;";
+            //DbConnection connection = null; 
+#if DEBUG
+            //connection = new SqlConnection();
+#else
+            connection = new MySqlConnection();
+#endif
+            //using 调用的是disposable方法,释放资源
+            //使用using不需要再写connection..close();可以自动关闭
+            //使用using相当于try catch 里面的finally方法，不论抛不抛异常，都会执行关闭。
+            //using (SqlConnection connection=new SqlConnection(connectionString))
+            //{
+            //    connection.Open();
+            //    SqlCommand command = new SqlCommand();
+            //    command.CommandText = @"INSERT Student VALUES(N'zjq',{Student.Age})";
+            //    command.Connection = connection;
+            //    int RowNumberAffect= command.ExecuteNonQuery();
+            //    Console.WriteLine(RowNumberAffect);
+            //}
 
-            string path1 = @"c:\temp\MyTest.txt";
-            string path2 = @"c:\temp\MyTest";
-            string path3 = @"temp";
+            //new Student() { Name = "于维谦", Age = 25 }.Save();
 
-            string disk = @"c:\";
+            //new Student() { Id=4}.Delete();
+            //SqlConnection connection = new SqlConnection(DbHelper.connectionString);
 
-            Console.WriteLine(Path.Combine(disk,path3));
-            Console.WriteLine(Path.GetDirectoryName(path1));
-            Console.WriteLine(Path.GetFileName(path1));
-            Console.WriteLine(Path.GetExtension(path1));
+            //DbHelper dbHelper = new DbHelper();
+
+            //new Student() { Name = "yf", Age = 39 }.Save(dbHelper.LongConnection);
+            //new Student() { Name = "xiaoyu", Age = 25 }.Save(dbHelper.LongConnection);
+            //new Student() { Name = "xiaoxiaoyu", Age = 15 }.Save(connection);
+            //Student.GetSum();
+
+            //IList<Student> students= Student.GetStudent();
+
+            //dbHelper.LongConnection.Close();
+            //Student wx = Student.GetStudentByName("wx");
+            //Student wx = Student.GetStudentByName("'UPDATE Student SET Age=100--");
+           // Console.WriteLine(wx.Id
+            //    +""+wx.Name+""+wx.Age);
+
+            string queryString =
+                "SELECT * FROM Student";
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(queryString,
+                ReaderDbHelper.connectionString);
+            DataSet dataSet = new DataSet();
+            sqlDataAdapter.Fill(dataSet);
+
+            var rows = dataSet.Tables[0].Rows;
+            foreach (var item in rows)
+            {
+                Console.WriteLine(((DataRow)item)[0]);
+            }
+            //sqlDataAdapter.RowUpdated += (o, j) => { Console.WriteLine("都是渣渣！！！"); };
+            //string path1 = @"c:\temp\MyTest.txt";
+            //string path2 = @"c:\temp\MyTest";
+            //string path3 = @"temp";
+
+            //string disk = @"c:\";
+
+            //Console.WriteLine(Path.Combine(disk,path3));
+            //Console.WriteLine(Path.GetDirectoryName(path1));
+            //Console.WriteLine(Path.GetFileName(path1));
+            //Console.WriteLine(Path.GetExtension(path1));
 
             //Directory.CreateDirectory(path2);
             ////Directory.Delete(path2);
@@ -47,8 +101,8 @@ namespace CSharpLearn
             //}
             //File.Create(path1);
             //File.AppendText(path1);
-            File.AppendAllText(path1,"今天晚上不熬夜早点睡。");
-            FileStream fileStream = File.Create(path1);
+            //File.AppendAllText(path1,"今天晚上不熬夜早点睡。");
+            //FileStream fileStream = File.Create(path1);
 
 
 
@@ -71,7 +125,7 @@ namespace CSharpLearn
             //string path = "c:\\17bang";
             //path = path + @"\test";
             //string subpath = Path.Join(path,@"test.text");
-            
+
             ////string和stringBuileder
             //string str = "      距离回去，还有12天！   ";
             //Console.WriteLine(str.Remove(1));

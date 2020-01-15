@@ -5,7 +5,7 @@ using static System.Console;
 
 namespace CSharpLearn
 {
-     class Repoistory
+     class Repoistory<T>
     {
         //    定义一个仓库（Repoistory）类，其中包含：
         //    一个int类型的常量version

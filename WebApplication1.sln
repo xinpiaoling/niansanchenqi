@@ -10,6 +10,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharpTest", "CSharpTest\CSharpTest.csproj", "{998C9C8E-1A74-475E-84F8-370C61A7556E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MyselfPractice", "MyselfPractice", "{BC5F8478-D69A-4B41-92AF-A3D456B44310}"
+	ProjectSection(SolutionItems) = preProject
+		SqlQuery_1.sql = SqlQuery_1.sql
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dailyLearn", "dailyLearn", "{8A22E95D-549D-472A-90F4-FD0F03E6CE39}"
 EndProject
